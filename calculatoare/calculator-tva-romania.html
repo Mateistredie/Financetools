@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+ 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator TVA România 2026</title>
+
+<meta name="description" content="Calculează TVA 19% și totalul unei sume rapid și gratuit.">
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">💰 Finance Tools RO</div>
+
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="salariu.html">Salariu</a>
+<a href="tva.html">TVA</a>
+<a href="credit.html">Credit</a>
+<a href="buget.html">Buget</a>
+<a href="dobanda.html">Dobândă</a>
+</nav>
+
+</header>
+
+<section class="hero">
+<h1>Calculator TVA</h1>
+<p>Calculează TVA 19% rapid</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Sumă (RON)</h2>
+<input id="val" type="number" placeholder="Ex: 1000">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+<h2>Cum funcționează?</h2>
+<p>TVA este calculat la 19% conform legislației din România.</p>
+</section>
+
+<footer class="footer">© 2026 Finance Tools RO</footer>
+
+<script>
+function calc(){
+let v = parseFloat(document.getElementById("val").value);
+
+if(isNaN(v) || v<=0){
+document.getElementById("rezultat").innerText="Introdu o valoare validă";
+return;
+}
+
+let tva = v * 0.19;
+let total = v * 1.19;
+
+document.getElementById("rezultat").innerText =
+"TVA: " + tva.toFixed(2) + " RON";
+
+document.getElementById("detalii").innerText =
+"Total cu TVA: " + total.toFixed(2) + " RON";
+}
+</script>
+
+</body>
+</html>

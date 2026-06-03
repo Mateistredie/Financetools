@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Dobândă Compusă România 2026 | Economii și investiții</title>
+
+<meta name="description" content="Calculează cum cresc economiile tale în timp cu dobândă compusă. Vezi suma finală, profitul și evoluția investiției.">
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">💰 Finance Tools RO</div>
+
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-salariu-net-romania.html">Salariu</a>
+<a href="calculator-tva-romania.html">TVA</a>
+<a href="calculator-credit-romania.html">Credit</a>
+<a href="calculator-buget-personal.html">Buget</a>
+<a href="calculator-dobanda-compusa.html">Dobândă</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Calculator Dobândă Compusă</h1>
+
+<p>
+Vezi cum cresc economiile tale în timp prin efectul dobânzii compuse.
+Unul dintre cele mai importante concepte din investiții.
+</p>
+
+</section>
+
+<div class="calc-box">
+
+<h2>Suma inițială (RON)</h2>
+<input id="suma" type="number" placeholder="Ex: 10000">
+
+<h2>Contribuție lunară (RON)</h2>
+<input id="lunar" type="number" placeholder="Ex: 500">
+
+<h2>Dobândă anuală (%)</h2>
+<input id="dobanda" type="number" placeholder="Ex: 7">
+
+<h2>Număr de ani</h2>
+<input id="ani" type="number" placeholder="Ex: 10">
+
+<button onclick="calc()">Calculează creșterea</button>
+
+<div class="rezultat-box">
+
+<h2 id="rezultat">Rezultat final</h2>
+
+<p id="rezultat2"></p>
+
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>Rezultate detaliate</h2>
+
+<p id="detalii"></p>
+
+</section>
+
+<section class="content">
+
+<h2>Ce este dobânda compusă?</h2>
+
+<p>
+Dobânda compusă înseamnă că câștigi dobândă nu doar pe suma inițială,
+ci și pe dobânda acumulată în timp.
+</p>
+
+<p>
+Este unul dintre cele mai puternice concepte din investiții pe termen lung.
+</p>
+
+</section>
+
+<section class="content">
+
+<h2>Întrebări frecvente</h2>
+
+<div class="faq-item">
+<h3>Este garantat acest randament?</h3>
+<p>Nu. Este o simulare matematică bazată pe dobânda introdusă.</p>
+</div>
+
+<div class="faq-item">
+<h3>Include inflația?</h3>
+<p>Nu, rezultatul este brut, fără ajustare pentru inflație.</p>
+</div>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+
+function calc(){
+
+let suma = parseFloat(document.getElementById("suma").value);
+let lunar = parseFloat(document.getElementById("lunar").value);
+let dobanda = parseFloat(document.getElementById("dobanda").value);
+let ani = parseInt(document.getElementById("ani").value);
+
+if(isNaN(suma) || isNaN(lunar) || isNaN(dobanda) || isNaN(ani) || ani <= 0){
+document.getElementById("rezultat").innerText = "Completează toate câmpurile corect";
+return;
+}
+
+let luni = ani * 12;
+let rataLunaraDobanda = (dobanda / 100) / 12;
+
+let total = suma;
+
+for(let i = 0; i < luni; i++){
+total = total * (1 + rataLunaraDobanda);
+total += lunar;
+}
+
+let investit = suma + (lunar * luni);
+let profit = total - investit;
+
+document.getElementById("rezultat").innerText =
+"Total final: " + total.toFixed(0) + " RON";
+
+document.getElementById("rezultat2").innerText =
+"Profit estimat: " + profit.toFixed(0) + " RON";
+
+document.getElementById("detalii").innerHTML =
+"• Investit total: " + investit.toFixed(0) + " RON<br>" +
+"• Ani: " + ani + "<br>" +
+"• Luni: " + luni;
+}
+
+</script>
+
+</body>
+</html>

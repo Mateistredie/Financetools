@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Salariu Net România 2026 | Brut → Net, CAS, CASS</title>
+
+<meta name="description" content="Calculează salariul net din brut în România. Vezi CAS, CASS, impozit și salariul final în mână. Gratuit și rapid.">
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">💰 Finance Tools RO</div>
+
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-salariu-net-romania.html">Salariu</a>
+<a href="calculator-tva-romania.html">TVA</a>
+<a href="calculator-credit-romania.html">Credit</a>
+<a href="calculator-buget-personal.html">Buget</a>
+<a href="calculator-dobanda-compusa.html">Dobândă</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Calculator Salariu Net România</h1>
+
+<p>
+Află exact cât primești în mână din salariul brut.
+Include CAS, CASS și impozit pe venit.
+</p>
+
+</section>
+
+<div class="calc-box">
+
+<h2>Salariu brut (RON)</h2>
+<input id="brut" type="number" placeholder="Ex: 7000">
+
+<button onclick="calc()">Calculează salariul net</button>
+
+<div class="rezultat-box">
+
+<h2 id="net">Salariu net</h2>
+
+<p id="rezultat"></p>
+
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>Detalii calcul</h2>
+
+<p id="detalii"></p>
+
+</section>
+
+<section class="content">
+
+<h2>Cum se calculează salariul în România?</h2>
+
+<p>
+Salariul brut este supus contribuțiilor sociale:
+CAS (pensie), CASS (sănătate) și impozit pe venit.
+</p>
+
+<p>
+După aceste rețineri, rezultă salariul net (banii primiți în mână).
+</p>
+
+</section>
+
+<section class="content">
+
+<h2>Întrebări frecvente</h2>
+
+<div class="faq-item">
+<h3>Este calculul exact?</h3>
+<p>Este o estimare foarte apropiată de realitate pentru salarii standard.</p>
+</div>
+
+<div class="faq-item">
+<h3>Include deduceri personale?</h3>
+<p>Nu, este un calcul general fără deduceri speciale.</p>
+</div>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+
+function calc(){
+
+let brut = parseFloat(document.getElementById("brut").value);
+
+if(isNaN(brut) || brut <= 0){
+document.getElementById("net").innerText = "Introdu un salariu valid";
+document.getElementById("rezultat").innerText = "";
+document.getElementById("detalii").innerText = "";
+return;
+}
+
+// România (standard)
+let cas = brut * 0.25;
+let cass = brut * 0.10;
+
+let baza = brut - cas - cass;
+let impozit = baza * 0.10;
+
+let net = brut - cas - cass - impozit;
+
+document.getElementById("net").innerText =
+"Salariu net: " + net.toFixed(0) + " RON";
+
+document.getElementById("rezultat").innerText =
+"Brut: " + brut.toFixed(0) + " RON";
+
+document.getElementById("detalii").innerHTML =
+"• CAS (25%): " + cas.toFixed(0) + " RON<br>" +
+"• CASS (10%): " + cass.toFixed(0) + " RON<br>" +
+"• Impozit (10%): " + impozit.toFixed(0) + " RON";
+}
+
+</script>
+
+</body>
+</html>

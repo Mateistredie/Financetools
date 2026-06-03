@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Credit România 2026 | Rată lunară, cost total și dobândă</title>
+
+<meta name="description" content="Calculează rata lunară pentru un credit în România. Vezi costul total, dobânda plătită și evoluția creditului. Gratuit și rapid.">
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">💰 Finance Tools RO</div>
+
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-salariu-net-romania.html">Salariu</a>
+<a href="calculator-tva-romania.html">TVA</a>
+<a href="calculator-credit-romania.html">Credit</a>
+<a href="calculator-buget-personal.html">Buget</a>
+<a href="calculator-dobanda-compusa.html">Dobândă</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Calculator Credit România</h1>
+
+<p>
+Calculează rata lunară, costul total și dobânda unui credit.
+Înțelege exact cât plătești în timp.
+</p>
+
+</section>
+
+<div class="calc-box">
+
+<h2>Suma creditului (RON)</h2>
+<input id="suma" type="number" placeholder="Ex: 100000">
+
+<h2>Dobândă anuală (%)</h2>
+<input id="dobanda" type="number" placeholder="Ex: 8">
+
+<h2>Perioada (ani)</h2>
+<input id="ani" type="number" placeholder="Ex: 30">
+
+<button onclick="calc()">Calculează creditul</button>
+
+<div class="rezultat-box">
+
+<h2 id="rata">Rata lunară</h2>
+<p id="rezultat"></p>
+
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>Rezultate detaliate</h2>
+
+<p id="detalii"></p>
+
+</section>
+
+<section class="content">
+
+<h2>Ce trebuie să știi despre credite</h2>
+
+<p>
+Rata lunară este calculată pe baza unei formule de tip anuitate,
+unde plătești aceeași sumă în fiecare lună.
+</p>
+
+<p>
+În primii ani, majoritatea banilor merg către dobândă, nu către principal.
+</p>
+
+</section>
+
+<section class="content">
+
+<h2>Întrebări frecvente</h2>
+
+<div class="faq-item">
+<h3>Este calculul exact?</h3>
+<p>Este o estimare foarte apropiată de realitate, fără comisioane bancare.</p>
+</div>
+
+<div class="faq-item">
+<h3>Include taxe sau asigurări?</h3>
+<p>Nu. Doar principal + dobândă.</p>
+</div>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+
+function calc(){
+
+let suma = parseFloat(document.getElementById("suma").value);
+let dobanda = parseFloat(document.getElementById("dobanda").value);
+let ani = parseInt(document.getElementById("ani").value);
+
+if(isNaN(suma) || isNaN(dobanda) || isNaN(ani) || suma <= 0 || dobanda <= 0 || ani <= 0){
+document.getElementById("rata").innerText = "Completează toate câmpurile corect";
+document.getElementById("rezultat").innerText = "";
+document.getElementById("detalii").innerText = "";
+return;
+}
+
+let luni = ani * 12;
+let r = (dobanda / 100) / 12;
+
+let rata = suma * (r * Math.pow(1 + r, luni)) / (Math.pow(1 + r, luni) - 1);
+
+let total = rata * luni;
+let dobandaTotala = total - suma;
+
+document.getElementById("rata").innerText = "Rată lunară: " + rata.toFixed(0) + " RON";
+
+document.getElementById("rezultat").innerText =
+"Total plătit: " + total.toFixed(0) + " RON";
+
+document.getElementById("detalii").innerHTML =
+"• Suma împrumutată: " + suma.toFixed(0) + " RON<br>" +
+"• Dobândă totală: " + dobandaTotala.toFixed(0) + " RON<br>" +
+"• Durată: " + ani + " ani (" + luni + " luni)";
+}
+
+</script>
+
+</body>
+</html>
