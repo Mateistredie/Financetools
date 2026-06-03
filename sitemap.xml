@@ -2,36 +2,44 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://mateistredie.github.io/Financetools/</loc>
-</url>
+  <!-- Homepage -->
+  <url>
+    <loc>https://mateistredie.github.io/Financetools/</loc>
+  </url>
 
-<url>
-<loc>https://mateistredie.github.io/Financetools/despre.html</loc>
-</url>
+  <!-- Despre -->
+  <url>
+    <loc>https://mateistredie.github.io/Financetools/despre.html</loc>
+  </url>
 
-<url>
-<loc>https://mateistredie.github.io/Financetools/contact.html</loc>
-</url>
+  <!-- Contact -->
+  <url>
+    <loc>https://mateistredie.github.io/Financetools/contact.html</loc>
+  </url>
 
-<url>
-<loc>https://mateistredie.github.io/Financetools/calculatoare/salariu.html</loc>
-</url>
+  <!-- Calculator Salariu Net -->
+  <url>
+    <loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-salariu-net-romania.html</loc>
+  </url>
 
-<url>
-<loc>https://mateistredie.github.io/Financetools/calculatoare/tva.html</loc>
-</url>
+  <!-- Calculator TVA -->
+  <url>
+    <loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-tva-romania.html</loc>
+  </url>
 
-<url>
-<loc>https://mateistredie.github.io/Financetools/calculatoare/credit.html</loc>
-</url>
+  <!-- Calculator Credit -->
+  <url>
+    <loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-credit-romania.html</loc>
+  </url>
 
-<url>
-<loc>https://mateistredie.github.io/Financetools/calculatoare/buget.html</loc>
-</url>
+  <!-- Calculator Buget -->
+  <url>
+    <loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-buget-personal</loc>
+  </url>
 
-<url>
-<loc>https://mateistredie.github.io/Financetools/calculatoare/dobanda.html</loc>
-</url>
+  <!-- Calculator Dobândă -->
+  <url>
+    <loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-dobanda-compusa.html</loc>
+  </url>
 
 </urlset>
