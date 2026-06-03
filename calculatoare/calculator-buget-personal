@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+ 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Calculator Buget Personal România</title>
+
+<meta name="description" content="Compară veniturile și cheltuielile și vezi dacă ai surplus sau deficit.">
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">💰 Finance Tools RO</div>
+
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="salariu.html">Salariu</a>
+<a href="tva.html">TVA</a>
+<a href="credit.html">Credit</a>
+<a href="buget.html">Buget</a>
+<a href="dobanda.html">Dobândă</a>
+</nav>
+
+</header>
+
+<section class="hero">
+<h1>Calculator Buget</h1>
+<p>Venit vs cheltuieli</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Venit</h2>
+<input id="v" type="number" placeholder="Ex: 5000">
+
+<h2>Cheltuieli</h2>
+<input id="c" type="number" placeholder="Ex: 3000">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<script>
+function calc(){
+let v = parseFloat(document.getElementById("v").value);
+let c = parseFloat(document.getElementById("c").value);
+
+if(isNaN(v) || isNaN(c)){
+document.getElementById("rezultat").innerText="Introdu valori valide";
+return;
+}
+
+let diff = v - c;
+let procent = (c / v) * 100;
+
+let status =
+diff > 0 ? "Surplus" : "Deficit";
+
+document.getElementById("rezultat").innerText =
+status + ": " + diff.toFixed(0) + " RON";
+
+document.getElementById("detalii").innerText =
+"Cheltuieli: " + procent.toFixed(1) + "% din venit";
+}
+</script>
+
+</body>
+</html>
