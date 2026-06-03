@@ -1,0 +1,182 @@
+/* ===== RESET ===== */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+:root {
+--bg: #0b1220;
+--card: rgba(255,255,255,0.06);
+--card2: rgba(255,255,255,0.1);
+--text: #ffffff;
+--muted: rgba(255,255,255,0.7);
+--accent: #38bdf8;
+--border: rgba(255,255,255,0.08);
+}
+
+/* ===== BODY ===== */
+body {
+background: radial-gradient(circle at top, #111827, #0b1220);
+color: var(--text);
+line-height: 1.6;
+min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 40px;
+position:sticky;
+top:0;
+background: rgba(0,0,0,0.4);
+backdrop-filter: blur(10px);
+border-bottom: 1px solid var(--border);
+z-index: 1000;
+}
+
+.logo {
+font-weight: 800;
+font-size: 20px;
+}
+
+.navbar nav {
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+}
+
+.navbar a {
+color: var(--text);
+text-decoration:none;
+font-weight:600;
+opacity:0.8;
+transition:0.2s;
+}
+
+.navbar a:hover {
+color: var(--accent);
+opacity:1;
+}
+
+/* ===== HERO ===== */
+.hero {
+text-align:center;
+padding:90px 20px 40px;
+max-width:900px;
+margin:auto;
+}
+
+.hero h1 {
+font-size:44px;
+margin-bottom:12px;
+}
+
+.hero p {
+color: var(--muted);
+font-size:18px;
+}
+
+/* ===== GRID CARDS ===== */
+.container {
+max-width:1100px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:18px;
+}
+
+.card {
+background: var(--card);
+border:1px solid var(--border);
+padding:22px;
+border-radius:16px;
+text-decoration:none;
+color:white;
+transition:0.2s;
+}
+
+.card:hover {
+transform: translateY(-5px);
+background: var(--card2);
+}
+
+/* ===== CALCULATOR ===== */
+.calc-box {
+max-width:700px;
+margin:40px auto;
+padding:28px;
+background: var(--card);
+border:1px solid var(--border);
+border-radius:18px;
+}
+
+.calc-box input {
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:10px;
+border:none;
+outline:none;
+}
+
+.calc-box button {
+width:100%;
+padding:14px;
+background: var(--accent);
+border:none;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+margin-top:10px;
+}
+
+.calc-box button:hover {
+opacity:0.9;
+}
+
+/* ===== RESULT ===== */
+.rezultat-box {
+margin-top:20px;
+padding:16px;
+background: rgba(56,189,248,0.1);
+border:1px solid rgba(56,189,248,0.3);
+border-radius:12px;
+text-align:center;
+}
+
+.rezultat-box h2 {
+font-size:26px;
+}
+
+/* ===== CONTENT SEO ===== */
+.content {
+max-width:850px;
+margin:50px auto;
+padding:20px;
+color: var(--muted);
+}
+
+.content h2 {
+color:white;
+margin-bottom:10px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+text-align:center;
+padding:30px;
+border-top:1px solid var(--border);
+margin-top:60px;
+opacity:0.7;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px) {
+.hero h1 {font-size:30px;}
+.navbar {flex-direction:column; gap:10px;}
+}
