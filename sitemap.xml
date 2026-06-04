@@ -2,44 +2,24 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage -->
-  <url>
-    <loc>https://mateistredie.github.io/Financetools/</loc>
-  </url>
+<url><loc>https://mateistredie.github.io/Financetools/</loc></url>
 
-  <!-- Despre -->
-  <url>
-    <loc>https://mateistredie.github.io/Financetools/despre.html</loc>
-  </url>
+<url><loc>https://mateistredie.github.io/Financetools/despre.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/contact.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/privacy-policy.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/terms.html</loc></url>
 
-  <!-- Contact -->
-  <url>
-    <loc>https://mateistredie.github.io/Financetools/contact.html</loc>
-  </url>
+<url><loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-salariu-net-romania.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-tva-romania.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-credit-romania.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-buget-personal.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-dobanda-compusa.html</loc></url>
 
-  <!-- Calculator Salariu Net -->
-  <url>
-    <loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-salariu-net-romania.html</loc>
-  </url>
-
-  <!-- Calculator TVA -->
-  <url>
-    <loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-tva-romania.html</loc>
-  </url>
-
-  <!-- Calculator Credit -->
-  <url>
-    <loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-credit-romania.html</loc>
-  </url>
-
-  <!-- Calculator Buget -->
-  <url>
-    <loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-buget-personal.html</loc>
-  </url>
-
-  <!-- Calculator Dobândă -->
-  <url>
-    <loc>https://mateistredie.github.io/Financetools/calculatoare/calculator-dobanda-compusa.html</loc>
-  </url>
+<url><loc>https://mateistredie.github.io/Financetools/blog/salariu-net-explicat.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/blog/ce-este-tva.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/blog/cum-se-calculeaza-creditul.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/blog/dobanda-compusa-explicata.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/blog/cum-faci-buget-personal.html</loc></url>
+<url><loc>https://mateistredie.github.io/Financetools/blog/brut-vs-net.html</loc></url>
 
 </urlset>
