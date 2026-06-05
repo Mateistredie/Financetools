@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Credit Ipotecar | Rată lunară locuință</title>
+<meta name="description" content="Calculează rata lunară pentru un credit ipotecar în funcție de prețul locuinței, avans, dobândă și perioadă.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-credit-romania.html">Credit</a>
+<a href="calculator-credit-ipotecar.html">Credit Ipotecar</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Credit Ipotecar</h1>
+<p>Estimează rata lunară pentru cumpărarea unei locuințe.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Preț locuință (RON)</h2>
+<input id="pret" type="number" placeholder="Ex: 500000">
+
+<h2>Avans (RON)</h2>
+<input id="avans" type="number" placeholder="Ex: 75000">
+
+<h2>Dobândă anuală (%)</h2>
+<input id="dobanda" type="number" placeholder="Ex: 7">
+
+<h2>Perioada (ani)</h2>
+<input id="ani" type="number" placeholder="Ex: 30">
+
+<button onclick="calc()">Calculează rata ipotecară</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>Ce este un credit ipotecar?</h2>
+<p>
+Creditul ipotecar este un împrumut folosit pentru cumpărarea unei locuințe. De obicei, locuința cumpărată este folosită ca garanție pentru bancă.
+</p>
+
+<p>
+Calculatorul oferă o estimare a ratei lunare, fără a include toate comisioanele, asigurările sau costurile notariale.
+</p>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+
+let pret = parseFloat(document.getElementById("pret").value);
+let avans = parseFloat(document.getElementById("avans").value);
+let dobanda = parseFloat(document.getElementById("dobanda").value);
+let ani = parseInt(document.getElementById("ani").value);
+
+if(isNaN(pret) || isNaN(avans) || isNaN(dobanda) || isNaN(ani) || pret <= 0 || avans < 0 || dobanda <= 0 || ani <= 0 || avans >= pret){
+document.getElementById("rezultat").innerText = "Completează corect toate câmpurile";
+document.getElementById("detalii").innerText = "";
+return;
+}
+
+let sumaCredit = pret - avans;
+let luni = ani * 12;
+let rataDobanda = (dobanda / 100) / 12;
+
+let rata = sumaCredit * (rataDobanda * Math.pow(1 + rataDobanda, luni)) / (Math.pow(1 + rataDobanda, luni) - 1);
+
+let total = rata * luni;
+let dobandaTotala = total - sumaCredit;
+
+document.getElementById("rezultat").innerText =
+"Rată lunară estimată: " + rata.toFixed(0) + " RON";
+
+document.getElementById("detalii").innerHTML =
+"• Suma împrumutată: " + sumaCredit.toFixed(0) + " RON<br>" +
+"• Avans: " + avans.toFixed(0) + " RON<br>" +
+"• Total rambursat: " + total.toFixed(0) + " RON<br>" +
+"• Dobândă totală: " + dobandaTotala.toFixed(0) + " RON";
+}
+</script>
+
+</body>
+</html>
