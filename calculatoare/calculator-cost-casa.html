@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Cost Casă | Finance Tools RO</title>
+<meta name="description" content="Estimează costul construirii unei case.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Cost Casă</h1>
+<p>Estimează costul construirii unei case.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Suprafață construită (mp)</h2>
+<input id="mp" type="number" placeholder="Ex: 120">
+
+<h2>Cost pe mp (RON)</h2>
+<input id="cost" type="number" placeholder="Ex: 3500">
+
+<h2>Costuri extra (RON)</h2>
+<input id="extra" type="number" placeholder="Ex: 30000">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+<h2>Calculator Cost Casă</h2><p>Estimează costul construirii unei case.</p><p>Calculatorul oferă o estimare rapidă, utilă pentru planificare financiară personală.</p>
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+let mp=parseFloat(document.getElementById("mp").value), cost=parseFloat(document.getElementById("cost").value), extra=parseFloat(document.getElementById("extra").value);
+if(isNaN(mp)||isNaN(cost)||isNaN(extra)||mp<=0||cost<=0||extra<0){rezultat.innerText="Completează corect";detalii.innerText="";return;}
+let total=mp*cost+extra;
+rezultat.innerText="Cost estimat: "+total.toFixed(0)+" RON";
+detalii.innerHTML="• Cost construcție: "+(mp*cost).toFixed(0)+" RON<br>• Costuri extra: "+extra.toFixed(0)+" RON";
+}
+</script>
+
+</body>
+</html>

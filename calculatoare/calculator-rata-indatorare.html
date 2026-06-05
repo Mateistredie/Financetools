@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Grad de Îndatorare | Finance Tools RO</title>
+<meta name="description" content="Calculează procentul din venit alocat ratelor.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Grad de Îndatorare</h1>
+<p>Calculează procentul din venit alocat ratelor.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Venit net lunar (RON)</h2>
+<input id="venit" type="number" placeholder="Ex: 6000">
+
+<h2>Rate lunare totale (RON)</h2>
+<input id="rate" type="number" placeholder="Ex: 1800">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+<h2>Calculator Grad de Îndatorare</h2><p>Calculează procentul din venit alocat ratelor.</p><p>Calculatorul oferă o estimare rapidă, utilă pentru planificare financiară personală.</p>
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+let venit=parseFloat(document.getElementById("venit").value);
+let rate=parseFloat(document.getElementById("rate").value);
+if(isNaN(venit)||isNaN(rate)||venit<=0||rate<0){rezultat.innerText="Completează corect";detalii.innerText="";return;}
+let grad=rate/venit*100;
+rezultat.innerText="Grad de îndatorare: "+grad.toFixed(2)+"%";
+detalii.innerHTML=grad>40?"• Atenție: nivel ridicat al ratelor.":"• Nivel estimativ al ratelor raportat la venit.";
+}
+</script>
+
+</body>
+</html>

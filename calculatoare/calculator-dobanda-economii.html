@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Dobândă Economii | Finance Tools RO</title>
+<meta name="description" content="Estimează dobânda câștigată într-un cont de economii.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Dobândă Economii</h1>
+<p>Estimează dobânda câștigată într-un cont de economii.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Sumă depusă (RON)</h2>
+<input id="suma" type="number" placeholder="Ex: 10000">
+
+<h2>Dobândă anuală (%)</h2>
+<input id="dobanda" type="number" placeholder="Ex: 4">
+
+<h2>Luni</h2>
+<input id="luni" type="number" placeholder="Ex: 12">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+<h2>Calculator Dobândă Economii</h2><p>Estimează dobânda câștigată într-un cont de economii.</p><p>Calculatorul oferă o estimare rapidă, utilă pentru planificare financiară personală.</p>
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+let suma=parseFloat(document.getElementById("suma").value), d=parseFloat(document.getElementById("dobanda").value), luni=parseInt(document.getElementById("luni").value);
+if(isNaN(suma)||isNaN(d)||isNaN(luni)||suma<=0||d<0||luni<=0){rezultat.innerText="Completează corect";detalii.innerText="";return;}
+let total=suma*Math.pow(1+d/100/12,luni);
+rezultat.innerText="Total estimat: "+total.toFixed(2)+" RON";
+detalii.innerHTML="• Dobândă câștigată: "+(total-suma).toFixed(2)+" RON";
+}
+</script>
+
+</body>
+</html>

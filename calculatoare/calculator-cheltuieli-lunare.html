@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Cheltuieli Lunare | Finance Tools RO</title>
+<meta name="description" content="Adună principalele cheltuieli lunare.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Cheltuieli Lunare</h1>
+<p>Adună principalele cheltuieli lunare.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Locuință (RON)</h2>
+<input id="locuinta" type="number" placeholder="Ex: 2000">
+
+<h2>Mâncare (RON)</h2>
+<input id="mancare" type="number" placeholder="Ex: 1500">
+
+<h2>Transport (RON)</h2>
+<input id="transport" type="number" placeholder="Ex: 500">
+
+<h2>Altele (RON)</h2>
+<input id="altele" type="number" placeholder="Ex: 700">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+<h2>Calculator Cheltuieli Lunare</h2><p>Adună principalele cheltuieli lunare.</p><p>Calculatorul oferă o estimare rapidă, utilă pentru planificare financiară personală.</p>
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+let ids=["locuinta","mancare","transport","altele"];let vals=ids.map(id=>parseFloat(document.getElementById(id).value));
+if(vals.some(x=>isNaN(x)||x<0)){rezultat.innerText="Completează corect";detalii.innerText="";return;}
+let total=vals.reduce((a,b)=>a+b,0);
+rezultat.innerText="Cheltuieli lunare: "+total.toFixed(0)+" RON";
+detalii.innerHTML="• Cheltuieli anuale: "+(total*12).toFixed(0)+" RON";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Concediu Medical | Indemnizație estimativă</title>
+<meta name="description" content="Estimează indemnizația pentru concediu medical în funcție de media veniturilor, procent și numărul de zile.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Concediu Medical</h1>
+<p>Calculează estimativ indemnizația pentru zilele de concediu medical.</p>
+</section>
+
+<div class="calc-box">
+
+
+<h2>Media zilnică a veniturilor (RON)</h2>
+<input id="medie" type="number" placeholder="Ex: 230">
+
+<h2>Procent indemnizație (%)</h2>
+<input id="procent" type="number" placeholder="Ex: 75">
+
+<h2>Număr zile concediu medical</h2>
+<input id="zile" type="number" placeholder="Ex: 10">
+
+
+<button onclick="calc()">Calculează indemnizația</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>Cum se estimează concediul medical?</h2>
+<p>Indemnizația poate depinde de media veniturilor, tipul concediului medical și procentul aplicabil. Calculatorul oferă o estimare simplificată.</p>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+
+function calc(){
+let medie=parseFloat(document.getElementById("medie").value);
+let procent=parseFloat(document.getElementById("procent").value);
+let zile=parseInt(document.getElementById("zile").value);
+if(isNaN(medie)||isNaN(procent)||isNaN(zile)||medie<=0||procent<0||zile<=0){
+document.getElementById("rezultat").innerText="Completează toate câmpurile corect";
+document.getElementById("detalii").innerText="";
+return;
+}
+let total=medie*(procent/100)*zile;
+document.getElementById("rezultat").innerText="Indemnizație estimată: "+total.toFixed(0)+" RON";
+document.getElementById("detalii").innerHTML=
+"• Media zilnică: "+medie.toFixed(2)+" RON<br>"+
+"• Procent folosit: "+procent+"%<br>"+
+"• Zile: "+zile;
+}
+
+</script>
+
+</body>
+</html>

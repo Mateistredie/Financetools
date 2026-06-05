@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Randament Chirie | Finance Tools RO</title>
+<meta name="description" content="Calculează randamentul anual brut din chirie.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Randament Chirie</h1>
+<p>Calculează randamentul anual brut din chirie.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Preț proprietate (RON)</h2>
+<input id="pret" type="number" placeholder="Ex: 400000">
+
+<h2>Chirie lunară (RON)</h2>
+<input id="chirie" type="number" placeholder="Ex: 2200">
+
+<h2>Costuri anuale (RON)</h2>
+<input id="costuri" type="number" placeholder="Ex: 3000">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+<h2>Calculator Randament Chirie</h2><p>Calculează randamentul anual brut din chirie.</p><p>Calculatorul oferă o estimare rapidă, utilă pentru planificare financiară personală.</p>
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+let pret=parseFloat(document.getElementById("pret").value), chirie=parseFloat(document.getElementById("chirie").value), costuri=parseFloat(document.getElementById("costuri").value);
+if(isNaN(pret)||isNaN(chirie)||isNaN(costuri)||pret<=0||chirie<0||costuri<0){rezultat.innerText="Completează corect";detalii.innerText="";return;}
+let venit=chirie*12, net=venit-costuri, rand=net/pret*100;
+rezultat.innerText="Randament net estimativ: "+rand.toFixed(2)+"%";
+detalii.innerHTML="• Venit anual chirie: "+venit.toFixed(0)+" RON<br>• Venit după costuri: "+net.toFixed(0)+" RON";
+}
+</script>
+
+</body>
+</html>

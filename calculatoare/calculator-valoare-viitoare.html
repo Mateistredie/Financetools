@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Valoare Viitoare | Finance Tools RO</title>
+<meta name="description" content="Calculează valoarea viitoare a unei sume.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Valoare Viitoare</h1>
+<p>Calculează valoarea viitoare a unei sume.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Suma inițială (RON)</h2>
+<input id="suma" type="number" placeholder="Ex: 10000">
+
+<h2>Randament anual (%)</h2>
+<input id="randament" type="number" placeholder="Ex: 7">
+
+<h2>Ani</h2>
+<input id="ani" type="number" placeholder="Ex: 10">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+<h2>Calculator Valoare Viitoare</h2><p>Calculează valoarea viitoare a unei sume.</p><p>Calculatorul oferă o estimare rapidă, utilă pentru planificare financiară personală.</p>
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+let suma=parseFloat(document.getElementById("suma").value), r=parseFloat(document.getElementById("randament").value), ani=parseInt(document.getElementById("ani").value);
+if(isNaN(suma)||isNaN(r)||isNaN(ani)||suma<=0||r<0||ani<=0){rezultat.innerText="Completează corect";detalii.innerText="";return;}
+let total=suma*Math.pow(1+r/100,ani);
+rezultat.innerText="Valoare viitoare: "+total.toFixed(0)+" RON";
+detalii.innerHTML="• Câștig estimat: "+(total-suma).toFixed(0)+" RON";
+}
+</script>
+
+</body>
+</html>

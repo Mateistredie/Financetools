@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator CAS și CASS România | Contribuții sociale</title>
+<meta name="description" content="Calculează rapid contribuțiile CAS și CASS pornind de la o sumă brută. Instrument estimativ pentru România.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-salariu-net-romania.html">Salariu Net</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator CAS și CASS</h1>
+<p>Estimează contribuțiile sociale pentru pensie și sănătate.</p>
+</section>
+
+<div class="calc-box">
+
+
+<h2>Sumă brută (RON)</h2>
+<input id="brut" type="number" placeholder="Ex: 7000">
+
+
+<button onclick="calc()">Calculează contribuțiile</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>Ce sunt CAS și CASS?</h2>
+<p>CAS este contribuția pentru pensie, iar CASS este contribuția pentru sănătate. Acestea se aplică de obicei la veniturile salariale și influențează suma netă primită.</p>
+<p>Calculatorul are scop informativ și oferă o estimare rapidă.</p>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+
+function calc(){
+let brut=parseFloat(document.getElementById("brut").value);
+if(isNaN(brut)||brut<=0){
+document.getElementById("rezultat").innerText="Introdu o valoare validă";
+document.getElementById("detalii").innerText="";
+return;
+}
+let cas=brut*0.25;
+let cass=brut*0.10;
+let total=cas+cass;
+document.getElementById("rezultat").innerText="Total contribuții: "+total.toFixed(0)+" RON";
+document.getElementById("detalii").innerHTML=
+"• CAS pensie 25%: "+cas.toFixed(0)+" RON<br>"+
+"• CASS sănătate 10%: "+cass.toFixed(0)+" RON<br>"+
+"• Sumă rămasă înainte de impozit: "+(brut-total).toFixed(0)+" RON";
+}
+
+</script>
+
+</body>
+</html>

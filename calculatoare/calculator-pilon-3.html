@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Pilon III | Finance Tools RO</title>
+<meta name="description" content="Estimează economiile într-o pensie privată facultativă.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Pilon III</h1>
+<p>Estimează economiile într-o pensie privată facultativă.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Contribuție lunară (RON)</h2>
+<input id="lunar" type="number" placeholder="Ex: 300">
+
+<h2>Randament anual (%)</h2>
+<input id="randament" type="number" placeholder="Ex: 5">
+
+<h2>Ani</h2>
+<input id="ani" type="number" placeholder="Ex: 25">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+<h2>Calculator Pilon III</h2><p>Estimează economiile într-o pensie privată facultativă.</p><p>Calculatorul oferă o estimare rapidă, utilă pentru planificare financiară personală.</p>
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+let lunar=parseFloat(document.getElementById("lunar").value);
+let randament=parseFloat(document.getElementById("randament").value);
+let ani=parseInt(document.getElementById("ani").value);
+if(isNaN(lunar)||isNaN(randament)||isNaN(ani)||lunar<0||randament<0||ani<=0){rezultat.innerText="Completează corect";detalii.innerText="";return;}
+let total=0, luni=ani*12, r=randament/100/12;
+for(let i=0;i<luni;i++){total=(total+lunar)*(1+r);}
+let contributii=lunar*luni;
+rezultat.innerText="Valoare estimată: "+total.toFixed(0)+" RON";
+detalii.innerHTML="• Contribuții totale: "+contributii.toFixed(0)+" RON<br>• Câștig estimat: "+(total-contributii).toFixed(0)+" RON";
+}
+</script>
+
+</body>
+</html>
