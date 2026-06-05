@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Curs Valutar | Conversie EUR USD RON</title>
+<meta name="description" content="Calculează rapid conversia valutară între RON, EUR și USD folosind cursuri introduse manual.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-curs-valutar.html">Curs Valutar</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Curs Valutar</h1>
+<p>Transformă rapid o sumă dintr-o monedă în alta.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Suma</h2>
+<input id="suma" type="number" placeholder="Ex: 1000">
+
+<h2>Curs valutar</h2>
+<input id="curs" type="number" placeholder="Ex: 4.97">
+
+<button onclick="calc()">Calculează conversia</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>Cum funcționează calculatorul?</h2>
+<p>
+Introdu suma și cursul valutar dorit, iar calculatorul îți arată valoarea convertită.
+</p>
+
+<p>
+Acest instrument este util pentru conversii rapide între RON, EUR, USD sau alte monede.
+</p>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+
+let suma = parseFloat(document.getElementById("suma").value);
+let curs = parseFloat(document.getElementById("curs").value);
+
+if(isNaN(suma) || isNaN(curs) || suma <= 0 || curs <= 0){
+document.getElementById("rezultat").innerText = "Completează toate câmpurile corect";
+document.getElementById("detalii").innerText = "";
+return;
+}
+
+let rezultat = suma * curs;
+
+document.getElementById("rezultat").innerText =
+"Rezultat: " + rezultat.toFixed(2);
+
+document.getElementById("detalii").innerHTML =
+"• Suma introdusă: " + suma.toFixed(2) + "<br>" +
+"• Curs folosit: " + curs.toFixed(4);
+}
+</script>
+
+</body>
+</html>
