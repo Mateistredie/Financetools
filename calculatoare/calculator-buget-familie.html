@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Buget Familie</title>
+<meta name="description" content="Compară veniturile și cheltuielile familiei.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Buget Familie</h1>
+<p>Compară veniturile și cheltuielile familiei.</p>
+</section>
+
+<div class="calc-box">
+<h2>Venituri totale familie (RON)</h2>
+<input id="venituri" type="number" placeholder="Ex: 9000">
+<h2>Cheltuieli totale familie (RON)</h2>
+<input id="cheltuieli" type="number" placeholder="Ex: 6500">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Buget Familie</h2><p>Compară veniturile și cheltuielile familiei.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let v=parseFloat(venituri.value), c=parseFloat(cheltuieli.value);
+if(isNaN(v)||isNaN(c)||v<=0||c<0){rezultat.innerText='Completează câmpurile corect';detalii.innerText='';return;}
+let dif=v-c;
+rezultat.innerText=dif>=0?'Surplus: '+dif.toFixed(0)+' RON':'Deficit: '+Math.abs(dif).toFixed(0)+' RON';
+detalii.innerHTML='• Rată economisire: '+(dif/v*100).toFixed(2)+'%';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

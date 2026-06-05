@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Obiectiv Financiar</title>
+<meta name="description" content="Calculează cât trebuie să economisești lunar pentru un obiectiv.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Obiectiv Financiar</h1>
+<p>Calculează cât trebuie să economisești lunar pentru un obiectiv.</p>
+</section>
+
+<div class="calc-box">
+<h2>Suma țintă (RON)</h2>
+<input id="tinta" type="number" placeholder="Ex: 30000">
+<h2>Economii existente (RON)</h2>
+<input id="existent" type="number" placeholder="Ex: 5000">
+<h2>Luni disponibile</h2>
+<input id="luni" type="number" placeholder="Ex: 24">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Obiectiv Financiar</h2><p>Calculează cât trebuie să economisești lunar pentru un obiectiv.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let t=parseFloat(tinta.value), e=parseFloat(existent.value), l=parseInt(luni.value);
+if(isNaN(t)||isNaN(e)||isNaN(l)||t<=0||e<0||l<=0){rezultat.innerText='Completează corect';detalii.innerText='';return;}
+let ramas=Math.max(0,t-e), lunar=ramas/l;
+rezultat.innerText='Economisire necesară: '+lunar.toFixed(0)+' RON/lună';
+detalii.innerHTML='• Sumă rămasă: '+ramas.toFixed(0)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

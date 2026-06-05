@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Leasing Auto</title>
+<meta name="description" content="Estimează rata lunară pentru leasing auto.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Leasing Auto</h1>
+<p>Estimează rata lunară pentru leasing auto.</p>
+</section>
+
+<div class="calc-box">
+<h2>Preț mașină (RON)</h2>
+<input id="pret" type="number" placeholder="Ex: 120000">
+<h2>Avans (RON)</h2>
+<input id="avans" type="number" placeholder="Ex: 20000">
+<h2>Dobândă anuală (%)</h2>
+<input id="dobanda" type="number" placeholder="Ex: 8">
+<h2>Perioadă (ani)</h2>
+<input id="ani" type="number" placeholder="Ex: 5">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Leasing Auto</h2><p>Estimează rata lunară pentru leasing auto.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let p=parseFloat(pret.value), a=parseFloat(avans.value), d=parseFloat(dobanda.value), y=parseInt(ani.value);
+if(isNaN(p)||isNaN(a)||isNaN(d)||isNaN(y)||p<=0||a<0||a>=p||d<0||y<=0){rezultat.innerText='Completează corect câmpurile';detalii.innerText='';return;}
+let suma=p-a,l=y*12,r=d/100/12;let rata=r===0?suma/l:suma*(r*Math.pow(1+r,l))/(Math.pow(1+r,l)-1);
+rezultat.innerText='Rată estimată: '+rata.toFixed(0)+' RON/lună';
+detalii.innerHTML='• Suma finanțată: '+suma.toFixed(0)+' RON<br>• Total rate: '+(rata*l).toFixed(0)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

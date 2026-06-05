@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Refinanțare Credit</title>
+<meta name="description" content="Compară rata veche cu rata nouă.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Refinanțare Credit</h1>
+<p>Compară rata veche cu rata nouă.</p>
+</section>
+
+<div class="calc-box">
+<h2>Rata veche (RON)</h2>
+<input id="rataVeche" type="number" placeholder="Ex: 2200">
+<h2>Rata nouă (RON)</h2>
+<input id="rataNoua" type="number" placeholder="Ex: 1900">
+<h2>Luni rămase</h2>
+<input id="luni" type="number" placeholder="Ex: 120">
+<h2>Costuri refinanțare (RON)</h2>
+<input id="costuri" type="number" placeholder="Ex: 1500">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Refinanțare Credit</h2><p>Compară rata veche cu rata nouă.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let v=parseFloat(rataVeche.value), n=parseFloat(rataNoua.value), l=parseInt(luni.value), cost=parseFloat(costuri.value);
+if(isNaN(v)||isNaN(n)||isNaN(l)||isNaN(cost)||v<=0||n<=0||l<=0||cost<0){rezultat.innerText='Completează corect';detalii.innerText='';return;}
+let economii=(v-n)*l-cost;
+rezultat.innerText='Economii estimate: '+economii.toFixed(0)+' RON';
+detalii.innerHTML='• Economie lunară: '+(v-n).toFixed(0)+' RON<br>• Costuri refinanțare: '+cost.toFixed(0)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

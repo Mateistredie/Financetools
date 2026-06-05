@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Prag Rentabilitate</title>
+<meta name="description" content="Află câte vânzări trebuie pentru profit zero.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Prag Rentabilitate</h1>
+<p>Află câte vânzări trebuie pentru profit zero.</p>
+</section>
+
+<div class="calc-box">
+<h2>Costuri fixe (RON)</h2>
+<input id="costuri" type="number" placeholder="Ex: 10000">
+<h2>Preț vânzare/unitate (RON)</h2>
+<input id="pret" type="number" placeholder="Ex: 100">
+<h2>Cost variabil/unitate (RON)</h2>
+<input id="costUnit" type="number" placeholder="Ex: 60">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Prag Rentabilitate</h2><p>Află câte vânzări trebuie pentru profit zero.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let cf=parseFloat(costuri.value), p=parseFloat(pret.value), cu=parseFloat(costUnit.value);
+if(isNaN(cf)||isNaN(p)||isNaN(cu)||cf<0||p<=0||cu<0||p<=cu){rezultat.innerText='Completează corect';detalii.innerText='';return;}
+let unit=cf/(p-cu);
+rezultat.innerText='Prag rentabilitate: '+Math.ceil(unit)+' unități';
+detalii.innerHTML='• Marjă/unitate: '+(p-cu).toFixed(2)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

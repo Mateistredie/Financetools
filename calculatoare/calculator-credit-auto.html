@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Credit Auto</title>
+<meta name="description" content="Estimează rata pentru un credit auto.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Credit Auto</h1>
+<p>Estimează rata pentru un credit auto.</p>
+</section>
+
+<div class="calc-box">
+<h2>Suma credit auto (RON)</h2>
+<input id="suma" type="number" placeholder="Ex: 80000">
+<h2>Dobândă anuală (%)</h2>
+<input id="dobanda" type="number" placeholder="Ex: 9">
+<h2>Perioadă (ani)</h2>
+<input id="ani" type="number" placeholder="Ex: 5">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Credit Auto</h2><p>Estimează rata pentru un credit auto.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let s=parseFloat(suma.value), d=parseFloat(dobanda.value), a=parseInt(ani.value);
+if(isNaN(s)||isNaN(d)||isNaN(a)||s<=0||d<0||a<=0){rezultat.innerText='Completează corect';detalii.innerText='';return;}
+let luni=a*12,r=d/100/12;let rata=r===0?s/luni:s*(r*Math.pow(1+r,luni))/(Math.pow(1+r,luni)-1);
+rezultat.innerText='Rată estimată: '+rata.toFixed(0)+' RON/lună';
+detalii.innerHTML='• Total rambursat: '+(rata*luni).toFixed(0)+' RON<br>• Dobândă totală: '+(rata*luni-s).toFixed(0)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

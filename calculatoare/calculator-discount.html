@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Reduceri</title>
+<meta name="description" content="Calculează prețul după discount.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Reduceri</h1>
+<p>Calculează prețul după discount.</p>
+</section>
+
+<div class="calc-box">
+<h2>Preț inițial (RON)</h2>
+<input id="pret" type="number" placeholder="Ex: 500">
+<h2>Reducere (%)</h2>
+<input id="discount" type="number" placeholder="Ex: 20">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Reduceri</h2><p>Calculează prețul după discount.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let p=parseFloat(pret.value), d=parseFloat(discount.value);
+if(isNaN(p)||isNaN(d)||p<=0||d<0||d>100){rezultat.innerText='Completează corect';detalii.innerText='';return;}
+let reduc=p*d/100, final=p-reduc;
+rezultat.innerText='Preț final: '+final.toFixed(2)+' RON';
+detalii.innerHTML='• Economisești: '+reduc.toFixed(2)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

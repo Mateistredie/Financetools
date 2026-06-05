@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Profit Afacere</title>
+<meta name="description" content="Calculează profitul și marja de profit.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Profit Afacere</h1>
+<p>Calculează profitul și marja de profit.</p>
+</section>
+
+<div class="calc-box">
+<h2>Venituri totale (RON)</h2>
+<input id="venituri" type="number" placeholder="Ex: 50000">
+<h2>Costuri totale (RON)</h2>
+<input id="costuri" type="number" placeholder="Ex: 35000">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Profit Afacere</h2><p>Calculează profitul și marja de profit.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let v=parseFloat(venituri.value), c=parseFloat(costuri.value);
+if(isNaN(v)||isNaN(c)||v<0||c<0){rezultat.innerText='Completează corect';detalii.innerText='';return;}
+let profit=v-c, marja=v>0?profit/v*100:0;
+rezultat.innerText='Profit: '+profit.toFixed(0)+' RON';
+detalii.innerHTML='• Marjă profit: '+marja.toFixed(2)+'%';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

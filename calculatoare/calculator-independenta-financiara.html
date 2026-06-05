@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Independență Financiară</title>
+<meta name="description" content="Estimează suma necesară pentru independență financiară.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Independență Financiară</h1>
+<p>Estimează suma necesară pentru independență financiară.</p>
+</section>
+
+<div class="calc-box">
+<h2>Cheltuieli anuale (RON)</h2>
+<input id="cheltuieli" type="number" placeholder="Ex: 60000">
+<h2>Multiplu FIRE</h2>
+<input id="multiplu" type="number" placeholder="Ex: 25">
+<h2>Economii actuale (RON)</h2>
+<input id="economii" type="number" placeholder="Ex: 50000">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Independență Financiară</h2><p>Estimează suma necesară pentru independență financiară.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let c=parseFloat(cheltuieli.value), m=parseFloat(multiplu.value), e=parseFloat(economii.value);
+if(isNaN(c)||isNaN(m)||isNaN(e)||c<=0||m<=0||e<0){rezultat.innerText='Completează câmpurile corect';detalii.innerText='';return;}
+let tinta=c*m;let ramas=Math.max(0,tinta-e);
+rezultat.innerText='Țintă estimată: '+tinta.toFixed(0)+' RON';
+detalii.innerHTML='• Mai ai de acumulat: '+ramas.toFixed(0)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

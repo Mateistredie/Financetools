@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Salariu Anual</title>
+<meta name="description" content="Transformă salariul lunar în venit anual.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Salariu Anual</h1>
+<p>Transformă salariul lunar în venit anual.</p>
+</section>
+
+<div class="calc-box">
+<h2>Salariu lunar net (RON)</h2>
+<input id="lunar" type="number" placeholder="Ex: 5000">
+<h2>Bonusuri anuale (RON)</h2>
+<input id="bonus" type="number" placeholder="Ex: 3000">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Salariu Anual</h2><p>Transformă salariul lunar în venit anual.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let l=parseFloat(lunar.value), b=parseFloat(bonus.value);
+if(isNaN(l)||isNaN(b)||l<=0||b<0){rezultat.innerText='Completează corect';detalii.innerText='';return;}
+let anual=l*12+b;
+rezultat.innerText='Venit anual estimat: '+anual.toFixed(0)+' RON';
+detalii.innerHTML='• Salariu din 12 luni: '+(l*12).toFixed(0)+' RON<br>• Bonusuri: '+b.toFixed(0)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

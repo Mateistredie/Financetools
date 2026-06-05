@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Dividende</title>
+<meta name="description" content="Calculează venitul estimat din dividende.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Dividende</h1>
+<p>Calculează venitul estimat din dividende.</p>
+</section>
+
+<div class="calc-box">
+<h2>Sumă investită (RON)</h2>
+<input id="investitie" type="number" placeholder="Ex: 20000">
+<h2>Randament dividend (%)</h2>
+<input id="yield" type="number" placeholder="Ex: 5">
+<h2>Taxă estimată (%)</h2>
+<input id="taxa" type="number" placeholder="Ex: 8">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Dividende</h2><p>Calculează venitul estimat din dividende.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let inv=parseFloat(investitie.value), y=parseFloat(yield.value), t=parseFloat(taxa.value);
+if(isNaN(inv)||isNaN(y)||isNaN(t)||inv<=0||y<0||t<0){rezultat.innerText='Completează câmpurile corect';detalii.innerText='';return;}
+let brut=inv*y/100, net=brut*(1-t/100);
+rezultat.innerText='Dividende nete estimate: '+net.toFixed(0)+' RON/an';
+detalii.innerHTML='• Brut: '+brut.toFixed(0)+' RON<br>• Taxă estimată: '+(brut-net).toFixed(0)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

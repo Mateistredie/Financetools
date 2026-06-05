@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Inflație Cumulată</title>
+<meta name="description" content="Calculează creșterea cumulată a prețurilor.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Inflație Cumulată</h1>
+<p>Calculează creșterea cumulată a prețurilor.</p>
+</section>
+
+<div class="calc-box">
+<h2>Inflație anuală (%)</h2>
+<input id="inflatie" type="number" placeholder="Ex: 6">
+<h2>Număr de ani</h2>
+<input id="ani" type="number" placeholder="Ex: 10">
+<h2>Preț actual (RON)</h2>
+<input id="pret" type="number" placeholder="Ex: 1000">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Inflație Cumulată</h2><p>Calculează creșterea cumulată a prețurilor.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let i=parseFloat(inflatie.value), a=parseInt(ani.value), p=parseFloat(pret.value);
+if(isNaN(i)||isNaN(a)||isNaN(p)||i<0||a<=0||p<=0){rezultat.innerText='Completează corect';detalii.innerText='';return;}
+let viitor=p*Math.pow(1+i/100,a);
+rezultat.innerText='Preț estimat viitor: '+viitor.toFixed(0)+' RON';
+detalii.innerHTML='• Creștere cumulată: '+((viitor/p-1)*100).toFixed(2)+'%';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

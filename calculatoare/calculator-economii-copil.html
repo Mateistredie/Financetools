@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Economii Copil</title>
+<meta name="description" content="Estimează economiile pentru viitorul copilului.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Economii Copil</h1>
+<p>Estimează economiile pentru viitorul copilului.</p>
+</section>
+
+<div class="calc-box">
+<h2>Contribuție lunară (RON)</h2>
+<input id="lunar" type="number" placeholder="Ex: 300">
+<h2>Număr de ani</h2>
+<input id="ani" type="number" placeholder="Ex: 18">
+<h2>Randament anual (%)</h2>
+<input id="randament" type="number" placeholder="Ex: 5">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Economii Copil</h2><p>Estimează economiile pentru viitorul copilului.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let l=parseFloat(lunar.value), a=parseInt(ani.value), r=parseFloat(randament.value);
+if(isNaN(l)||isNaN(a)||isNaN(r)||l<0||a<=0||r<0){rezultat.innerText='Completează corect';detalii.innerText='';return;}
+let total=0, rate=r/100/12, luni=a*12;for(let i=0;i<luni;i++){total=(total+l)*(1+rate);}
+let contrib=l*luni;
+rezultat.innerText='Valoare estimată: '+total.toFixed(0)+' RON';
+detalii.innerHTML='• Contribuții: '+contrib.toFixed(0)+' RON<br>• Câștig estimat: '+(total-contrib).toFixed(0)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

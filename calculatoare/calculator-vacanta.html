@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Economii Vacanță</title>
+<meta name="description" content="Calculează cât trebuie să economisești lunar pentru vacanță.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Economii Vacanță</h1>
+<p>Calculează cât trebuie să economisești lunar pentru vacanță.</p>
+</section>
+
+<div class="calc-box">
+<h2>Cost total vacanță (RON)</h2>
+<input id="suma" type="number" placeholder="Ex: 6000">
+<h2>Luni până la vacanță</h2>
+<input id="luni" type="number" placeholder="Ex: 12">
+<h2>Economii deja existente (RON)</h2>
+<input id="economii" type="number" placeholder="Ex: 1000">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Economii Vacanță</h2><p>Calculează cât trebuie să economisești lunar pentru vacanță.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let suma=parseFloat(document.getElementById('suma').value);
+let luni=parseFloat(document.getElementById('luni').value);
+let economii=parseFloat(document.getElementById('economii').value);
+if(isNaN(suma)||isNaN(luni)||isNaN(economii)||suma<=0||luni<=0||economii<0){rezultat.innerText='Completează toate câmpurile corect';detalii.innerText='';return;}
+let ramas=Math.max(0,suma-economii);let lunar=ramas/luni;
+rezultat.innerText='Trebuie să economisești: '+lunar.toFixed(0)+' RON/lună';
+detalii.innerHTML='• Sumă rămasă: '+ramas.toFixed(0)+' RON<br>• Perioadă: '+luni.toFixed(0)+' luni';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

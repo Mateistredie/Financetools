@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Mărire Salariu</title>
+<meta name="description" content="Vezi diferența dintre salariul vechi și cel nou.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Mărire Salariu</h1>
+<p>Vezi diferența dintre salariul vechi și cel nou.</p>
+</section>
+
+<div class="calc-box">
+<h2>Salariu vechi (RON)</h2>
+<input id="vechi" type="number" placeholder="Ex: 4500">
+<h2>Salariu nou (RON)</h2>
+<input id="nou" type="number" placeholder="Ex: 5200">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Mărire Salariu</h2><p>Vezi diferența dintre salariul vechi și cel nou.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let vechi=parseFloat(document.getElementById('vechi').value), nou=parseFloat(document.getElementById('nou').value);
+if(isNaN(vechi)||isNaN(nou)||vechi<=0||nou<=0){rezultat.innerText='Completează câmpurile corect';detalii.innerText='';return;}
+let dif=nou-vechi;let proc=dif/vechi*100;
+rezultat.innerText='Diferență: '+dif.toFixed(0)+' RON';
+detalii.innerHTML='• Creștere procentuală: '+proc.toFixed(2)+'%<br>• Diferență anuală: '+(dif*12).toFixed(0)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>

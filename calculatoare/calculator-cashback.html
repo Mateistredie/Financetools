@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Cashback</title>
+<meta name="description" content="Calculează câți bani poți primi înapoi din cashback.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../index.html">Acasă</a>
+</nav>
+</header>
+
+
+<section class="hero">
+<h1>Calculator Cashback</h1>
+<p>Calculează câți bani poți primi înapoi din cashback.</p>
+</section>
+
+<div class="calc-box">
+<h2>Cheltuieli eligibile (RON)</h2>
+<input id="cheltuieli" type="number" placeholder="Ex: 3000">
+<h2>Cashback (%)</h2>
+<input id="cashback" type="number" placeholder="Ex: 2">
+
+<button onclick="calc()">Calculează</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+</div>
+
+<section class="content">
+<h2>Calculator Cashback</h2><p>Calculează câți bani poți primi înapoi din cashback.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
+</section>
+
+<script>
+function calc(){
+let c=parseFloat(cheltuieli.value), cb=parseFloat(cashback.value);
+if(isNaN(c)||isNaN(cb)||c<=0||cb<0){rezultat.innerText='Completează câmpurile corect';detalii.innerText='';return;}
+let lunar=c*cb/100;
+rezultat.innerText='Cashback estimat: '+lunar.toFixed(2)+' RON/lună';
+detalii.innerHTML='• Cashback anual: '+(lunar*12).toFixed(2)+' RON';
+}
+</script>
+
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+</body>
+</html>
