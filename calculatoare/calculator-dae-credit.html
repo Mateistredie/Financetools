@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator DAE Credit | Cost real credit România</title>
+<meta name="description" content="Calculează estimativ DAE și costul real al unui credit pe baza sumei, dobânzii, perioadei și comisioanelor.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-credit-romania.html">Credit</a>
+<a href="calculator-dae-credit.html">DAE</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator DAE Credit</h1>
+<p>Estimează costul real al unui credit, incluzând dobânda și comisioanele.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Suma creditului (RON)</h2>
+<input id="suma" type="number" placeholder="Ex: 50000">
+
+<h2>Dobândă anuală (%)</h2>
+<input id="dobanda" type="number" placeholder="Ex: 8">
+
+<h2>Perioada (ani)</h2>
+<input id="ani" type="number" placeholder="Ex: 5">
+
+<h2>Comisioane totale (RON)</h2>
+<input id="comisioane" type="number" placeholder="Ex: 1000">
+
+<button onclick="calc()">Calculează DAE estimativ</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>Ce este DAE?</h2>
+<p>
+DAE înseamnă Dobânda Anuală Efectivă și arată costul total al unui credit exprimat procentual anual.
+</p>
+
+<p>
+Spre deosebire de dobânda simplă, DAE poate include și alte costuri, precum comisioane sau taxe asociate creditului.
+</p>
+
+<h2>De ce este importantă DAE?</h2>
+<p>
+DAE te ajută să compari mai corect două credite diferite. Un credit cu dobândă mai mică nu este întotdeauna mai ieftin dacă are comisioane mari.
+</p>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+
+let suma = parseFloat(document.getElementById("suma").value);
+let dobanda = parseFloat(document.getElementById("dobanda").value);
+let ani = parseInt(document.getElementById("ani").value);
+let comisioane = parseFloat(document.getElementById("comisioane").value);
+
+if(isNaN(suma) || isNaN(dobanda) || isNaN(ani) || isNaN(comisioane) || suma <= 0 || dobanda < 0 || ani <= 0 || comisioane < 0){
+document.getElementById("rezultat").innerText = "Completează toate câmpurile corect";
+document.getElementById("detalii").innerText = "";
+return;
+}
+
+let luni = ani * 12;
+let rataDobanda = (dobanda / 100) / 12;
+
+let rata = suma * (rataDobanda * Math.pow(1 + rataDobanda, luni)) / (Math.pow(1 + rataDobanda, luni) - 1);
+
+let totalDobanda = rata * luni;
+let costTotal = totalDobanda + comisioane;
+let costCredit = costTotal - suma;
+let daeEstimativ = ((costCredit / suma) / ani) * 100;
+
+document.getElementById("rezultat").innerText =
+"DAE estimativ: " + daeEstimativ.toFixed(2) + "%";
+
+document.getElementById("detalii").innerHTML =
+"• Rată lunară estimată: " + rata.toFixed(0) + " RON<br>" +
+"• Total rambursat cu comisioane: " + costTotal.toFixed(0) + " RON<br>" +
+"• Cost total credit: " + costCredit.toFixed(0) + " RON<br>" +
+"• Comisioane introduse: " + comisioane.toFixed(0) + " RON";
+}
+</script>
+
+</body>
+</html>
