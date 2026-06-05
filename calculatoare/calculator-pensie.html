@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Pensie | Estimare economii pentru pensie</title>
+<meta name="description" content="Calculează cât poți acumula până la pensie în funcție de economiile lunare, perioada de economisire și randamentul anual estimat.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-pensie.html">Pensie</a>
+<a href="calculator-dobanda-compusa.html">Dobândă Compusă</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Pensie</h1>
+<p>Estimează cât poți acumula pentru pensie prin economii lunare și randament anual.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Economii lunare (RON)</h2>
+<input id="lunar" type="number" placeholder="Ex: 500">
+
+<h2>Randament anual estimat (%)</h2>
+<input id="randament" type="number" placeholder="Ex: 6">
+
+<h2>Număr de ani până la pensie</h2>
+<input id="ani" type="number" placeholder="Ex: 30">
+
+<button onclick="calc()">Calculează pensia estimată</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>De ce este importantă planificarea pensiei?</h2>
+
+<p>
+Planificarea pensiei te ajută să estimezi cât ai putea acumula pe termen lung dacă economisești constant.
+</p>
+
+<p>
+Cu cât începi mai devreme, cu atât efectul timpului și al randamentului compus poate fi mai puternic.
+</p>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+
+let lunar = parseFloat(document.getElementById("lunar").value);
+let randament = parseFloat(document.getElementById("randament").value);
+let ani = parseInt(document.getElementById("ani").value);
+
+if(isNaN(lunar) || isNaN(randament) || isNaN(ani) || lunar <= 0 || randament < 0 || ani <= 0){
+document.getElementById("rezultat").innerText = "Completează toate câmpurile corect";
+document.getElementById("detalii").innerText = "";
+return;
+}
+
+let luni = ani * 12;
+let rataLunara = (randament / 100) / 12;
+let total = 0;
+
+for(let i = 0; i < luni; i++){
+total = (total + lunar) * (1 + rataLunara);
+}
+
+let contributii = lunar * luni;
+let castig = total - contributii;
+
+document.getElementById("rezultat").innerText =
+"Valoare estimată: " + total.toFixed(0) + " RON";
+
+document.getElementById("detalii").innerHTML =
+"• Contribuții totale: " + contributii.toFixed(0) + " RON<br>" +
+"• Câștig estimat: " + castig.toFixed(0) + " RON<br>" +
+"• Perioadă: " + ani + " ani";
+}
+</script>
+
+</body>
+</html>
