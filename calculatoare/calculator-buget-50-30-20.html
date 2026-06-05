@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Buget 50/30/20 | Regula pentru bani</title>
+
+<meta name="description" content="Calculează rapid bugetul personal folosind regula 50/30/20: nevoi, dorințe și economii.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-buget-personal.html">Buget</a>
+<a href="calculator-buget-50-30-20.html">50/30/20</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Buget 50/30/20</h1>
+<p>Împarte venitul lunar în nevoi, dorințe și economii.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Venit lunar net (RON)</h2>
+<input id="venit" type="number" placeholder="Ex: 5000">
+
+<button onclick="calc()">Calculează bugetul</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>Ce este regula 50/30/20?</h2>
+
+<p>
+Regula 50/30/20 este o metodă simplă de organizare a banilor.
+Îți împarte venitul în trei categorii principale: nevoi, dorințe și economii.
+</p>
+
+<p>
+Această regulă este utilă pentru persoanele care vor să își controleze mai bine bugetul lunar.
+</p>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+
+let venit = parseFloat(document.getElementById("venit").value);
+
+if(isNaN(venit) || venit <= 0){
+document.getElementById("rezultat").innerText = "Introdu un venit valid";
+document.getElementById("detalii").innerText = "";
+return;
+}
+
+let nevoi = venit * 0.50;
+let dorinte = venit * 0.30;
+let economii = venit * 0.20;
+
+document.getElementById("rezultat").innerText =
+"Buget calculat pentru " + venit.toFixed(0) + " RON";
+
+document.getElementById("detalii").innerHTML =
+"• Nevoi esențiale (50%): " + nevoi.toFixed(0) + " RON<br>" +
+"• Dorințe (30%): " + dorinte.toFixed(0) + " RON<br>" +
+"• Economii și investiții (20%): " + economii.toFixed(0) + " RON";
+
+}
+</script>
+
+</body>
+</html>
