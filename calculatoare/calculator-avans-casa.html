@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Avans Casă | Cât trebuie să economisești</title>
+<meta name="description" content="Calculează cât trebuie să economisești pentru avansul unei locuințe și în cât timp poți strânge suma necesară.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-avans-casa.html">Avans Casă</a>
+<a href="calculator-credit-ipotecar.html">Credit Ipotecar</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Avans Casă</h1>
+<p>Vezi cât trebuie să economisești pentru avansul unei locuințe.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Preț locuință (RON)</h2>
+<input id="pret" type="number" placeholder="Ex: 500000">
+
+<h2>Avans necesar (%)</h2>
+<input id="procent" type="number" placeholder="Ex: 15">
+
+<h2>Economii lunare (RON)</h2>
+<input id="lunar" type="number" placeholder="Ex: 2000">
+
+<button onclick="calc()">Calculează avansul</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>Ce este avansul pentru casă?</h2>
+<p>
+Avansul reprezintă suma pe care trebuie să o ai disponibilă înainte de a lua un credit pentru cumpărarea unei locuințe.
+</p>
+
+<p>
+De obicei, avansul este exprimat ca procent din prețul locuinței.
+</p>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+
+let pret = parseFloat(document.getElementById("pret").value);
+let procent = parseFloat(document.getElementById("procent").value);
+let lunar = parseFloat(document.getElementById("lunar").value);
+
+if(isNaN(pret) || isNaN(procent) || isNaN(lunar) || pret <= 0 || procent <= 0 || lunar <= 0){
+document.getElementById("rezultat").innerText = "Completează toate câmpurile corect";
+document.getElementById("detalii").innerText = "";
+return;
+}
+
+let avans = pret * procent / 100;
+let luni = avans / lunar;
+let ani = luni / 12;
+
+document.getElementById("rezultat").innerText =
+"Avans necesar: " + avans.toFixed(0) + " RON";
+
+document.getElementById("detalii").innerHTML =
+"• Economii lunare: " + lunar.toFixed(0) + " RON<br>" +
+"• Timp estimat: " + Math.ceil(luni) + " luni<br>" +
+"• Aproximativ: " + ani.toFixed(1) + " ani";
+}
+</script>
+
+</body>
+</html>
