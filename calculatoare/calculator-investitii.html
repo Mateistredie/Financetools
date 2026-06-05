@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Investiții | Profit estimat și randament</title>
+<meta name="description" content="Calculează profitul estimat al unei investiții în funcție de suma investită, randamentul anual și perioada aleasă.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">💰 Finance Tools RO</div>
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-investitii.html">Investiții</a>
+<a href="calculator-dobanda-compusa.html">Dobândă Compusă</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Calculator Investiții</h1>
+<p>Estimează profitul și valoarea finală a unei investiții în timp.</p>
+</section>
+
+<div class="calc-box">
+
+<h2>Suma investită inițial (RON)</h2>
+<input id="suma" type="number" placeholder="Ex: 10000">
+
+<h2>Randament anual estimat (%)</h2>
+<input id="randament" type="number" placeholder="Ex: 8">
+
+<h2>Număr de ani</h2>
+<input id="ani" type="number" placeholder="Ex: 10">
+
+<button onclick="calc()">Calculează investiția</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>Ce este o investiție?</h2>
+
+<p>
+O investiție înseamnă plasarea banilor într-un activ cu scopul de a obține un câștig în viitor.
+</p>
+
+<p>
+Rezultatul depinde de randament, perioadă, risc și disciplină financiară.
+</p>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+function calc(){
+
+let suma = parseFloat(document.getElementById("suma").value);
+let randament = parseFloat(document.getElementById("randament").value);
+let ani = parseInt(document.getElementById("ani").value);
+
+if(isNaN(suma) || isNaN(randament) || isNaN(ani) || suma <= 0 || randament < 0 || ani <= 0){
+document.getElementById("rezultat").innerText = "Completează toate câmpurile corect";
+document.getElementById("detalii").innerText = "";
+return;
+}
+
+let total = suma * Math.pow(1 + randament / 100, ani);
+let profit = total - suma;
+
+document.getElementById("rezultat").innerText =
+"Valoare finală estimată: " + total.toFixed(0) + " RON";
+
+document.getElementById("detalii").innerHTML =
+"• Suma investită: " + suma.toFixed(0) + " RON<br>" +
+"• Profit estimat: " + profit.toFixed(0) + " RON<br>" +
+"• Perioadă: " + ani + " ani<br>" +
+"• Randament anual: " + randament + "%";
+}
+</script>
+
+</body>
+</html>
