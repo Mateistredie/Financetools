@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Economii Lunare | Cât poți strânge în timp</title>
+
+<meta name="description" content="Calculează cât poți economisi în funcție de suma pusă deoparte lunar și perioada aleasă.">
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">💰 Finance Tools RO</div>
+
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="calculator-economii-lunare.html">Economii</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Calculator Economii Lunare</h1>
+
+<p>
+Află cât poți strânge dacă economisești constant în fiecare lună.
+</p>
+
+</section>
+
+<div class="calc-box">
+
+<h2>Sumă economisită lunar (RON)</h2>
+<input id="lunar" type="number" placeholder="Ex: 500">
+
+<h2>Număr de ani</h2>
+<input id="ani" type="number" placeholder="Ex: 10">
+
+<button onclick="calc()">Calculează economiile</button>
+
+<div class="rezultat-box">
+<h2 id="rezultat">Rezultat</h2>
+<p id="detalii"></p>
+</div>
+
+</div>
+
+<section class="content">
+
+<h2>De ce să economisești?</h2>
+
+<p>
+Economisirea constantă este una dintre cele mai simple metode de a construi stabilitate financiară.
+</p>
+
+<p>
+Chiar și sume mici puse deoparte lunar pot deveni importante pe termen lung.
+</p>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Finance Tools RO</p>
+</footer>
+
+<script>
+
+function calc(){
+
+let lunar = parseFloat(document.getElementById("lunar").value);
+let ani = parseInt(document.getElementById("ani").value);
+
+if(isNaN(lunar) || isNaN(ani) || lunar <= 0 || ani <= 0){
+
+document.getElementById("rezultat").innerText =
+"Completează toate câmpurile corect";
+
+document.getElementById("detalii").innerText = "";
+
+return;
+
+}
+
+let total = lunar * 12 * ani;
+
+document.getElementById("rezultat").innerText =
+"Economii totale: " + total.toFixed(0) + " RON";
+
+document.getElementById("detalii").innerHTML =
+"• Economii lunare: " + lunar.toFixed(0) + " RON<br>" +
+"• Perioadă: " + ani + " ani<br>" +
+"• Total acumulat: " + total.toFixed(0) + " RON";
+
+}
+
+</script>
+
+</body>
+</html>
