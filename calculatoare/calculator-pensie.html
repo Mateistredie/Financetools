@@ -1,70 +1,27 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Calculator Pensie | Estimare economii pentru pensie</title>
-<meta name="description" content="Calculează cât poți acumula până la pensie în funcție de economiile lunare, perioada de economisire și randamentul anual estimat.">
-
-<link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-
-<header class="navbar">
-<div class="logo">💰 Finance Tools RO</div>
-<nav>
-<a href="../index.html">Acasă</a>
-<a href="calculator-pensie.html">Pensie</a>
-<a href="calculator-dobanda-compusa.html">Dobândă Compusă</a>
-</nav>
-</header>
-
-<section class="hero">
-<h1>Calculator Pensie</h1>
-<p>Estimează cât poți acumula pentru pensie prin economii lunare și randament anual.</p>
-</section>
-
-<div class="calc-box">
-
+<!DOCTYPE html><html lang="ro"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Calculator Pensie | Estimare economii pentru pensie</title><meta name="description" content="Calculează cât poți acumula până la pensie în funcție de economiile lunare, perioada de economisire și randamentul anual estimat."><link rel="stylesheet" href="../style.css"><link rel="manifest" href="../manifest.json"><link rel="icon" type="image/png" href="../icons/icon-192.png"><meta name="theme-color" content="#7c3aed"></head><body class="calculator-page"><header class="navbar">
+<a class="brand" href="https://mateistredie.github.io/Financetools/">
+<img src="../icons/icon-192.png" alt="Finance Tools RO logo"><span>Finance Tools RO</span></a>
+<nav><a href="https://mateistredie.github.io/Financetools/">Acasă</a><a href="../calculatoare.html">Calculatoare</a><a href="../articole.html">Articole</a><a href="../categorii.html">Categorii</a><a href="../despre.html">Despre</a><a href="../contact.html">Contact</a></nav></header><main class="calc-page-shell"><section class="calc-hero"><img src="../icons/icon-192.png" alt="Finance Tools RO"><div class="badge">🧮 Calculator financiar</div><h1>Calculator Pensie</h1><p>Estimează cât poți acumula pentru pensie prin economii lunare și randament anual.</p></section><section class="tool-layout"><div><div class="calc-box">
 <h2>Economii lunare (RON)</h2>
-<input id="lunar" type="number" placeholder="Ex: 500">
-
+<input id="lunar" placeholder="Ex: 500" type="number"/>
 <h2>Randament anual estimat (%)</h2>
-<input id="randament" type="number" placeholder="Ex: 6">
-
+<input id="randament" placeholder="Ex: 6" type="number"/>
 <h2>Număr de ani până la pensie</h2>
-<input id="ani" type="number" placeholder="Ex: 30">
-
+<input id="ani" placeholder="Ex: 30" type="number"/>
 <button onclick="calc()">Calculează pensia estimată</button>
-
 <div class="rezultat-box">
 <h2 id="rezultat">Rezultat</h2>
 <p id="detalii"></p>
 </div>
-
-</div>
-
-<section class="content">
-
+</div></div><aside class="visual-panel"><div class="visual-card"><h3>Rezultat rapid și clar</h3><p>Completează valorile și vezi imediat estimarea. Calculele sunt făcute direct în browser.</p><div class="visual-chart"><i style="height:42%"></i><i style="height:68%"></i><i style="height:56%"></i><i style="height:86%"></i></div></div><div class="visual-card visual-list"><span>🔒 Fără cont</span><span>⚡ Calcul instant</span><span>📲 Funcționează și ca aplicație</span></div></aside></section></main><section class="content-layout"><article class="content-main"><section class="content">
 <h2>De ce este importantă planificarea pensiei?</h2>
-
 <p>
 Planificarea pensiei te ajută să estimezi cât ai putea acumula pe termen lung dacă economisești constant.
 </p>
-
 <p>
 Cu cât începi mai devreme, cu atât efectul timpului și al randamentului compus poate fi mai puternic.
 </p>
-
-</section>
-
-<footer class="footer">
-<p>© 2026 Finance Tools RO</p>
-</footer>
-
-<script>
+</section></article><aside class="content-side"><div class="side-card"><h3>Finance Tools RO</h3><p>Instrumente gratuite pentru salarii, credite, economii și investiții.</p></div><div class="side-card"><h3>Instrumente utile</h3><a href="calculator-credit-romania.html">🏦 Calculator Credit</a><a href="calculator-tva-romania.html">🧾 Calculator TVA</a><a href="calculator-dobanda-compusa.html">📈 Dobândă Compusă</a></div></aside></section><footer class="footer"><p>© 2026 Finance Tools RO | <a href="../privacy-policy.html">Politica de Confidențialitate</a> | <a href="../terms.html">Termeni și Condiții</a> | <a href="../cookie-policy.html">Politica Cookie</a> | <a href="../disclaimer.html">Disclaimer</a> | <a href="../despre.html">Despre</a> | <a href="../contact.html">Contact</a></p></footer><script>
 function calc(){
 
 let lunar = parseFloat(document.getElementById("lunar").value);
@@ -96,7 +53,4 @@ document.getElementById("detalii").innerHTML =
 "• Câștig estimat: " + castig.toFixed(0) + " RON<br>" +
 "• Perioadă: " + ani + " ani";
 }
-</script>
-
-</body>
-</html>
+</script></body></html>

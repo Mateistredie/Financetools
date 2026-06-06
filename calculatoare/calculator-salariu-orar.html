@@ -1,67 +1,26 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-<title>Calculator Salariu Orar | Cât câștigi pe oră</title>
-<meta name="description" content="Calculează cât câștigi pe oră, pe zi și pe săptămână în funcție de salariul lunar și orele lucrate.">
-
-<link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-
-<header class="navbar">
-<div class="logo">💰 Finance Tools RO</div>
-<nav>
-<a href="../index.html">Acasă</a>
-<a href="calculator-salariu-net-romania.html">Salariu Net</a>
-<a href="calculator-salariu-orar.html">Salariu Orar</a>
-</nav>
-</header>
-
-<section class="hero">
-<h1>Calculator Salariu Orar</h1>
-<p>Află cât câștigi pe oră, pe zi și pe săptămână.</p>
-</section>
-
-<div class="calc-box">
-
+<!DOCTYPE html><html lang="ro"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Calculator Salariu Orar | Cât câștigi pe oră</title><meta name="description" content="Calculează cât câștigi pe oră, pe zi și pe săptămână în funcție de salariul lunar și orele lucrate."><link rel="stylesheet" href="../style.css"><link rel="manifest" href="../manifest.json"><link rel="icon" type="image/png" href="../icons/icon-192.png"><meta name="theme-color" content="#7c3aed"></head><body class="calculator-page"><header class="navbar">
+<a class="brand" href="https://mateistredie.github.io/Financetools/">
+<img src="../icons/icon-192.png" alt="Finance Tools RO logo"><span>Finance Tools RO</span></a>
+<nav><a href="https://mateistredie.github.io/Financetools/">Acasă</a><a href="../calculatoare.html">Calculatoare</a><a href="../articole.html">Articole</a><a href="../categorii.html">Categorii</a><a href="../despre.html">Despre</a><a href="../contact.html">Contact</a></nav></header><main class="calc-page-shell"><section class="calc-hero"><img src="../icons/icon-192.png" alt="Finance Tools RO"><div class="badge">🧮 Calculator financiar</div><h1>Calculator Salariu Orar</h1><p>Află cât câștigi pe oră, pe zi și pe săptămână.</p></section><section class="tool-layout"><div><div class="calc-box">
 <h2>Salariu net lunar (RON)</h2>
-<input id="salariu" type="number" placeholder="Ex: 5000">
-
+<input id="salariu" placeholder="Ex: 5000" type="number"/>
 <h2>Ore lucrate pe săptămână</h2>
-<input id="ore" type="number" placeholder="Ex: 40">
-
+<input id="ore" placeholder="Ex: 40" type="number"/>
 <button onclick="calc()">Calculează salariul orar</button>
-
 <div class="rezultat-box">
 <h2 id="rezultat">Rezultat</h2>
 <p id="detalii"></p>
 </div>
-
-</div>
-
-<section class="content">
-
+</div></div><aside class="visual-panel"><div class="visual-card"><h3>Rezultat rapid și clar</h3><p>Completează valorile și vezi imediat estimarea. Calculele sunt făcute direct în browser.</p><div class="visual-chart"><i style="height:42%"></i><i style="height:68%"></i><i style="height:56%"></i><i style="height:86%"></i></div></div><div class="visual-card visual-list"><span>🔒 Fără cont</span><span>⚡ Calcul instant</span><span>📲 Funcționează și ca aplicație</span></div></aside></section></main><section class="content-layout"><article class="content-main"><section class="content">
 <h2>Ce este salariul orar?</h2>
 <p>
 Salariul orar arată cât câștigi pentru fiecare oră lucrată. Este util pentru angajați, freelanceri și persoane care vor să compare mai bine valoarea timpului lor.
 </p>
-
 <h2>De ce este util?</h2>
 <p>
 Chiar dacă salariul lunar pare clar, salariul orar te ajută să înțelegi mai bine cât valorează timpul tău de muncă.
 </p>
-
-</section>
-
-<footer class="footer">
-<p>© 2026 Finance Tools RO</p>
-</footer>
-
-<script>
+</section></article><aside class="content-side"><div class="side-card"><h3>Finance Tools RO</h3><p>Instrumente gratuite pentru salarii, credite, economii și investiții.</p></div><div class="side-card"><h3>Instrumente utile</h3><a href="calculator-credit-romania.html">🏦 Calculator Credit</a><a href="calculator-tva-romania.html">🧾 Calculator TVA</a><a href="calculator-dobanda-compusa.html">📈 Dobândă Compusă</a></div></aside></section><footer class="footer"><p>© 2026 Finance Tools RO | <a href="../privacy-policy.html">Politica de Confidențialitate</a> | <a href="../terms.html">Termeni și Condiții</a> | <a href="../cookie-policy.html">Politica Cookie</a> | <a href="../disclaimer.html">Disclaimer</a> | <a href="../despre.html">Despre</a> | <a href="../contact.html">Contact</a></p></footer><script>
 function calc(){
 
 let salariu = parseFloat(document.getElementById("salariu").value);
@@ -86,7 +45,4 @@ document.getElementById("detalii").innerHTML =
 "• Salariu pe săptămână: " + salariuSaptamana.toFixed(2) + " RON<br>" +
 "• Ore estimate pe lună: " + oreLuna.toFixed(0);
 }
-</script>
-
-</body>
-</html>
+</script></body></html>

@@ -1,58 +1,17 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
- 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Calculator Buget Personal România</title>
-
-<meta name="description" content="Compară veniturile și cheltuielile și vezi dacă ai surplus sau deficit.">
-
-<link rel="stylesheet" href="../style.css">
-
-</head>
-
-<body>
-
-<header class="navbar">
-
-<div class="logo">💰 Finance Tools RO</div>
-
-<nav>
-<a href="../index.html">Acasă</a>
-<a href="salariu.html">Salariu</a>
-<a href="tva.html">TVA</a>
-<a href="credit.html">Credit</a>
-<a href="buget.html">Buget</a>
-<a href="dobanda.html">Dobândă</a>
-</nav>
-
-</header>
-
-<section class="hero">
-<h1>Calculator Buget</h1>
-<p>Venit vs cheltuieli</p>
-</section>
-
-<div class="calc-box">
-
+<!DOCTYPE html><html lang="ro"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Calculator Buget Personal România</title><meta name="description" content="Compară veniturile și cheltuielile și vezi dacă ai surplus sau deficit."><link rel="stylesheet" href="../style.css"><link rel="manifest" href="../manifest.json"><link rel="icon" type="image/png" href="../icons/icon-192.png"><meta name="theme-color" content="#7c3aed"></head><body class="calculator-page"><header class="navbar">
+<a class="brand" href="https://mateistredie.github.io/Financetools/">
+<img src="../icons/icon-192.png" alt="Finance Tools RO logo"><span>Finance Tools RO</span></a>
+<nav><a href="https://mateistredie.github.io/Financetools/">Acasă</a><a href="../calculatoare.html">Calculatoare</a><a href="../articole.html">Articole</a><a href="../categorii.html">Categorii</a><a href="../despre.html">Despre</a><a href="../contact.html">Contact</a></nav></header><main class="calc-page-shell"><section class="calc-hero"><img src="../icons/icon-192.png" alt="Finance Tools RO"><div class="badge">🧮 Calculator financiar</div><h1>Calculator Buget</h1><p>Venit vs cheltuieli</p></section><section class="tool-layout"><div><div class="calc-box">
 <h2>Venit</h2>
-<input id="v" type="number" placeholder="Ex: 5000">
-
+<input id="v" placeholder="Ex: 5000" type="number"/>
 <h2>Cheltuieli</h2>
-<input id="c" type="number" placeholder="Ex: 3000">
-
+<input id="c" placeholder="Ex: 3000" type="number"/>
 <button onclick="calc()">Calculează</button>
-
 <div class="rezultat-box">
 <h2 id="rezultat">Rezultat</h2>
 <p id="detalii"></p>
 </div>
-
-</div>
-
-<script>
+</div></div><aside class="visual-panel"><div class="visual-card"><h3>Rezultat rapid și clar</h3><p>Completează valorile și vezi imediat estimarea. Calculele sunt făcute direct în browser.</p><div class="visual-chart"><i style="height:42%"></i><i style="height:68%"></i><i style="height:56%"></i><i style="height:86%"></i></div></div><div class="visual-card visual-list"><span>🔒 Fără cont</span><span>⚡ Calcul instant</span><span>📲 Funcționează și ca aplicație</span></div></aside></section></main><section class="content-layout"><article class="content-main"><section class="content"><h2>Despre acest calculator</h2><p>Compară veniturile și cheltuielile și vezi dacă ai surplus sau deficit.</p><p>Folosește acest instrument pentru estimări rapide și ușor de înțeles.</p></section></article><aside class="content-side"><div class="side-card"><h3>Finance Tools RO</h3><p>Instrumente gratuite pentru salarii, credite, economii și investiții.</p></div><div class="side-card"><h3>Instrumente utile</h3><a href="calculator-credit-romania.html">🏦 Calculator Credit</a><a href="calculator-tva-romania.html">🧾 Calculator TVA</a><a href="calculator-dobanda-compusa.html">📈 Dobândă Compusă</a></div></aside></section><footer class="footer"><p>© 2026 Finance Tools RO | <a href="../privacy-policy.html">Politica de Confidențialitate</a> | <a href="../terms.html">Termeni și Condiții</a> | <a href="../cookie-policy.html">Politica Cookie</a> | <a href="../disclaimer.html">Disclaimer</a> | <a href="../despre.html">Despre</a> | <a href="../contact.html">Contact</a></p></footer><script>
 function calc(){
 let v = parseFloat(document.getElementById("v").value);
 let c = parseFloat(document.getElementById("c").value);
@@ -74,7 +33,4 @@ status + ": " + diff.toFixed(0) + " RON";
 document.getElementById("detalii").innerText =
 "Cheltuieli: " + procent.toFixed(1) + "% din venit";
 }
-</script>
-
-</body>
-</html>
+</script></body></html>
