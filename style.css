@@ -1079,4 +1079,179 @@ a:hover {
   padding:26px
 }
 
+/* ===== GLOBAL PREMIUM FIX FOR OLD CALCULATOR + ARTICLE PAGES ===== */
+
+/* Logo vechi transformat în logo cu icon */
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:22px;
+font-weight:900;
+color:#111827;
+}
+
+.logo::before{
+content:"";
+width:44px;
+height:44px;
+display:inline-block;
+background:url("icons/icon-192.png") center/cover no-repeat;
+border-radius:13px;
+box-shadow:0 10px 25px rgba(124,58,237,0.25);
+}
+
+/* Titluri principale pe centru */
+body > h1,
+main > h1,
+.content > h1{
+max-width:1000px;
+margin:65px auto 16px;
+padding:0 24px;
+text-align:center;
+font-size:clamp(36px,5vw,62px);
+line-height:1.05;
+letter-spacing:-2px;
+background:linear-gradient(90deg,#111827,#6d28d9,#2563eb);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* Subtitluri sub titlu */
+body > p,
+main > p{
+max-width:850px;
+margin:0 auto 40px;
+padding:0 24px;
+text-align:center;
+font-size:19px;
+color:#64748b;
+}
+
+/* Calculator card premium */
+.calc-box{
+max-width:820px;
+margin:45px auto;
+padding:42px;
+background:
+radial-gradient(circle at top right,rgba(124,58,237,0.12),transparent 35%),
+linear-gradient(180deg,#ffffff,#f8fafc);
+border:1px solid #e9d5ff;
+border-radius:34px;
+box-shadow:0 35px 90px rgba(124,58,237,0.18);
+position:relative;
+overflow:hidden;
+}
+
+.calc-box::before{
+content:"📊";
+position:absolute;
+right:34px;
+top:28px;
+font-size:54px;
+opacity:0.16;
+}
+
+.calc-box label,
+.calc-box h2{
+font-size:17px;
+font-weight:900;
+color:#111827;
+}
+
+.calc-box input{
+height:58px;
+border-radius:18px;
+border:1px solid #d8b4fe;
+background:#ffffff;
+font-size:16px;
+}
+
+.calc-box button{
+height:60px;
+border-radius:18px;
+font-size:16px;
+background:linear-gradient(135deg,#7c3aed,#2563eb);
+box-shadow:0 20px 45px rgba(124,58,237,0.28);
+}
+
+.rezultat-box{
+background:linear-gradient(135deg,#f5f3ff,#eff6ff);
+border:1px solid #ddd6fe;
+border-radius:26px;
+box-shadow:inset 0 0 0 1px rgba(255,255,255,0.7);
+}
+
+/* Textul explicativ de sub calculator */
+.content{
+max-width:1180px;
+display:grid;
+grid-template-columns:1fr 340px;
+gap:30px;
+align-items:start;
+margin:70px auto;
+padding:38px;
+background:#ffffff;
+border:1px solid #e5e7eb;
+border-radius:34px;
+box-shadow:0 25px 70px rgba(15,23,42,0.08);
+}
+
+.content::after{
+content:"💰 Finance Tools RO\A\A📈 Calcule rapide\A🏦 Decizii mai clare\A🔒 Fără cont\A📲 Instalabil pe telefon";
+white-space:pre-line;
+display:block;
+padding:30px;
+border-radius:28px;
+background:
+radial-gradient(circle at top right,rgba(124,58,237,0.22),transparent 35%),
+linear-gradient(180deg,#f5f3ff,#eff6ff);
+border:1px solid #ddd6fe;
+font-size:18px;
+font-weight:900;
+color:#334155;
+line-height:1.9;
+}
+
+.content h2{
+font-size:32px;
+letter-spacing:-1px;
+color:#111827;
+}
+
+.content p,
+.content li{
+font-size:17px;
+color:#64748b;
+}
+
+/* Articole mai frumoase */
+.content h1 + p{
+font-size:19px;
+text-align:center;
+}
+
+/* Mobile */
+@media(max-width:900px){
+.content{
+grid-template-columns:1fr;
+padding:26px;
+margin:45px 18px;
+}
+
+.content::after{
+font-size:16px;
+}
+
+.calc-box{
+margin:32px 18px;
+padding:28px;
+}
+
+body > h1,
+main > h1,
+.content > h1{
+margin-top:45px;
+font-size:36px;
+}
 }
