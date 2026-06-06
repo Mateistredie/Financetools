@@ -1,4 +1,4 @@
-const CACHE_NAME = 'finance-tools-ro-v10';
-self.addEventListener('install', event => self.skipWaiting());
-self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(names => Promise.all(names.map(n => caches.delete(n))))); self.clients.claim(); });
-self.addEventListener('fetch', event => { event.respondWith(fetch(event.request)); });
+const CACHE_NAME = "finance-tools-ro-v9";
+self.addEventListener("install", event => { self.skipWaiting(); });
+self.addEventListener("activate", event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.map(key => caches.delete(key))))); self.clients.claim(); });
+self.addEventListener("fetch", event => { event.respondWith(fetch(event.request).catch(() => caches.match(event.request))); });
