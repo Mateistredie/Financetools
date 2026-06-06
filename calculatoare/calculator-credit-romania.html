@@ -1,71 +1,536 @@
-<!DOCTYPE html><html lang="ro"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Calculator Credit România 2026 | Rată lunară, cost total și dobândă</title><meta name="description" content="Calculează rata lunară pentru un credit în România. Vezi costul total, dobânda plătită și evoluția creditului. Gratuit și rapid."><link rel="stylesheet" href="../style.css"><link rel="manifest" href="../manifest.json"><link rel="icon" type="image/png" href="../icons/icon-192.png"><meta name="theme-color" content="#7c3aed"></head><body class="calculator-page"><header class="navbar" style="--logo-url:url('../icons/icon-192.png')"><a class="brand" href="https://mateistredie.github.io/Financetools/"><img src="../icons/icon-192.png" alt="Finance Tools RO logo"><span>Finance Tools RO</span></a><nav><a href="../index.html">Acasă</a><a href="../calculatoare.html">Calculatoare</a><a href="../articole.html">Articole</a><a href="../categorii.html">Categorii</a><a href="../despre.html">Despre</a><a href="../contact.html">Contact</a></nav></header><main><section class="calc-hero"><div class="eyebrow">Calculator financiar</div><h1>Calculator Credit România</h1><p>Calculează rata lunară pentru un credit în România. Vezi costul total, dobânda plătită și evoluția creditului. Gratuit și rapid.</p></section><section class="premium-calculator"><div class="calculator-card"><h2>Introdu datele pentru calcul</h2><div class="calc-box">
-<h2>Suma creditului (RON)</h2>
-<input id="suma" placeholder="Ex: 100000" type="number"/>
-<h2>Dobândă anuală (%)</h2>
-<input id="dobanda" placeholder="Ex: 8" type="number"/>
-<h2>Perioada (ani)</h2>
-<input id="ani" placeholder="Ex: 30" type="number"/>
-<button onclick="calc()">Calculează creditul</button>
-<div class="rezultat-box">
-<h2 id="rata">Rata lunară</h2>
-<p id="rezultat"></p>
-</div>
-</div></div><aside class="calculator-visual"><div><div class="visual-label">Rezultat rapid și clar</div><h2>Calculator Credit România</h2><p>Completează valorile și vezi imediat estimarea. Calculele sunt făcute direct în browser.</p></div><div class="mini-bars"><i style="height:45%"></i><i style="height:68%"></i><i style="height:55%"></i><i style="height:82%"></i><i style="height:95%"></i></div><div class="visual-pills"><div><strong>Rapid</strong><span>instant</span></div><div><strong>Privat</strong><span>fără cont</span></div><div><strong>Util</strong><span>decizii clare</span></div></div></aside></section><section class="premium-content"><div class="content-main"><section class="content">
-<h2>Rezultate detaliate</h2>
-<p id="detalii"></p>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculator Credit România 2026 | Rată lunară, cost total și dobândă</title>
+<meta name="description" content="Calculează rata lunară pentru un credit în România. Vezi costul total, dobânda plătită și evoluția creditului. Gratuit și rapid.">
+
+<link rel="stylesheet" href="../style.css">
+<link rel="manifest" href="../manifest.json">
+<link rel="icon" type="image/png" href="../icons/icon-192.png">
+<meta name="theme-color" content="#7c3aed">
+
+<style>
+/* CSS doar pentru această pagină - nu strică restul site-ului */
+
+.credit-page {
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.16), transparent 32%),
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 34%),
+    linear-gradient(180deg, #ffffff, #f8fafc);
+}
+
+.credit-main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.credit-hero {
+  padding: 76px 0 44px;
+  text-align: center;
+}
+
+.credit-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #ede9fe;
+  color: #6d28d9;
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.08);
+}
+
+.credit-hero h1 {
+  max-width: 1000px;
+  margin: 0 auto 18px;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.03;
+  letter-spacing: -2.6px;
+  background: linear-gradient(90deg, #111827, #6d28d9, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.credit-hero p {
+  max-width: 780px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 21px;
+  line-height: 1.75;
+}
+
+.credit-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) 390px;
+  gap: 30px;
+  align-items: start;
+  margin-bottom: 70px;
+}
+
+.credit-card {
+  padding: 42px;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.11), transparent 36%),
+    linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid #e9d5ff;
+  box-shadow: 0 30px 80px rgba(124, 58, 237, 0.15);
+}
+
+.credit-card h2 {
+  margin-bottom: 26px;
+  color: #111827;
+  font-size: 30px;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.credit-card label {
+  display: block;
+  margin: 18px 0 8px;
+  color: #111827;
+  font-weight: 900;
+}
+
+.credit-card input {
+  width: 100%;
+  height: 60px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid #d8b4fe;
+  outline: none;
+  background: #ffffff;
+  color: #111827;
+  font-size: 16px;
+}
+
+.credit-card input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+}
+
+.credit-card button {
+  width: 100%;
+  min-height: 62px;
+  margin-top: 24px;
+  padding: 16px;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: white;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.28);
+  transition: 0.24s ease;
+}
+
+.credit-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 26px 58px rgba(124, 58, 237, 0.34);
+}
+
+.credit-result {
+  margin-top: 28px;
+  padding: 30px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #f5f3ff, #eff6ff);
+  border: 1px solid #ddd6fe;
+  text-align: center;
+}
+
+.credit-result h2 {
+  margin-bottom: 8px;
+  color: #4c1d95;
+  font-size: 30px;
+}
+
+.credit-result p {
+  color: #64748b;
+  font-weight: 800;
+}
+
+.credit-side {
+  position: sticky;
+  top: 105px;
+  display: grid;
+  gap: 18px;
+}
+
+.credit-panel {
+  padding: 28px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.17), transparent 38%),
+    linear-gradient(180deg, #ffffff, #f5f3ff);
+  border: 1px solid #e9d5ff;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
+}
+
+.credit-panel h2 {
+  margin-bottom: 10px;
+  color: #111827;
+  font-size: 25px;
+  line-height: 1.16;
+  letter-spacing: -0.7px;
+}
+
+.credit-panel p {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.credit-chart {
+  height: 190px;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  margin: 24px 0;
+  padding: 20px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid #ede9fe;
+}
+
+.credit-chart i {
+  flex: 1;
+  display: block;
+  border-radius: 14px 14px 6px 6px;
+  background: linear-gradient(180deg, #7c3aed, #2563eb);
+  box-shadow: 0 14px 25px rgba(124, 58, 237, 0.18);
+}
+
+.credit-pills {
+  display: grid;
+  gap: 12px;
+}
+
+.credit-pills div,
+.recommend-links a {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid #e5e7eb;
+  color: #334155;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.credit-pills span {
+  color: #64748b;
+}
+
+.recommend-links {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.credit-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 30px;
+  align-items: start;
+  margin-bottom: 70px;
+}
+
+.credit-article {
+  padding: 40px;
+  border-radius: 34px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+}
+
+.credit-article h2 {
+  margin: 28px 0 14px;
+  color: #111827;
+  font-size: 32px;
+  line-height: 1.16;
+  letter-spacing: -1px;
+}
+
+.credit-article h2:first-child {
+  margin-top: 0;
+}
+
+.credit-article h3 {
+  margin: 22px 0 10px;
+  color: #111827;
+  font-size: 22px;
+}
+
+.credit-article p,
+.credit-article li {
+  margin-bottom: 16px;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.credit-article ul {
+  margin: 10px 0 20px 24px;
+}
+
+.credit-note {
+  padding: 28px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #ffffff, #f5f3ff);
+  border: 1px solid #e9d5ff;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.07);
+}
+
+.credit-note h3 {
+  margin-bottom: 12px;
+  color: #111827;
+  font-size: 24px;
+  letter-spacing: -0.7px;
+}
+
+.credit-note p {
+  color: #64748b;
+  line-height: 1.8;
+}
+
+@media (max-width: 1000px) {
+  .credit-layout,
+  .credit-content {
+    grid-template-columns: 1fr;
+  }
+
+  .credit-side {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .credit-main {
+    padding: 0 18px;
+  }
+
+  .credit-hero {
+    padding-top: 52px;
+  }
+
+  .credit-hero h1 {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
+
+  .credit-hero p {
+    font-size: 18px;
+  }
+
+  .credit-card,
+  .credit-article {
+    padding: 28px;
+  }
+}
+</style>
+</head>
+
+<body class="calculator-page credit-page">
+
+<header class="navbar">
+<a class="brand" href="https://mateistredie.github.io/Financetools/">
+<img src="../icons/icon-192.png" alt="Finance Tools RO logo">
+<span>Finance Tools RO</span>
+</a>
+
+<nav>
+<a href="../index.html">Acasă</a>
+<a href="../calculatoare.html">Calculatoare</a>
+<a href="../articole.html">Articole</a>
+<a href="../categorii.html">Categorii</a>
+<a href="../despre.html">Despre</a>
+<a href="../contact.html">Contact</a>
+</nav>
+</header>
+
+<main class="credit-main">
+
+<section class="credit-hero">
+<div class="credit-badge">🏦 Calculator financiar</div>
+<h1>Calculator Credit România</h1>
+<p>
+Calculează rata lunară pentru un credit în România. Vezi costul total,
+dobânda plătită și estimarea completă, rapid și gratuit.
+</p>
 </section>
-<section class="content">
+
+<section class="credit-layout">
+
+<div class="credit-card">
+<h2>Introdu datele creditului</h2>
+
+<label for="suma">Suma creditului (RON)</label>
+<input id="suma" placeholder="Ex: 100000" type="number">
+
+<label for="dobanda">Dobândă anuală (%)</label>
+<input id="dobanda" placeholder="Ex: 8" type="number">
+
+<label for="ani">Perioada (ani)</label>
+<input id="ani" placeholder="Ex: 30" type="number">
+
+<button onclick="calc()">Calculează creditul</button>
+
+<div class="credit-result">
+<h2 id="rata">Rata lunară</h2>
+<p id="rezultat">Completează câmpurile pentru estimare.</p>
+</div>
+</div>
+
+<aside class="credit-side">
+
+<div class="credit-panel">
+<h2>Rezultat rapid și clar</h2>
+<p>
+Completează valorile și vezi imediat rata lunară, totalul plătit și dobânda estimată.
+</p>
+
+<div class="credit-chart">
+<i style="height:45%"></i>
+<i style="height:68%"></i>
+<i style="height:55%"></i>
+<i style="height:82%"></i>
+<i style="height:95%"></i>
+</div>
+
+<div class="credit-pills">
+<div><strong>Rapid</strong><span>instant</span></div>
+<div><strong>Privat</strong><span>fără cont</span></div>
+<div><strong>Util</strong><span>decizii clare</span></div>
+</div>
+</div>
+
+<div class="credit-panel">
+<h2>Recomandate</h2>
+<div class="recommend-links">
+<a href="calculator-salariu-net-romania.html">💼 Salariu net</a>
+<a href="calculator-credit-ipotecar.html">🏠 Credit ipotecar</a>
+<a href="calculator-dae-credit.html">📉 DAE credit</a>
+</div>
+</div>
+
+</aside>
+
+</section>
+
+<section class="credit-content">
+
+<article class="credit-article">
+
+<h2>Rezultate detaliate</h2>
+<p id="detalii">
+După calcul, aici vei vedea suma împrumutată, dobânda totală și durata creditului.
+</p>
+
 <h2>Ce trebuie să știi despre credite</h2>
 <p>
-Rata lunară este calculată pe baza unei formule de tip anuitate,
-unde plătești aceeași sumă în fiecare lună.
+Rata lunară este calculată pe baza unei formule de tip anuitate. Asta înseamnă
+că plătești aceeași sumă în fiecare lună, dacă dobânda rămâne neschimbată.
 </p>
+
 <p>
-În primii ani, majoritatea banilor merg către dobândă, nu către principal.
+În primii ani, o parte mai mare din rată merge către dobândă, iar o parte mai mică
+merge către principal. Pe măsură ce creditul avansează, ponderea principalului crește.
 </p>
-</section>
-<section class="content">
+
+<h2>Cum folosești calculatorul</h2>
+<ul>
+<li>Introdu suma creditului în lei.</li>
+<li>Adaugă dobânda anuală estimată.</li>
+<li>Alege perioada creditului în ani.</li>
+<li>Apasă pe buton pentru a vedea estimarea.</li>
+</ul>
+
 <h2>Întrebări frecvente</h2>
-<div class="faq-item">
+
 <h3>Este calculul exact?</h3>
-<p>Este o estimare foarte apropiată de realitate, fără comisioane bancare.</p>
-</div>
-<div class="faq-item">
+<p>
+Este o estimare foarte apropiată pentru un credit standard, dar nu include toate comisioanele,
+asigurările sau costurile specifice fiecărei bănci.
+</p>
+
 <h3>Include taxe sau asigurări?</h3>
-<p>Nu. Doar principal + dobândă.</p>
-</div>
-</section></div><aside class="side-stack"><div class="side-card gradient"><h3>💎 Finance Tools RO</h3><p>Instrumente simple pentru decizii financiare mai clare.</p><div class="side-list"><div>📈 Calcule rapide</div><div>🔒 Fără cont</div><div>📲 Instalabil pe telefon</div></div></div><div class="side-card"><h3>Recomandate</h3><div class="side-list"><a href="../calculatoare/calculator-salariu-net-romania.html">💼 Salariu net</a><a href="../calculatoare/calculator-credit-romania.html">🏦 Credit</a><a href="../calculatoare/calculator-etf.html">🌍 ETF</a></div></div></aside></section></main><footer class="footer"><p>© 2026 Finance Tools RO | <a href="../privacy-policy.html">Confidențialitate</a> | <a href="../terms.html">Termeni</a> | <a href="../contact.html">Contact</a></p></footer><script>
+<p>
+Nu. Calculul include principalul și dobânda, fără taxe suplimentare, comisioane sau asigurări.
+</p>
 
-function calc(){
+<h3>Pot folosi calculatorul pentru credit ipotecar?</h3>
+<p>
+Da, îl poți folosi pentru o estimare generală. Pentru ipotecar, poți folosi și calculatorul
+dedicat de credit ipotecar.
+</p>
 
-let suma = parseFloat(document.getElementById("suma").value);
-let dobanda = parseFloat(document.getElementById("dobanda").value);
-let ani = parseInt(document.getElementById("ani").value);
+</article>
 
-if(isNaN(suma) || isNaN(dobanda) || isNaN(ani) || suma <= 0 || dobanda <= 0 || ani <= 0){
-document.getElementById("rata").innerText = "Completează toate câmpurile corect";
-document.getElementById("rezultat").innerText = "";
-document.getElementById("detalii").innerText = "";
-return;
+<aside class="credit-note">
+<h3>💎 Finance Tools RO</h3>
+<p>
+Instrumente simple pentru decizii financiare mai clare. Calculele sunt rapide,
+gratuite și făcute direct în browser.
+</p>
+</aside>
+
+</section>
+
+</main>
+
+<footer class="footer">
+<p>
+© 2026 Finance Tools RO |
+<a href="../privacy-policy.html">Confidențialitate</a> |
+<a href="../terms.html">Termeni</a> |
+<a href="../contact.html">Contact</a>
+</p>
+</footer>
+
+<script>
+function calc() {
+  let suma = parseFloat(document.getElementById("suma").value);
+  let dobanda = parseFloat(document.getElementById("dobanda").value);
+  let ani = parseInt(document.getElementById("ani").value);
+
+  if (isNaN(suma) || isNaN(dobanda) || isNaN(ani) || suma <= 0 || dobanda <= 0 || ani <= 0) {
+    document.getElementById("rata").innerText = "Completează toate câmpurile corect";
+    document.getElementById("rezultat").innerText = "";
+    document.getElementById("detalii").innerText = "Introdu valori valide pentru suma creditului, dobândă și perioadă.";
+    return;
+  }
+
+  let luni = ani * 12;
+  let r = (dobanda / 100) / 12;
+
+  let rata = suma * (r * Math.pow(1 + r, luni)) / (Math.pow(1 + r, luni) - 1);
+
+  let total = rata * luni;
+  let dobandaTotala = total - suma;
+
+  document.getElementById("rata").innerText = "Rată lunară: " + rata.toFixed(0) + " RON";
+
+  document.getElementById("rezultat").innerText =
+    "Total plătit: " + total.toFixed(0) + " RON";
+
+  document.getElementById("detalii").innerHTML =
+    "• Suma împrumutată: " + suma.toFixed(0) + " RON<br>" +
+    "• Dobândă totală: " + dobandaTotala.toFixed(0) + " RON<br>" +
+    "• Durată: " + ani + " ani (" + luni + " luni)";
 }
+</script>
 
-let luni = ani * 12;
-let r = (dobanda / 100) / 12;
-
-let rata = suma * (r * Math.pow(1 + r, luni)) / (Math.pow(1 + r, luni) - 1);
-
-let total = rata * luni;
-let dobandaTotala = total - suma;
-
-document.getElementById("rata").innerText = "Rată lunară: " + rata.toFixed(0) + " RON";
-
-document.getElementById("rezultat").innerText =
-"Total plătit: " + total.toFixed(0) + " RON";
-
-document.getElementById("detalii").innerHTML =
-"• Suma împrumutată: " + suma.toFixed(0) + " RON<br>" +
-"• Dobândă totală: " + dobandaTotala.toFixed(0) + " RON<br>" +
-"• Durată: " + ani + " ani (" + luni + " luni)";
-}
-
-</script></body></html>
+</body>
+</html>
