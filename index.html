@@ -11,26 +11,17 @@
 <link rel="canonical" href="https://mateistredie.github.io/Financetools/">
 <link rel="stylesheet" href="style.css">
 <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="theme-color" content="#7c3aed">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Finance Tools RO">
-  
 </head>
 
 <body>
 
 <header class="navbar">
-<div class="logo">💰 Finance Tools RO</div>
-<nav>
-<header class="navbar">
-<a class="brand" href="index.html">
-<img src="icons/icon-192.png" alt="Finance Tools RO logo">
-<span>Finance Tools RO</span>
-</a>
-
-<nav>
-<header class="navbar">
-<a class="brand" href="index.html">
+<a class="brand" href="index.html" aria-label="Finance Tools RO - Acasă">
 <img src="icons/icon-192.png" alt="Finance Tools RO logo">
 <span>Finance Tools RO</span>
 </a>
@@ -44,16 +35,11 @@
 <a href="contact.html">Contact</a>
 </nav>
 </header>
-</nav>
-</header>
-</nav>
-</header>
+
 <main>
 
 <section class="hero premium-hero">
-
 <div class="hero-left">
-
 <div class="hero-badge">🚀 Aplicație financiară instalabilă gratuit</div>
 
 <h1>Controlează-ți banii cu instrumente financiare inteligente</h1>
@@ -73,28 +59,31 @@ pentru salarii, credite, taxe, economii, pensii și investiții.
 <span>✅ Gratuit</span>
 <span>✅ Datele rămân la tine</span>
 </div>
-
 </div>
 
 <div class="hero-visual">
-<div class="phone-card">
-<img src="icons/icon-512.png" alt="Finance Tools RO App">
+<div class="app-preview">
+<div class="preview-top">
+<img src="icons/icon-192.png" alt="Finance Tools RO app icon">
+<div>
 <h3>Finance Tools RO</h3>
-<p>49+ calculatoare financiare</p>
-
-<div class="mini-chart">
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-</div>
-
-<div class="app-button">Instalează aplicația</div>
+<p>Aplicație financiară gratuită</p>
 </div>
 </div>
 
-</section>
-  
+<div class="preview-stats">
+<div><strong>49+</strong><span>Calculatoare</span></div>
+<div><strong>50+</strong><span>Articole</span></div>
+</div>
+
+<div class="preview-list">
+<p>💼 Salarii</p>
+<p>🏦 Credite</p>
+<p>📈 Investiții</p>
+<p>💰 Economii</p>
+</div>
+</div>
+</div>
 </section>
 
 <section class="seo" id="populare">
@@ -767,21 +756,18 @@ pentru salarii, credite, taxe, economii, pensii și investiții.
 </div>
 </section>
 
-</main>
-
 <section class="seo">
-
 <h2>Explorează toate categoriile</h2>
-
 <p>
 Cauți calculatoare și ghiduri despre salarii, credite, investiții, economii,
 taxe sau pensii? Vizitează pagina
 <a href="categorii.html">Categorii</a>
 pentru acces rapid la toate resursele disponibile.
 </p>
-
 </section>
-  
+
+</main>
+
 <footer class="footer">
 <p>
 © 2026 Finance Tools RO |
@@ -791,7 +777,7 @@ pentru acces rapid la toate resursele disponibile.
 <a href="disclaimer.html">Disclaimer</a> |
 <a href="despre.html">Despre</a> |
 <a href="contact.html">Contact</a> |
-<a href="categorii.html">Categorii</a> |
+<a href="categorii.html">Categorii</a>
 </p>
 </footer>
 
@@ -830,9 +816,11 @@ pentru acces rapid la toate resursele disponibile.
 
 <script>
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/Financetools/service-worker.js");
+  window.addEventListener("load", function() {
+    navigator.serviceWorker.register("/Financetools/service-worker.js");
+  });
 }
 </script>
-  
+
 </body>
 </html>
