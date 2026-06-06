@@ -786,6 +786,12 @@ pentru acces rapid la toate resursele disponibile.
   ]
 }
 </script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/Financetools/service-worker.js");
+}
+</script>
   
 </body>
 </html>
