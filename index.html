@@ -11,772 +11,793 @@
 <link rel="stylesheet" href="style.css">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
-<meta name="theme-color" content="#111827">
+<meta name="theme-color" content="#0f172a">
 
 <style>
 /* =========================================================
-   FINANCE TOOLS RO - HOMEPAGE EXECUTIVE EDITION
+   FINANCE TOOLS RO - HOMEPAGE 10/10 PRODUCT EDITION
    Stil izolat doar pentru index.html
    ========================================================= */
 
-:root{
-  --ft-dark:#07111f;
-  --ft-text:#0f172a;
-  --ft-muted:#64748b;
-  --ft-violet:#7c3aed;
-  --ft-blue:#2563eb;
-  --ft-cyan:#06b6d4;
-  --ft-green:#10b981;
-  --ft-line:#e5e7eb;
-  --ft-card:#ffffff;
-  --ft-shadow:0 28px 90px rgba(15,23,42,.12);
-  --ft-soft:0 16px 45px rgba(15,23,42,.08);
+:root {
+  --ft-bg: #f8fafc;
+  --ft-text: #0f172a;
+  --ft-muted: #64748b;
+  --ft-line: #e5e7eb;
+  --ft-card: #ffffff;
+  --ft-violet: #7c3aed;
+  --ft-blue: #2563eb;
+  --ft-green: #10b981;
+  --ft-dark: #08111f;
+  --ft-shadow: 0 26px 80px rgba(15, 23, 42, 0.10);
+  --ft-shadow-strong: 0 44px 120px rgba(15, 23, 42, 0.24);
 }
 
-body.ft-home{
+body.ft-home-10 {
   background:
-    radial-gradient(circle at 8% 0%, rgba(124,58,237,.18), transparent 32%),
-    radial-gradient(circle at 92% 3%, rgba(37,99,235,.15), transparent 30%),
-    linear-gradient(180deg,#ffffff 0%,#f8fafc 58%,#ffffff 100%);
-  color:var(--ft-text);
+    radial-gradient(circle at 8% 0%, rgba(124, 58, 237, 0.18), transparent 32%),
+    radial-gradient(circle at 92% 0%, rgba(37, 99, 235, 0.14), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 58%, #ffffff 100%);
+  color: var(--ft-text);
 }
 
-/* top announcement */
-.ft-announcement{
-  background:#07111f;
-  color:#dbeafe;
-  text-align:center;
-  padding:9px 16px;
-  font-size:13px;
-  font-weight:800;
+.ft-home-10 .navbar {
+  min-height: 82px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.05);
 }
 
-.ft-announcement span{
-  color:#a78bfa;
+.ft-home-10 .brand span {
+  letter-spacing: -0.9px;
 }
 
-/* improved homepage navbar only */
-.ft-home .navbar{
-  min-height:82px;
-  border-bottom:1px solid rgba(226,232,240,.9);
-  box-shadow:0 10px 35px rgba(15,23,42,.05);
+.ft-nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--ft-violet), var(--ft-blue));
+  color: #ffffff !important;
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.24);
 }
 
-.ft-home .brand span{
-  letter-spacing:-.9px;
+/* Top Strip */
+.ft-top-strip {
+  background: #08111f;
+  color: #dbeafe;
+  text-align: center;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 850;
 }
 
-.ft-nav-cta{
-  display:inline-flex;
-  padding:10px 16px;
-  border-radius:999px;
-  background:linear-gradient(135deg,var(--ft-violet),var(--ft-blue));
-  color:white!important;
-  box-shadow:0 12px 30px rgba(124,58,237,.24);
+.ft-top-strip strong {
+  color: #c4b5fd;
 }
 
 /* HERO */
-.ft-hero{
-  max-width:1280px;
-  margin:0 auto;
-  padding:72px 24px 54px;
-  display:grid;
-  grid-template-columns:1.02fr .98fr;
-  gap:54px;
-  align-items:center;
+.ft-hero-10 {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 74px 24px 54px;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 58px;
+  align-items: center;
 }
 
-.ft-kicker{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 16px;
-  margin-bottom:24px;
-  border-radius:999px;
-  background:rgba(255,255,255,.86);
-  border:1px solid #ede9fe;
-  box-shadow:0 12px 34px rgba(124,58,237,.08);
-  color:#5b21b6;
-  font-size:14px;
-  font-weight:950;
+.ft-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #ede9fe;
+  color: #5b21b6;
+  font-size: 14px;
+  font-weight: 950;
+  box-shadow: 0 12px 34px rgba(124, 58, 237, 0.08);
 }
 
-.ft-hero h1{
-  max-width:820px;
-  margin:0 0 24px;
-  font-size:clamp(48px,6.6vw,92px);
-  line-height:.96;
-  letter-spacing:-4px;
-  color:#0f172a;
+.ft-hero-10 h1 {
+  max-width: 840px;
+  margin: 0 0 24px;
+  font-size: clamp(50px, 6.8vw, 96px);
+  line-height: 0.96;
+  letter-spacing: -4.2px;
+  color: #0f172a;
 }
 
-.ft-gradient-text{
-  background:linear-gradient(90deg,#111827 0%,#6d28d9 46%,#2563eb 100%);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+.ft-gradient {
+  background: linear-gradient(90deg, #111827 0%, #6d28d9 46%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.ft-hero p{
-  max-width:720px;
-  color:#475569;
-  font-size:21px;
-  line-height:1.75;
+.ft-hero-10 p {
+  max-width: 720px;
+  color: #475569;
+  font-size: 21px;
+  line-height: 1.75;
 }
 
-.ft-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:16px;
-  margin-top:34px;
+.ft-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 34px;
 }
 
-.ft-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:60px;
-  padding:16px 30px;
-  border-radius:18px;
-  text-decoration:none;
-  font-weight:950;
-  transition:.25s ease;
+.ft-btn {
+  min-height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 30px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 950;
+  transition: 0.24s ease;
 }
 
-.ft-btn.primary{
-  color:white;
-  background:linear-gradient(135deg,var(--ft-violet),var(--ft-blue));
-  box-shadow:0 22px 50px rgba(124,58,237,.28);
+.ft-btn.primary {
+  background: linear-gradient(135deg, var(--ft-violet), var(--ft-blue));
+  color: white;
+  box-shadow: 0 22px 50px rgba(124, 58, 237, 0.28);
 }
 
-.ft-btn.secondary{
-  color:#4c1d95;
-  background:white;
-  border:1px solid #ddd6fe;
-  box-shadow:0 15px 34px rgba(15,23,42,.07);
+.ft-btn.secondary {
+  background: white;
+  color: #4c1d95;
+  border: 1px solid #ddd6fe;
+  box-shadow: 0 15px 34px rgba(15, 23, 42, 0.07);
 }
 
-.ft-btn:hover{
-  transform:translateY(-3px);
+.ft-btn:hover {
+  transform: translateY(-3px);
 }
 
-.ft-trust{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:28px;
+.ft-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
 }
 
-.ft-trust span{
-  padding:10px 14px;
-  border-radius:999px;
-  background:white;
-  border:1px solid #e9d5ff;
-  color:#4c1d95;
-  box-shadow:0 10px 28px rgba(15,23,42,.06);
-  font-size:14px;
-  font-weight:850;
+.ft-trust-row span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid #e9d5ff;
+  color: #4c1d95;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+  font-size: 14px;
+  font-weight: 850;
 }
 
-/* PRODUCT CONSOLE */
-.ft-console{
-  position:relative;
-  padding:18px;
-  border-radius:42px;
-  background:linear-gradient(145deg,#111827,#1e1b4b);
-  box-shadow:0 45px 120px rgba(15,23,42,.28);
-  overflow:hidden;
+/* LIVE PRODUCT PANEL */
+.ft-product {
+  position: relative;
+  padding: 18px;
+  border-radius: 42px;
+  background: linear-gradient(145deg, #08111f, #1e1b4b);
+  box-shadow: var(--ft-shadow-strong);
+  overflow: hidden;
 }
 
-.ft-console::before{
-  content:"";
-  position:absolute;
-  width:320px;
-  height:320px;
-  right:-110px;
-  top:-120px;
-  border-radius:999px;
-  background:rgba(124,58,237,.35);
-  filter:blur(2px);
+.ft-product::before {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  right: -130px;
+  top: -130px;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.38);
 }
 
-.ft-console-inner{
-  position:relative;
-  padding:28px;
-  border-radius:32px;
+.ft-product-inner {
+  position: relative;
+  padding: 28px;
+  border-radius: 32px;
   background:
-    radial-gradient(circle at top right,rgba(124,58,237,.24),transparent 38%),
-    linear-gradient(180deg,#ffffff,#f8fafc);
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.21), transparent 38%),
+    linear-gradient(180deg, #ffffff, #f8fafc);
 }
 
-.ft-console-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:18px;
-  margin-bottom:22px;
+.ft-product-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
 }
 
-.ft-console-brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
+.ft-product-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-.ft-console-brand img{
-  width:62px;
-  height:62px;
-  border-radius:18px;
-  box-shadow:0 18px 38px rgba(124,58,237,.25);
+.ft-product-brand img {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  box-shadow: 0 18px 38px rgba(124, 58, 237, 0.25);
 }
 
-.ft-console-brand h2{
-  margin:0;
-  color:#111827;
-  font-size:24px;
-  letter-spacing:-.8px;
+.ft-product-brand h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
 }
 
-.ft-console-brand p{
-  margin:0;
-  color:var(--ft-muted);
-  font-size:14px;
-  font-weight:800;
+.ft-product-brand p {
+  margin: 3px 0 0;
+  color: var(--ft-muted);
+  font-size: 14px;
+  font-weight: 800;
 }
 
-.ft-live{
-  padding:8px 12px;
-  border-radius:999px;
-  background:#dcfce7;
-  color:#166534;
-  font-size:13px;
-  font-weight:950;
+.ft-live {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 13px;
+  font-weight: 950;
 }
 
-.ft-mini-calculator{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-bottom:18px;
+.ft-live-calc {
+  display: grid;
+  gap: 14px;
 }
 
-.ft-input-card,
-.ft-output-card{
-  padding:22px;
-  border-radius:24px;
-  background:white;
-  border:1px solid #e5e7eb;
-  box-shadow:0 12px 28px rgba(15,23,42,.06);
+.ft-live-box {
+  padding: 22px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
 }
 
-.ft-input-card label{
-  display:block;
-  color:#64748b;
-  font-size:13px;
-  font-weight:900;
-  margin-bottom:8px;
+.ft-live-box label {
+  display: block;
+  margin-bottom: 9px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 900;
 }
 
-.ft-input-card strong{
-  display:block;
-  color:#111827;
-  font-size:30px;
-  line-height:1;
+.ft-live-box input {
+  width: 100%;
+  height: 56px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid #d8b4fe;
+  outline: none;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 900;
 }
 
-.ft-output-card{
-  background:#111827;
-  color:white;
+.ft-live-output {
+  padding: 24px;
+  border-radius: 26px;
+  background: #111827;
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.24);
 }
 
-.ft-output-card span{
-  display:block;
-  color:#cbd5e1;
-  font-size:13px;
-  font-weight:900;
-  margin-bottom:8px;
+.ft-live-output span {
+  display: block;
+  margin-bottom: 8px;
+  color: #cbd5e1;
+  font-size: 13px;
+  font-weight: 900;
 }
 
-.ft-output-card strong{
-  display:block;
-  font-size:34px;
-  line-height:1;
+.ft-live-output strong {
+  display: block;
+  font-size: 42px;
+  line-height: 1;
+  letter-spacing: -1.5px;
 }
 
-.ft-console-chart{
-  height:180px;
-  display:flex;
-  align-items:flex-end;
-  gap:14px;
-  padding:20px;
-  margin:18px 0;
-  border-radius:26px;
-  background:white;
-  border:1px solid #ede9fe;
+.ft-live-output p {
+  margin-top: 8px;
+  color: #e9d5ff;
+  font-size: 14px;
 }
 
-.ft-console-chart i{
-  flex:1;
-  display:block;
-  border-radius:14px 14px 6px 6px;
-  background:linear-gradient(180deg,var(--ft-violet),var(--ft-blue));
-  box-shadow:0 14px 24px rgba(124,58,237,.18);
+.ft-breakdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
 }
 
-.ft-console-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
+.ft-breakdown div {
+  padding: 14px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
 }
 
-.ft-console-grid div{
-  padding:16px;
-  border-radius:18px;
-  background:white;
-  border:1px solid #e5e7eb;
+.ft-breakdown strong {
+  display: block;
+  color: #6d28d9;
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 6px;
 }
 
-.ft-console-grid strong{
-  display:block;
-  color:#6d28d9;
-  font-size:24px;
-  line-height:1;
-}
-
-.ft-console-grid span{
-  color:#64748b;
-  font-size:12px;
-  font-weight:900;
+.ft-breakdown span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 /* SECTIONS */
-.ft-section-head{
-  max-width:860px;
-  margin:86px auto 28px;
-  padding:0 24px;
-  text-align:center;
+.ft-section-title {
+  max-width: 860px;
+  margin: 86px auto 28px;
+  padding: 0 24px;
+  text-align: center;
 }
 
-.ft-section-head h2{
-  margin:0 0 12px;
-  color:#111827;
-  font-size:clamp(34px,4.2vw,54px);
-  line-height:1.08;
-  letter-spacing:-1.8px;
+.ft-section-title h2 {
+  margin: 0 0 12px;
+  color: #111827;
+  font-size: clamp(34px, 4.2vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -1.8px;
 }
 
-.ft-section-head p{
-  color:#64748b;
-  font-size:18px;
+.ft-section-title p {
+  color: #64748b;
+  font-size: 18px;
 }
 
-/* TRUST LOGOS/STRIP */
-.ft-proof{
-  max-width:1280px;
-  margin:0 auto 26px;
-  padding:0 24px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+/* Proof */
+.ft-proof {
+  max-width: 1280px;
+  margin: 0 auto 26px;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
 }
 
-.ft-proof div{
-  padding:24px;
-  border-radius:28px;
-  background:white;
-  border:1px solid #e9d5ff;
-  box-shadow:0 18px 48px rgba(15,23,42,.07);
+.ft-proof div {
+  padding: 24px;
+  border-radius: 28px;
+  background: white;
+  border: 1px solid #e9d5ff;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
 }
 
-.ft-proof strong{
-  display:block;
-  color:#6d28d9;
-  font-size:36px;
-  line-height:1;
-  margin-bottom:8px;
+.ft-proof strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #6d28d9;
+  font-size: 36px;
+  line-height: 1;
 }
 
-.ft-proof span{
-  color:#64748b;
-  font-size:14px;
-  font-weight:900;
+.ft-proof span {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 900;
 }
 
-/* CALCULATORS */
-.ft-calculators{
-  max-width:1280px;
-  margin:0 auto;
-  padding:0 24px;
-  display:grid;
-  grid-template-columns:1.2fr 1fr 1fr;
-  gap:22px;
+/* Tools */
+.ft-tools {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 22px;
 }
 
-.ft-tool{
-  position:relative;
-  min-height:220px;
-  padding:30px;
-  border-radius:32px;
-  background:white;
-  border:1px solid #e5e7eb;
-  box-shadow:0 18px 48px rgba(15,23,42,.07);
-  text-decoration:none;
-  color:#111827;
-  transition:.25s ease;
-  overflow:hidden;
+.ft-tool {
+  position: relative;
+  min-height: 220px;
+  display: block;
+  padding: 30px;
+  border-radius: 32px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  text-decoration: none;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
+  transition: 0.25s ease;
+  overflow: hidden;
 }
 
-.ft-tool::after{
-  content:"";
-  position:absolute;
-  right:-55px;
-  top:-55px;
-  width:140px;
-  height:140px;
-  border-radius:999px;
-  background:linear-gradient(135deg,rgba(124,58,237,.13),rgba(37,99,235,.10));
+.ft-tool::after {
+  content: "";
+  position: absolute;
+  right: -55px;
+  top: -55px;
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.13), rgba(37, 99, 235, 0.10));
 }
 
-.ft-tool:hover{
-  transform:translateY(-7px);
-  border-color:#c4b5fd;
-  box-shadow:0 30px 75px rgba(124,58,237,.17);
+.ft-tool:hover {
+  transform: translateY(-7px);
+  border-color: #c4b5fd;
+  box-shadow: 0 30px 75px rgba(124, 58, 237, 0.17);
 }
 
-.ft-tool.big{
-  grid-row:span 2;
-  min-height:462px;
+.ft-tool.big {
+  grid-row: span 2;
+  min-height: 462px;
   background:
-    radial-gradient(circle at top right,rgba(124,58,237,.22),transparent 42%),
-    linear-gradient(180deg,#ffffff,#f5f3ff);
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.22), transparent 42%),
+    linear-gradient(180deg, #ffffff, #f5f3ff);
 }
 
-.ft-tool .icon{
-  position:relative;
-  z-index:1;
-  display:block;
-  font-size:54px;
-  margin-bottom:22px;
+.ft-svg {
+  position: relative;
+  z-index: 1;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ede9fe, #eff6ff);
 }
 
-.ft-tool.big .icon{
-  font-size:84px;
-  margin-bottom:36px;
+.ft-tool.big .ft-svg {
+  width: 86px;
+  height: 86px;
+  border-radius: 26px;
+  margin-bottom: 36px;
 }
 
-.ft-tool h3{
-  position:relative;
-  z-index:1;
-  margin:0 0 12px;
-  font-size:28px;
-  line-height:1.12;
-  letter-spacing:-1px;
+.ft-svg svg {
+  width: 31px;
+  height: 31px;
+  stroke: #6d28d9;
+  stroke-width: 2.4;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.ft-tool.big h3{
-  font-size:42px;
+.ft-tool.big .ft-svg svg {
+  width: 45px;
+  height: 45px;
 }
 
-.ft-tool p{
-  position:relative;
-  z-index:1;
-  color:#64748b;
-  font-size:16px;
+.ft-tool h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.12;
+  letter-spacing: -1px;
 }
 
-.ft-tool-meta{
-  position:absolute;
-  left:30px;
-  bottom:28px;
-  z-index:1;
-  display:inline-flex;
-  padding:8px 12px;
-  border-radius:999px;
-  background:white;
-  border:1px solid #e9d5ff;
-  color:#6d28d9;
-  font-size:13px;
-  font-weight:950;
+.ft-tool.big h3 {
+  font-size: 42px;
 }
 
-/* CATEGORY STRIP */
-.ft-categories{
-  max-width:1280px;
-  margin:70px auto 0;
-  padding:0 24px;
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:14px;
+.ft-tool p {
+  position: relative;
+  z-index: 1;
+  color: #64748b;
+  font-size: 16px;
 }
 
-.ft-category{
-  padding:18px;
-  border-radius:22px;
-  background:white;
-  border:1px solid #e5e7eb;
-  text-align:center;
-  text-decoration:none;
-  color:#334155;
-  font-weight:950;
-  box-shadow:0 12px 28px rgba(15,23,42,.05);
-  transition:.22s;
+.ft-tool-tag {
+  position: absolute;
+  left: 30px;
+  bottom: 28px;
+  z-index: 1;
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid #e9d5ff;
+  color: #6d28d9;
+  font-size: 13px;
+  font-weight: 950;
 }
 
-.ft-category:hover{
-  transform:translateY(-4px);
-  color:#6d28d9;
-  border-color:#ddd6fe;
+/* Articles */
+.ft-articles {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
-/* ARTICLES */
-.ft-articles{
-  max-width:1280px;
-  margin:0 auto;
-  padding:0 24px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
+.ft-article {
+  display: block;
+  padding: 18px;
+  border-radius: 32px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  text-decoration: none;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
+  transition: 0.25s;
 }
 
-.ft-article{
-  display:block;
-  padding:18px;
-  border-radius:32px;
-  background:white;
-  border:1px solid #e5e7eb;
-  box-shadow:0 18px 48px rgba(15,23,42,.07);
-  color:#111827;
-  text-decoration:none;
-  transition:.25s;
+.ft-article:hover {
+  transform: translateY(-7px);
+  border-color: #c4b5fd;
+  box-shadow: 0 30px 75px rgba(124, 58, 237, 0.17);
 }
 
-.ft-article:hover{
-  transform:translateY(-7px);
-  border-color:#c4b5fd;
-  box-shadow:0 30px 75px rgba(124,58,237,.17);
+.ft-art {
+  height: 160px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ede9fe, #eff6ff);
 }
 
-.ft-art{
-  height:160px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:18px;
-  border-radius:24px;
-  background:linear-gradient(135deg,#ede9fe,#eff6ff);
-  font-size:60px;
+.ft-art svg {
+  width: 54px;
+  height: 54px;
+  stroke: #6d28d9;
+  stroke-width: 2.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.ft-article h3{
-  margin:0 0 9px;
-  font-size:22px;
-  line-height:1.2;
-  letter-spacing:-.6px;
+.ft-article h3 {
+  margin: 0 0 9px;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
 }
 
-.ft-article p{
-  color:#64748b;
-  font-size:15.5px;
+.ft-article p {
+  color: #64748b;
+  font-size: 15.5px;
 }
 
-/* WHY */
-.ft-why{
-  max-width:1280px;
-  margin:0 auto;
-  padding:0 24px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+/* Categories */
+.ft-categories {
+  max-width: 1280px;
+  margin: 70px auto 0;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
 }
 
-.ft-why-card{
-  padding:30px;
-  border-radius:30px;
-  background:linear-gradient(180deg,#ffffff,#faf5ff);
-  border:1px solid #ede9fe;
-  text-align:center;
-  box-shadow:0 18px 48px rgba(15,23,42,.07);
+.ft-category {
+  padding: 18px;
+  border-radius: 22px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  color: #334155;
+  text-decoration: none;
+  font-weight: 950;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+  transition: 0.22s;
 }
 
-.ft-why-card span{
-  display:block;
-  font-size:44px;
-  margin-bottom:14px;
+.ft-category:hover {
+  transform: translateY(-4px);
+  color: #6d28d9;
+  border-color: #ddd6fe;
 }
 
-.ft-why-card h3{
-  font-size:24px;
-  margin:0 0 10px;
-  letter-spacing:-.8px;
+/* Why */
+.ft-why {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
 }
 
-.ft-why-card p{
-  color:#64748b;
+.ft-why-card {
+  padding: 30px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #ffffff, #faf5ff);
+  border: 1px solid #ede9fe;
+  text-align: center;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
 }
 
-/* FINAL CTA */
-.ft-final-cta{
-  max-width:1280px;
-  margin:80px auto 20px;
-  padding:0 24px;
+.ft-why-card .ft-svg {
+  margin: 0 auto 14px;
 }
 
-.ft-final-box{
-  padding:46px;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:26px;
-  align-items:center;
-  border-radius:38px;
+.ft-why-card h3 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  letter-spacing: -0.8px;
+}
+
+.ft-why-card p {
+  color: #64748b;
+}
+
+/* CTA */
+.ft-cta {
+  max-width: 1280px;
+  margin: 80px auto 20px;
+  padding: 0 24px;
+}
+
+.ft-cta-box {
+  padding: 46px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 26px;
+  align-items: center;
+  border-radius: 38px;
   background:
-    radial-gradient(circle at right,rgba(124,58,237,.18),transparent 36%),
-    linear-gradient(135deg,#ffffff,#f5f3ff);
-  border:1px solid #e9d5ff;
-  box-shadow:0 28px 80px rgba(15,23,42,.09);
+    radial-gradient(circle at right, rgba(124, 58, 237, 0.18), transparent 36%),
+    linear-gradient(135deg, #ffffff, #f5f3ff);
+  border: 1px solid #e9d5ff;
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.09);
 }
 
-.ft-final-box h2{
-  margin:0 0 10px;
-  font-size:40px;
-  line-height:1.08;
-  letter-spacing:-1.5px;
+.ft-cta-box h2 {
+  margin: 0 0 10px;
+  font-size: 40px;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
 }
 
-.ft-final-box p{
-  color:#64748b;
-  font-size:17px;
+.ft-cta-box p {
+  color: #64748b;
+  font-size: 17px;
 }
 
 /* FAQ */
-.ft-faq{
-  max-width:980px;
-  margin:80px auto;
-  padding:0 24px;
+.ft-faq {
+  max-width: 980px;
+  margin: 80px auto;
+  padding: 0 24px;
 }
 
-.ft-faq h2{
-  text-align:center;
-  margin-bottom:24px;
-  font-size:clamp(32px,4vw,48px);
-  letter-spacing:-1.4px;
+.ft-faq h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -1.4px;
 }
 
-.ft-faq-item{
-  padding:26px;
-  margin-bottom:16px;
-  border-radius:26px;
-  background:white;
-  border:1px solid #e5e7eb;
-  box-shadow:0 16px 40px rgba(15,23,42,.06);
+.ft-faq-item {
+  padding: 26px;
+  margin-bottom: 16px;
+  border-radius: 26px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
 }
 
-.ft-faq-item h3{
-  margin:0 0 8px;
-  font-size:21px;
+.ft-faq-item h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
 }
 
-.ft-faq-item p{
-  color:#64748b;
+.ft-faq-item p {
+  color: #64748b;
 }
 
-/* RESPONSIVE */
-@media(max-width:1100px){
-  .ft-hero,
-  .ft-final-box{
-    grid-template-columns:1fr;
-    text-align:center;
+/* Responsive */
+@media(max-width:1100px) {
+  .ft-hero-10,
+  .ft-cta-box {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
-  .ft-hero p,
+  .ft-hero-10 p,
   .ft-actions,
-  .ft-trust{
-    margin-left:auto;
-    margin-right:auto;
-    justify-content:center;
+  .ft-trust-row {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
   }
 
   .ft-proof,
-  .ft-calculators,
+  .ft-tools,
   .ft-articles,
   .ft-why,
-  .ft-categories{
-    grid-template-columns:repeat(2,1fr);
+  .ft-categories {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .ft-tool.big{
-    grid-row:auto;
-    min-height:280px;
+  .ft-tool.big {
+    grid-row: auto;
+    min-height: 280px;
   }
 }
 
-@media(max-width:720px){
-  .ft-announcement{
-    font-size:12px;
+@media(max-width:720px) {
+  .ft-top-strip {
+    font-size: 12px;
   }
 
-  .ft-hero{
-    padding:54px 18px 34px;
+  .ft-hero-10 {
+    padding: 54px 18px 34px;
   }
 
-  .ft-hero h1{
-    font-size:42px;
-    letter-spacing:-1.6px;
+  .ft-hero-10 h1 {
+    font-size: 42px;
+    letter-spacing: -1.7px;
   }
 
-  .ft-hero p{
-    font-size:18px;
+  .ft-hero-10 p {
+    font-size: 18px;
   }
 
-  .ft-actions{
-    flex-direction:column;
+  .ft-actions {
+    flex-direction: column;
   }
 
-  .ft-btn{
-    width:100%;
+  .ft-btn {
+    width: 100%;
   }
 
-  .ft-console{
-    padding:10px;
-    border-radius:32px;
+  .ft-product {
+    padding: 10px;
+    border-radius: 32px;
   }
 
-  .ft-console-inner{
-    padding:22px;
-    border-radius:26px;
+  .ft-product-inner {
+    padding: 22px;
+    border-radius: 26px;
   }
 
-  .ft-mini-calculator,
-  .ft-console-grid{
-    grid-template-columns:1fr 1fr;
+  .ft-product-top {
+    align-items: flex-start;
   }
 
-  .ft-balance strong,
-  .ft-output-card strong{
-    font-size:34px;
-  }
-
+  .ft-breakdown,
   .ft-proof,
-  .ft-calculators,
+  .ft-tools,
   .ft-articles,
   .ft-why,
-  .ft-categories{
-    grid-template-columns:1fr;
+  .ft-categories {
+    grid-template-columns: 1fr;
   }
 
-  .ft-final-box{
-    padding:32px;
+  .ft-live-output strong {
+    font-size: 34px;
   }
 
-  .ft-final-box h2{
-    font-size:32px;
+  .ft-cta-box {
+    padding: 32px;
+  }
+
+  .ft-cta-box h2 {
+    font-size: 32px;
   }
 }
 </style>
 </head>
 
-<body class="ft-home">
+<body class="ft-home-10">
 
-<div class="ft-announcement">
-<span>Nou:</span> Finance Tools RO este instalabil ca aplicație PWA și include 99+ resurse financiare gratuite.
+<div class="ft-top-strip">
+<strong>Finance Tools RO</strong> — platformă financiară gratuită, instalabilă ca aplicație PWA.
 </div>
 
 <header class="navbar">
@@ -791,24 +812,24 @@ body.ft-home{
 <a href="articole.html">Articole</a>
 <a href="categorii.html">Categorii</a>
 <a href="despre.html">Despre</a>
-<a class="ft-nav-cta" href="calculatoare.html">Începe acum</a>
+<a class="ft-nav-button" href="calculatoare.html">Începe acum</a>
 </nav>
 </header>
 
 <main>
 
-<section class="ft-hero">
+<section class="ft-hero-10">
 
 <div>
-<div class="ft-kicker">🇷🇴 Platformă financiară premium pentru România</div>
+<div class="ft-badge">Platformă financiară premium pentru România</div>
 
 <h1>
-Calcule financiare <span class="ft-gradient-text">clare, rapide și inteligente</span>
+Calcule financiare <span class="ft-gradient">clare, rapide și inteligente</span>
 </h1>
 
 <p>
-Finance Tools RO îți oferă instrumente moderne pentru salarii, credite, TVA, buget,
-economii, pensii și investiții. Fără cont, fără aplicații complicate, direct în browser.
+Finance Tools RO îți oferă calculatoare moderne pentru salarii, credite, TVA,
+economii, pensii și investiții. Fără cont, fără complicații, direct în browser.
 </p>
 
 <div class="ft-actions">
@@ -816,53 +837,47 @@ economii, pensii și investiții. Fără cont, fără aplicații complicate, dir
 <a class="ft-btn secondary" href="articole.html">Citește ghidurile</a>
 </div>
 
-<div class="ft-trust">
-<span>✅ 49+ calculatoare</span>
-<span>✅ 50+ ghiduri</span>
-<span>✅ Fără cont</span>
-<span>✅ Date locale</span>
+<div class="ft-trust-row">
+<span>49+ calculatoare</span>
+<span>50+ ghiduri</span>
+<span>Fără cont</span>
+<span>Date locale</span>
 </div>
 </div>
 
-<div class="ft-console">
-<div class="ft-console-inner">
+<div class="ft-product">
+<div class="ft-product-inner">
 
-<div class="ft-console-top">
-<div class="ft-console-brand">
+<div class="ft-product-top">
+<div class="ft-product-brand">
 <img src="icons/icon-192.png" alt="Finance Tools RO">
 <div>
-<h2>Finance OS</h2>
-<p>Dashboard personal pentru decizii mai bune</p>
+<h2>Calculator live</h2>
+<p>Exemplu salariu brut → net</p>
 </div>
 </div>
 <div class="ft-live">LIVE</div>
 </div>
 
-<div class="ft-mini-calculator">
-<div class="ft-input-card">
-<label>Salariu brut exemplu</label>
-<strong>7.000 RON</strong>
+<div class="ft-live-calc">
+
+<div class="ft-live-box">
+<label for="heroBrut">Salariu brut exemplu</label>
+<input id="heroBrut" type="number" value="7000" min="1" oninput="calcHeroNet()">
 </div>
 
-<div class="ft-output-card">
-<span>Estimare net</span>
-<strong>≈ 4.095 RON</strong>
-</div>
-</div>
-
-<div class="ft-console-chart">
-<i style="height:38%"></i>
-<i style="height:58%"></i>
-<i style="height:46%"></i>
-<i style="height:76%"></i>
-<i style="height:92%"></i>
+<div class="ft-live-output">
+<span>Estimare salariu net</span>
+<strong id="heroNet">4.095 RON</strong>
+<p id="heroTaxText">CAS, CASS și impozit estimate automat.</p>
 </div>
 
-<div class="ft-console-grid">
-<div><strong>49+</strong><span>Calculatoare</span></div>
-<div><strong>50+</strong><span>Articole</span></div>
-<div><strong>100%</strong><span>Gratuit</span></div>
-<div><strong>0</strong><span>Conturi</span></div>
+<div class="ft-breakdown">
+<div><strong id="heroCas">1.750</strong><span>CAS</span></div>
+<div><strong id="heroCass">700</strong><span>CASS</span></div>
+<div><strong id="heroImp">455</strong><span>Impozit</span></div>
+</div>
+
 </div>
 
 </div>
@@ -877,40 +892,50 @@ economii, pensii și investiții. Fără cont, fără aplicații complicate, dir
 <div><strong>RO</strong><span>Creat pentru România</span></div>
 </section>
 
-<section class="ft-section-head">
+<section class="ft-section-title">
 <h2>Calculatoare folosite cel mai des</h2>
 <p>Acces rapid la cele mai importante instrumente pentru finanțe personale.</p>
 </section>
 
-<section class="ft-calculators">
+<section class="ft-tools">
 
 <a class="ft-tool big" href="calculatoare/calculator-salariu-net-romania.html">
-<span class="icon">💼</span>
+<span class="ft-svg">
+<svg viewBox="0 0 24 24"><path d="M4 7h16v10H4z"></path><path d="M8 7V5h8v2"></path><path d="M8 12h8"></path><path d="M8 15h5"></path></svg>
+</span>
 <h3>Calculator Salariu Net</h3>
-<p>Transformă salariul brut în salariu net și vezi rapid contribuțiile principale.</p>
-<span class="ft-tool-meta">Cel mai popular</span>
+<p>Transformă salariul brut în salariu net și vezi contribuțiile principale.</p>
+<span class="ft-tool-tag">Cel mai popular</span>
 </a>
 
 <a class="ft-tool" href="calculatoare/calculator-credit-romania.html">
-<span class="icon">🏦</span>
+<span class="ft-svg">
+<svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"></path><path d="M5 10v8"></path><path d="M19 10v8"></path><path d="M4 18h16"></path><path d="M8 14h8"></path></svg>
+</span>
 <h3>Credit</h3>
 <p>Calculează rata lunară, costul total și dobânda estimată.</p>
 </a>
 
 <a class="ft-tool" href="calculatoare/calculator-credit-ipotecar.html">
-<span class="icon">🏠</span>
+<span class="ft-svg">
+<svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg>
+</span>
 <h3>Credit Ipotecar</h3>
 <p>Estimare pentru locuință și planificare pe termen lung.</p>
 </a>
 
 <a class="ft-tool" href="calculatoare/calculator-etf.html">
-<span class="icon">🌍</span>
+<span class="ft-svg">
+<svg viewBox="0 0 24 24"><path d="M4 18V6"></path><path d="M4 18h16"></path><path d="M7 15l4-4 3 3 5-7"></path></svg>
+</span>
 <h3>ETF</h3>
 <p>Simulează investiții diversificate pe termen lung.</p>
 </a>
 
 <a class="ft-tool" href="calculatoare/calculator-dobanda-compusa.html">
-<span class="icon">📈</span>
+<span class="ft-svg">
+<svg viewBox="0 0 24 24"><path d="M4 19c6-1 10-5 12-12"></path><path d="M14 7h4v4"></path><path d="M5 15l3 3 4-5"></path></svg>
+</span>
 <h3>Dobândă Compusă</h3>
 <p>Vezi cum pot crește economiile tale în timp.</p>
 </a>
@@ -918,16 +943,16 @@ economii, pensii și investiții. Fără cont, fără aplicații complicate, dir
 </section>
 
 <section class="ft-categories">
-<a class="ft-category" href="categorii.html">💼 Salarii</a>
-<a class="ft-category" href="categorii.html">🏦 Credite</a>
-<a class="ft-category" href="categorii.html">🧾 Taxe</a>
-<a class="ft-category" href="categorii.html">📈 Investiții</a>
-<a class="ft-category" href="categorii.html">💰 Economii</a>
-<a class="ft-category" href="categorii.html">👴 Pensii</a>
+<a class="ft-category" href="categorii.html">Salarii</a>
+<a class="ft-category" href="categorii.html">Credite</a>
+<a class="ft-category" href="categorii.html">Taxe</a>
+<a class="ft-category" href="categorii.html">Investiții</a>
+<a class="ft-category" href="categorii.html">Economii</a>
+<a class="ft-category" href="categorii.html">Pensii</a>
 </section>
 
-<section class="ft-final-cta">
-<div class="ft-final-box">
+<section class="ft-cta">
+<div class="ft-cta-box">
 <div>
 <h2>Toate instrumentele într-un singur loc</h2>
 <p>Explorează biblioteca completă cu toate calculatoarele financiare gratuite.</p>
@@ -936,7 +961,7 @@ economii, pensii și investiții. Fără cont, fără aplicații complicate, dir
 </div>
 </section>
 
-<section class="ft-section-head">
+<section class="ft-section-title">
 <h2>Ghiduri financiare recomandate</h2>
 <p>Articole clare, fără jargon, pentru decizii financiare mai bune.</p>
 </section>
@@ -944,45 +969,57 @@ economii, pensii și investiții. Fără cont, fără aplicații complicate, dir
 <section class="ft-articles">
 
 <a class="ft-article" href="blog/salariu-net-explicat.html">
-<div class="ft-art">💼</div>
+<div class="ft-art">
+<svg viewBox="0 0 24 24"><path d="M4 7h16v10H4z"></path><path d="M8 7V5h8v2"></path><path d="M8 12h8"></path></svg>
+</div>
 <h3>Salariu Net România</h3>
 <p>Ghid complet despre salariu brut, net și contribuții.</p>
 </a>
 
 <a class="ft-article" href="blog/cum-se-calculeaza-creditul.html">
-<div class="ft-art">🏦</div>
+<div class="ft-art">
+<svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"></path><path d="M5 10v8"></path><path d="M19 10v8"></path><path d="M4 18h16"></path></svg>
+</div>
 <h3>Cum se calculează creditul?</h3>
 <p>Rate, dobânzi și cost total explicate simplu.</p>
 </a>
 
 <a class="ft-article" href="blog/dobanda-compusa-explicata.html">
-<div class="ft-art">📈</div>
+<div class="ft-art">
+<svg viewBox="0 0 24 24"><path d="M4 19c6-1 10-5 12-12"></path><path d="M14 7h4v4"></path><path d="M5 15l3 3 4-5"></path></svg>
+</div>
 <h3>Dobânda compusă</h3>
 <p>Cum cresc banii în timp prin reinvestire.</p>
 </a>
 
 <a class="ft-article" href="blog/ce-sunt-etf-urile.html">
-<div class="ft-art">🌍</div>
+<div class="ft-art">
+<svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"></path><path d="M3 12h18"></path><path d="M12 3c3 3 3 15 0 18"></path></svg>
+</div>
 <h3>Ce sunt ETF-urile?</h3>
 <p>Ghid simplu pentru investiții diversificate.</p>
 </a>
 
 <a class="ft-article" href="blog/regula-50-30-20.html">
-<div class="ft-art">📊</div>
+<div class="ft-art">
+<svg viewBox="0 0 24 24"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 16V9"></path><path d="M12 16V7"></path><path d="M16 16v-5"></path></svg>
+</div>
 <h3>Regula 50/30/20</h3>
 <p>Metodă simplă pentru buget personal.</p>
 </a>
 
 <a class="ft-article" href="blog/ce-este-inflatia.html">
-<div class="ft-art">🔥</div>
+<div class="ft-art">
+<svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M7 8l5-5 5 5"></path><path d="M7 16h10"></path></svg>
+</div>
 <h3>Ce este inflația?</h3>
 <p>Cum îți afectează economiile și salariul.</p>
 </a>
 
 </section>
 
-<section class="ft-final-cta">
-<div class="ft-final-box">
+<section class="ft-cta">
+<div class="ft-cta-box">
 <div>
 <h2>Învață finanțe personale în ritmul tău</h2>
 <p>Parcurge biblioteca de articole despre salarii, credite, taxe, investiții și economii.</p>
@@ -991,35 +1028,37 @@ economii, pensii și investiții. Fără cont, fără aplicații complicate, dir
 </div>
 </section>
 
-<section class="ft-section-head">
-<h2>De ce arată și funcționează diferit?</h2>
-<p>Finance Tools RO este construit pentru utilizatori reali, nu pentru formulare complicate.</p>
+<section class="ft-section-title">
+<h2>De ce Finance Tools RO?</h2>
+<p>Un produs digital construit pentru simplitate, claritate și decizii financiare mai bune.</p>
 </section>
 
 <section class="ft-why">
+
 <div class="ft-why-card">
-<span>⚡</span>
+<span class="ft-svg"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-13h-7z"></path></svg></span>
 <h3>Rapid</h3>
 <p>Rezultate instant, fără pași inutili.</p>
 </div>
 
 <div class="ft-why-card">
-<span>🔒</span>
+<span class="ft-svg"><svg viewBox="0 0 24 24"><path d="M6 10V8a6 6 0 0112 0v2"></path><path d="M5 10h14v10H5z"></path></svg></span>
 <h3>Privat</h3>
 <p>Nu cerem cont și nu salvăm datele introduse.</p>
 </div>
 
 <div class="ft-why-card">
-<span>📲</span>
+<span class="ft-svg"><svg viewBox="0 0 24 24"><path d="M8 2h8a2 2 0 012 2v16a2 2 0 01-2 2H8a2 2 0 01-2-2V4a2 2 0 012-2z"></path><path d="M10 18h4"></path></svg></span>
 <h3>Instalabil</h3>
 <p>Poți adăuga site-ul pe telefon ca aplicație PWA.</p>
 </div>
 
 <div class="ft-why-card">
-<span>🇷🇴</span>
+<span class="ft-svg"><svg viewBox="0 0 24 24"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></span>
 <h3>Pentru România</h3>
 <p>Instrumente gândite pentru salarii, taxe și credite locale.</p>
 </div>
+
 </section>
 
 <section class="ft-faq">
@@ -1055,6 +1094,47 @@ economii, pensii și investiții. Fără cont, fără aplicații complicate, dir
 </p>
 </footer>
 
+<script>
+function calcHeroNet() {
+  const input = document.getElementById("heroBrut");
+  const netEl = document.getElementById("heroNet");
+  const casEl = document.getElementById("heroCas");
+  const cassEl = document.getElementById("heroCass");
+  const impEl = document.getElementById("heroImp");
+
+  const brut = parseFloat(input.value);
+
+  if (!brut || brut <= 0) {
+    netEl.textContent = "—";
+    casEl.textContent = "—";
+    cassEl.textContent = "—";
+    impEl.textContent = "—";
+    return;
+  }
+
+  const cas = brut * 0.25;
+  const cass = brut * 0.10;
+  const baza = brut - cas - cass;
+  const impozit = baza * 0.10;
+  const net = brut - cas - cass - impozit;
+
+  const fmt = new Intl.NumberFormat("ro-RO", { maximumFractionDigits: 0 });
+
+  netEl.textContent = fmt.format(net) + " RON";
+  casEl.textContent = fmt.format(cas);
+  cassEl.textContent = fmt.format(cass);
+  impEl.textContent = fmt.format(impozit);
+}
+
+calcHeroNet();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker.register("/Financetools/service-worker.js");
+  });
+}
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1085,14 +1165,6 @@ economii, pensii și investiții. Fără cont, fără aplicații complicate, dir
       }
     }
   ]
-}
-</script>
-
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
-    navigator.serviceWorker.register("/Financetools/service-worker.js");
-  });
 }
 </script>
 
