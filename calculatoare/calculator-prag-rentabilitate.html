@@ -1,103 +1,180 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculator Prag Rentabilitate</title>
-<meta name="description" content="Află câte vânzări trebuie pentru profit zero.">
-<link rel="stylesheet" href="../style.css">
-<link rel="manifest" href="../manifest.json">
-<link rel="icon" type="image/png" href="../icons/icon-192.png">
-<meta name="theme-color" content="#7c3aed">
-
-<style>
-:root{--text:#0f172a;--muted:#64748b;--line:#e5e7eb;--violet:#7c3aed;--blue:#2563eb;--soft:#f5f3ff;--shadow:0 24px 70px rgba(15,23,42,.10);--shadow2:0 30px 90px rgba(124,58,237,.18)}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);line-height:1.7;min-height:100vh;background:radial-gradient(circle at top left,rgba(124,58,237,.15),transparent 34%),radial-gradient(circle at top right,rgba(37,99,235,.12),transparent 32%),linear-gradient(180deg,#fff,#f8fafc)}a{color:inherit}.navbar{position:sticky;top:0;z-index:1000;min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 7%;background:rgba(255,255,255,.92);backdrop-filter:blur(22px);border-bottom:1px solid rgba(226,232,240,.9);box-shadow:0 8px 32px rgba(15,23,42,.05)}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:22px;font-weight:950;letter-spacing:-.7px;color:#111827;white-space:nowrap}.brand img{width:46px;height:46px;border-radius:14px;object-fit:cover;box-shadow:0 12px 28px rgba(124,58,237,.24)}.navbar nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:18px}.navbar nav a{text-decoration:none;color:#334155;font-size:15px;font-weight:850;transition:.22s}.navbar nav a:hover{color:var(--violet)}
-.calc-main{max-width:1240px;margin:0 auto;padding:0 24px}.calc-hero{padding:74px 0 42px;text-align:center}.calc-badge{display:inline-flex;align-items:center;justify-content:center;margin-bottom:22px;padding:10px 18px;border-radius:999px;background:#fff;border:1px solid #ede9fe;box-shadow:0 10px 30px rgba(124,58,237,.08);color:#6d28d9;font-size:14px;font-weight:950}.calc-hero h1{max-width:1050px;margin:0 auto 18px;font-size:clamp(42px,5.8vw,76px);line-height:1.03;letter-spacing:-2.8px;background:linear-gradient(90deg,#111827,#6d28d9,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.calc-hero p{max-width:790px;margin:0 auto;color:var(--muted);font-size:21px;line-height:1.75}
-.tool-layout{display:grid;grid-template-columns:minmax(0,1.28fr) 390px;gap:30px;align-items:start;margin-bottom:72px}.tool-card{padding:42px;border-radius:34px;background:radial-gradient(circle at top right,rgba(124,58,237,.11),transparent 36%),linear-gradient(180deg,#fff,#f8fafc);border:1px solid #e9d5ff;box-shadow:var(--shadow2);position:relative;overflow:hidden}.tool-card::after{content:"";position:absolute;right:-90px;top:-90px;width:230px;height:230px;border-radius:999px;background:radial-gradient(circle,rgba(124,58,237,.16),transparent 68%)}.tool-card>h2{position:relative;z-index:1;margin-bottom:26px;color:#111827;font-size:30px;line-height:1.15;letter-spacing:-1px}.calc-box{position:relative;z-index:1;max-width:none!important;margin:0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;overflow:visible!important}.calc-box::before,.calc-box::after{display:none!important}.calc-box h2{margin:18px 0 9px!important;color:#111827!important;font-size:17px!important;font-weight:950!important}.calc-box input,.calc-box select{width:100%!important;height:60px!important;padding:16px 18px!important;margin-bottom:16px!important;border-radius:18px!important;border:1px solid #d8b4fe!important;outline:none!important;background:#fff!important;color:#111827!important;font-size:16px!important}.calc-box input:focus,.calc-box select:focus{border-color:var(--violet)!important;box-shadow:0 0 0 4px rgba(124,58,237,.12)!important}.calc-box button{width:100%!important;min-height:62px!important;margin-top:10px!important;padding:16px!important;border:0!important;border-radius:18px!important;background:linear-gradient(135deg,var(--violet),var(--blue))!important;color:white!important;font-size:16px!important;font-weight:950!important;cursor:pointer!important;box-shadow:0 20px 45px rgba(124,58,237,.28)!important;transition:.24s!important}.calc-box button:hover{transform:translateY(-2px)!important;box-shadow:0 26px 58px rgba(124,58,237,.34)!important}.rezultat-box,#rezultat,.result,.result-box{margin-top:28px!important;padding:30px!important;border-radius:28px!important;background:linear-gradient(135deg,#f5f3ff,#eff6ff)!important;border:1px solid #ddd6fe!important;text-align:center!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.72)!important}.rezultat-box h2,#rezultat h2,.result h2,.result-box h2{margin-bottom:8px!important;color:#4c1d95!important;font-size:30px!important}.rezultat-box p,#rezultat p,.result p,.result-box p{color:var(--muted)!important;font-weight:850!important}
-.tool-side{position:sticky;top:106px;display:grid;gap:18px}.side-card{padding:28px;border-radius:30px;background:radial-gradient(circle at top right,rgba(124,58,237,.17),transparent 38%),linear-gradient(180deg,#fff,#f5f3ff);border:1px solid #e9d5ff;box-shadow:0 20px 55px rgba(15,23,42,.08)}.side-card h2,.side-card h3{margin-bottom:10px;color:#111827;font-size:25px;line-height:1.16;letter-spacing:-.7px}.side-card p{color:var(--muted);font-size:16px;line-height:1.75}.mini-chart{height:190px;display:flex;align-items:flex-end;gap:14px;margin:24px 0;padding:20px;border-radius:24px;background:#fff;border:1px solid #ede9fe}.mini-chart i{flex:1;display:block;border-radius:14px 14px 6px 6px;background:linear-gradient(180deg,var(--violet),var(--blue));box-shadow:0 14px 25px rgba(124,58,237,.18)}.pill-list{display:grid;gap:12px}.pill-list div,.link-list a{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.78);border:1px solid var(--line);color:#334155;font-weight:900;text-decoration:none}.pill-list span{color:var(--muted)}.link-list{display:grid;gap:10px;margin-top:16px}.link-list a:hover{border-color:#c4b5fd;color:#6d28d9}
-.info-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:30px;align-items:start;margin-bottom:78px}.article-body{padding:40px;border-radius:34px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}.article-body .content{max-width:none!important;margin:0 0 22px!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;display:block!important}.article-body .content::after{display:none!important}.article-body h2{margin:30px 0 14px;color:#111827;font-size:32px;line-height:1.16;letter-spacing:-1px}.article-body h2:first-child{margin-top:0}.article-body h3{margin:22px 0 10px;color:#111827;font-size:22px}.article-body p,.article-body li{margin-bottom:16px;color:var(--muted);font-size:17px;line-height:1.85}.article-body ul{margin:10px 0 20px 24px}.note-card{padding:28px;border-radius:30px;background:linear-gradient(180deg,#fff,#f5f3ff);border:1px solid #e9d5ff;box-shadow:0 20px 55px rgba(15,23,42,.07);position:sticky;top:106px}.note-card h3{margin-bottom:12px;color:#111827;font-size:24px;letter-spacing:-.7px}.note-card p{color:var(--muted);line-height:1.8}.faq-item{margin:14px 0 18px;padding:22px;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:0 12px 34px rgba(15,23,42,.05)}.faq-item h3{margin-bottom:8px;color:#111827;font-size:20px}.footer{margin-top:90px;padding:46px 24px;text-align:center;background:#111827;color:#cbd5e1}.footer a{color:#e9d5ff;text-decoration:none;font-weight:850;margin:0 7px}.footer a:hover{color:#fff}
-@media(max-width:1000px){.tool-layout,.info-layout{grid-template-columns:1fr}.tool-side,.note-card{position:relative;top:auto}.navbar{padding:16px 20px}.calc-hero h1{font-size:44px}.calc-hero p{font-size:18px}}
-@media(max-width:700px){.navbar{flex-direction:column}.navbar nav{justify-content:center;gap:12px}.calc-main{padding:0 18px}.calc-hero{padding-top:52px}.calc-hero h1{font-size:38px;letter-spacing:-1.4px}.tool-card,.article-body{padding:28px}.tool-layout{gap:22px}.side-card,.note-card{padding:24px}}
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Prag Rentabilitate 2026 | Finance Tools RO</title>
+  <meta name="description" content="Calculator Prag Rentabilitate pentru România. Calculează rapid o estimare financiară direct în browser.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/svg+xml" href="../icons/constellation-logo.svg">
+  <meta name="theme-color" content="#07111f">
 </head>
+
 <body class="calculator-page">
+
 <header class="navbar">
-<a class="brand" href="https://mateistredie.github.io/Financetools/">
-<img src="../icons/icon-192.png" alt="Finance Tools RO logo">
-<span>Finance Tools RO</span>
-</a>
-<nav>
-<a href="../index.html">Acasă</a>
-<a href="../calculatoare.html">Calculatoare</a>
-<a href="../articole.html">Articole</a>
-<a href="../categorii.html">Categorii</a>
-<a href="../despre.html">Despre</a>
-<a href="../contact.html">Contact</a>
-</nav>
+  <a class="brand" href="../index.html">
+    <img src="../icons/constellation-logo.svg" alt="Finance Tools RO logo">
+    <span>Finance Tools RO</span>
+  </a>
+  <nav>
+    <a href="../index.html">Acasă</a>
+    <a href="../calculatoare.html">Calculatoare</a>
+    <a href="../articole.html">Articole</a>
+    <a href="../categorii.html">Categorii</a>
+    <a href="../despre.html">Despre</a>
+    <a href="../contact.html">Contact</a>
+  </nav>
 </header>
-<main class="calc-main">
-<section class="calc-hero">
-<div class="calc-badge">🧮 Calculator financiar</div>
-<h1>Calculator Prag Rentabilitate</h1>
-<p>Află câte vânzări trebuie pentru profit zero.</p>
-</section>
-<section class="tool-layout">
-<div class="tool-card">
-<h2>Introdu datele pentru calcul</h2>
-<div class="calc-box">
-<h2>Costuri fixe (RON)</h2>
-<input id="costuri" placeholder="Ex: 10000" type="number"/>
-<h2>Preț vânzare/unitate (RON)</h2>
-<input id="pret" placeholder="Ex: 100" type="number"/>
-<h2>Cost variabil/unitate (RON)</h2>
-<input id="costUnit" placeholder="Ex: 60" type="number"/>
-<button onclick="calc()">Calculează</button>
-<div class="rezultat-box">
-<h2 id="rezultat">Rezultat</h2>
-<p id="detalii"></p>
-</div>
-</div>
-</div>
-<aside class="tool-side">
-<div class="side-card">
-<h2>Rezultat rapid și clar</h2>
-<p>Completează valorile și vezi imediat estimarea. Calculele sunt făcute direct în browser.</p>
-<div class="mini-chart"><i style="height:45%"></i><i style="height:68%"></i><i style="height:55%"></i><i style="height:82%"></i><i style="height:95%"></i></div>
-<div class="pill-list"><div><strong>Rapid</strong><span>instant</span></div><div><strong>Privat</strong><span>fără cont</span></div><div><strong>Util</strong><span>decizii clare</span></div></div>
-</div>
-<div class="side-card">
-<h2>Recomandate</h2>
-<div class="link-list"><a href="calculator-salariu-net-romania.html">💼 Salariu net</a>
-<a href="calculator-credit-romania.html">🏦 Credit</a>
-<a href="calculator-tva-romania.html">🧾 TVA</a></div>
-</div>
-</aside>
-</section>
-<section class="info-layout">
-<article class="article-body">
-<section class="content">
-<h2>Calculator Prag Rentabilitate</h2><p>Află câte vânzări trebuie pentru profit zero.</p><p>Rezultatele sunt estimative și au scop informativ.</p>
-</section>
-</article>
-<aside class="note-card">
-<h3>💎 Finance Tools RO</h3>
-<p>Instrumente simple pentru decizii financiare mai clare. Gratuit, rapid și fără cont.</p>
-</aside>
-</section>
+
+<main>
+  <section class="page-hero">
+    <div class="eyebrow">Calculator financiar</div>
+    <h1>Calculator Prag Rentabilitate</h1>
+    <p>Calculator Prag Rentabilitate pentru România. Calculează rapid o estimare financiară direct în browser. Gratuit, rapid și fără cont.</p>
+  </section>
+
+  <section class="calculator-layout">
+    <div class="calc-card">
+      <h2>Introdu datele pentru calcul</h2>
+
+      <h2>Valoare principală (RON)</h2>
+      <input id="input1" type="number" placeholder="Ex: 7000">
+
+      
+        <h2>Procent / dobândă anuală (%)</h2>
+        <input id="input2" type="number" placeholder="Ex: 7">
+
+        <h2>Perioada (ani) / valoare suplimentară</h2>
+        <input id="input3" type="number" placeholder="Ex: 10">
+        
+
+      <button onclick="calculateTool('procent')">Calculează</button>
+
+      <div class="result">
+        <h2 id="resultTitle">Rezultat</h2>
+        <p id="rezultat"></p>
+      </div>
+    </div>
+
+    <aside class="visual">
+      <h2>Rezultat rapid și clar</h2>
+      <p>Completează valorile și vezi imediat estimarea. Calculele sunt făcute direct în browser.</p>
+
+      <div class="mini-bars">
+        <i style="height:45%"></i>
+        <i style="height:68%"></i>
+        <i style="height:55%"></i>
+        <i style="height:82%"></i>
+        <i style="height:95%"></i>
+      </div>
+
+      <div class="pills">
+        <div><strong>Rapid</strong><span>instant</span></div>
+        <div><strong>Privat</strong><span>fără cont</span></div>
+        <div><strong>Util</strong><span>decizii clare</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="content-layout">
+    <div class="content-main">
+      <section class="content">
+        <h2>Detalii calcul</h2>
+        <p>Acest calculator oferă o estimare rapidă pentru decizii financiare mai clare. Valorile pot varia în funcție de situația personală și de regulile aplicabile.</p>
+      </section>
+
+      <section class="content">
+        <h2>Întrebări frecvente</h2>
+        <div class="faq-item">
+          <h3>Este calculul exact?</h3>
+          <p>Este o estimare orientativă, utilă pentru comparații rapide și planificare.</p>
+        </div>
+      </section>
+    </div>
+
+    <aside class="side-stack">
+      <div class="side-card gradient">
+        <h3>Finance Tools RO</h3>
+        <p>Instrumente simple pentru decizii financiare mai clare.</p>
+      </div>
+
+      <div class="side-card">
+        <h3>Recomandate</h3>
+        <div class="side-list">
+          <a href="calculator-salariu-net-romania.html">Salariu net</a>
+          <a href="calculator-credit-romania.html">Credit</a>
+          <a href="calculator-etf.html">ETF</a>
+        </div>
+      </div>
+    </aside>
+  </section>
 </main>
-<footer class="footer"><p>© 2026 Finance Tools RO | <a href="../privacy-policy.html">Confidențialitate</a> | <a href="../terms.html">Termeni</a> | <a href="../contact.html">Contact</a></p></footer>
+
+<footer class="footer">
+  <p>© 2026 Finance Tools RO | <a href="../privacy-policy.html">Confidențialitate</a> | <a href="../terms.html">Termeni</a> | <a href="../contact.html">Contact</a></p>
+</footer>
+
 <script>
 
-function calc(){
-let cf=parseFloat(costuri.value), p=parseFloat(pret.value), cu=parseFloat(costUnit.value);
-if(isNaN(cf)||isNaN(p)||isNaN(cu)||cf<0||p<=0||cu<0||p<=cu){rezultat.innerText='Completează corect';detalii.innerText='';return;}
-let unit=cf/(p-cu);
-rezultat.innerText='Prag rentabilitate: '+Math.ceil(unit)+' unități';
-detalii.innerHTML='• Marjă/unitate: '+(p-cu).toFixed(2)+' RON';
+function val(id) {
+  return parseFloat(document.getElementById(id)?.value) || 0;
+}
+
+function writeResult(title, details) {
+  document.getElementById("resultTitle").innerText = title;
+  document.getElementById("rezultat").innerHTML = details || "";
+}
+
+function calculateTool(type) {
+  const a = val("input1");
+  const b = val("input2");
+  const c = val("input3");
+
+  if (a <= 0) {
+    writeResult("Introdu o valoare validă", "");
+    return;
+  }
+
+  if (type === "salariu") {
+    const cas = a * 0.25;
+    const cass = a * 0.10;
+    const impozit = (a - cas - cass) * 0.10;
+    const net = a - cas - cass - impozit;
+    writeResult("Rezultat: " + net.toFixed(0) + " RON", "CAS: " + cas.toFixed(0) + " RON<br>CASS: " + cass.toFixed(0) + " RON<br>Impozit: " + impozit.toFixed(0) + " RON");
+    return;
+  }
+
+  if (type === "credit") {
+    const dob = b || 7;
+    const ani = c || 20;
+    const luni = ani * 12;
+    const r = dob / 100 / 12;
+    const rata = a * (r * Math.pow(1 + r, luni)) / (Math.pow(1 + r, luni) - 1);
+    writeResult("Rată lunară: " + rata.toFixed(0) + " RON", "Total plătit: " + (rata * luni).toFixed(0) + " RON<br>Dobândă totală: " + (rata * luni - a).toFixed(0) + " RON");
+    return;
+  }
+
+  if (type === "buget") {
+    writeResult("Nevoi: " + (a * 0.5).toFixed(0) + " RON", "Dorințe: " + (a * 0.3).toFixed(0) + " RON<br>Economii: " + (a * 0.2).toFixed(0) + " RON");
+    return;
+  }
+
+  if (type === "compus") {
+    const dob = b || 7;
+    const ani = c || 10;
+    const final = a * Math.pow(1 + dob / 100, ani);
+    writeResult("Valoare finală: " + final.toFixed(0) + " RON", "Câștig estimat: " + (final - a).toFixed(0) + " RON");
+    return;
+  }
+
+  const procent = b || 19;
+  const rezultat = a * procent / 100;
+  writeResult("Rezultat: " + rezultat.toFixed(2), "Valoare: " + a.toFixed(2) + "<br>Procent: " + procent + "%");
 }
 
 </script>
+
 </body>
 </html>
