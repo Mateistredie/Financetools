@@ -1,29 +1,33 @@
 /* =========================================================
-   Finance Tools RO - Design constelație complet
-   Homepage + calculatoare + articole + despre + contact
+   Finance Tools RO - STYLE.CSS FORMATAT CORECT
+   Inlocuieste complet fisierul style.css actual cu acesta.
    ========================================================= */
 
+/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* VARIABILE */
 :root {
-  --bg: #f8fafc;
-  --card: #ffffff;
+  --dark: #07111f;
+  --dark-2: #0b1630;
   --text: #0f172a;
   --muted: #64748b;
   --line: #e5e7eb;
+  --card: #ffffff;
+  --bg: #f8fafc;
   --violet: #7c3aed;
   --blue: #2563eb;
   --cyan: #38bdf8;
-  --dark: #07111f;
-  --dark-2: #0b1630;
+  --purple-soft: #f5f3ff;
   --shadow: 0 24px 70px rgba(15, 23, 42, 0.10);
   --shadow-strong: 0 34px 95px rgba(15, 23, 42, 0.18);
 }
 
+/* BAZA */
 html {
   scroll-behavior: smooth;
 }
@@ -34,8 +38,9 @@ body {
   color: var(--text);
   line-height: 1.7;
   background:
-    radial-gradient(circle at top left, rgba(124, 58, 237, 0.10), transparent 32%),
-    linear-gradient(180deg, #ffffff, #f8fafc);
+    radial-gradient(circle at 8% 8%, rgba(124, 58, 237, 0.08), transparent 28%),
+    radial-gradient(circle at 88% 14%, rgba(37, 99, 235, 0.08), transparent 30%),
+    linear-gradient(180deg, #ffffff, #f8fafc 45%, #ffffff);
 }
 
 a {
@@ -44,6 +49,7 @@ a {
 
 img {
   max-width: 100%;
+  display: block;
 }
 
 input,
@@ -57,11 +63,11 @@ input,
 select,
 textarea {
   width: 100%;
-  min-height: 56px;
-  padding: 14px 16px;
-  border-radius: 16px;
+  min-height: 58px;
+  padding: 14px 18px;
+  border-radius: 18px;
   border: 1px solid #d8b4fe;
-  background: rgba(255, 255, 255, 0.88);
+  background: #ffffff;
   color: var(--text);
   outline: none;
 }
@@ -73,16 +79,7 @@ textarea:focus {
   box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.14);
 }
 
-button,
-.btn,
-.hero-btn {
-  cursor: pointer;
-}
-
-/* =========================
-   NAVBAR
-   ========================= */
-
+/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
@@ -93,10 +90,17 @@ button,
   justify-content: space-between;
   gap: 24px;
   padding: 16px 7%;
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.05);
+  background: rgba(7, 17, 31, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.18);
   backdrop-filter: blur(22px);
+}
+
+.constellation-home .navbar {
+  position: fixed;
+  width: 100%;
+  background: rgba(7, 17, 31, 0.42);
+  box-shadow: none;
 }
 
 .brand,
@@ -107,7 +111,7 @@ button,
   text-decoration: none;
   font-size: 22px;
   font-weight: 950;
-  color: var(--text);
+  color: #ffffff;
   letter-spacing: -0.7px;
   white-space: nowrap;
 }
@@ -129,14 +133,14 @@ button,
 
 .navbar nav a {
   text-decoration: none;
-  color: #334155;
+  color: #cbd5e1;
   font-size: 15px;
   font-weight: 850;
   transition: 0.22s ease;
 }
 
 .navbar nav a:hover {
-  color: var(--violet);
+  color: #ffffff;
 }
 
 .nav-action {
@@ -147,54 +151,41 @@ button,
   box-shadow: 0 14px 34px rgba(124, 58, 237, 0.28);
 }
 
-/* =========================
-   DARK CONSTELLATION NAV
-   ========================= */
+/* BUTOANE */
+.hero-btn,
+.btn,
+button {
+  min-height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 28px;
+  border: 0;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--violet), var(--blue));
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 950;
+  box-shadow: 0 22px 50px rgba(124, 58, 237, 0.28);
+  transition: 0.24s;
+  cursor: pointer;
+}
 
-.constellation-home .navbar,
-.constellation-page .navbar,
-.calculator-page .navbar,
-.article-page .navbar {
-  background: rgba(7, 17, 31, 0.94);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.hero-btn.secondary,
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
   box-shadow: none;
 }
 
-.constellation-home .brand span,
-.constellation-page .brand span,
-.calculator-page .brand span,
-.article-page .brand span,
-.constellation-home .navbar a,
-.constellation-page .navbar a,
-.calculator-page .navbar a,
-.article-page .navbar a {
-  color: #ffffff;
+.hero-btn:hover,
+.btn:hover,
+button:hover {
+  transform: translateY(-3px);
 }
 
-.constellation-home .navbar nav a,
-.constellation-page .navbar nav a,
-.calculator-page .navbar nav a,
-.article-page .navbar nav a {
-  color: #cbd5e1;
-}
-
-.constellation-home .navbar nav a:hover,
-.constellation-page .navbar nav a:hover,
-.calculator-page .navbar nav a:hover,
-.article-page .navbar nav a:hover {
-  color: #ffffff;
-}
-
-.constellation-home .navbar {
-  position: fixed;
-  width: 100%;
-  background: rgba(7, 17, 31, 0.42);
-}
-
-/* =========================
-   STAR BACKGROUNDS
-   ========================= */
-
+/* STELE */
 .stars,
 .page-stars {
   position: absolute;
@@ -214,11 +205,7 @@ button,
     radial-gradient(circle at 73% 56%, rgba(255,255,255,.76) 0 1px, transparent 2px),
     radial-gradient(circle at 81% 18%, rgba(196,181,253,.75) 0 1px, transparent 2px),
     radial-gradient(circle at 88% 72%, rgba(96,165,250,.65) 0 1px, transparent 2px),
-    radial-gradient(circle at 94% 38%, rgba(255,255,255,.68) 0 1px, transparent 2px),
-    radial-gradient(circle at 22% 48%, rgba(255,255,255,.45) 0 1px, transparent 2px),
-    radial-gradient(circle at 47% 36%, rgba(196,181,253,.45) 0 1px, transparent 2px),
-    radial-gradient(circle at 69% 86%, rgba(96,165,250,.45) 0 1px, transparent 2px),
-    radial-gradient(circle at 91% 8%, rgba(255,255,255,.48) 0 1px, transparent 2px);
+    radial-gradient(circle at 94% 38%, rgba(255,255,255,.68) 0 1px, transparent 2px);
 }
 
 .aurora {
@@ -245,14 +232,7 @@ button,
   background: rgba(56, 189, 248, 0.22);
 }
 
-/* =========================
-   HOMEPAGE
-   ========================= */
-
-.constellation-home {
-  background: #ffffff;
-}
-
+/* HOMEPAGE HERO */
 .constellation-hero {
   position: relative;
   overflow: hidden;
@@ -277,13 +257,14 @@ button,
   align-items: center;
 }
 
-.hero-small-label {
+.hero-small-label,
+.eyebrow {
   display: inline-flex;
   margin-bottom: 24px;
   padding: 10px 16px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #c4b5fd;
   font-size: 14px;
   font-weight: 950;
@@ -292,7 +273,6 @@ button,
 
 .hero-copy h1 {
   max-width: 680px;
-  margin: 0;
   color: #ffffff;
   font-size: clamp(54px, 7vw, 92px);
   line-height: 0.95;
@@ -312,42 +292,6 @@ button,
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 34px;
-}
-
-.hero-btn,
-.btn {
-  min-height: 60px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 30px;
-  border-radius: 18px;
-  text-decoration: none;
-  font-weight: 950;
-  border: 0;
-  transition: 0.24s;
-}
-
-.hero-btn.primary,
-.btn,
-button {
-  background: linear-gradient(135deg, var(--violet), var(--blue));
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(124, 58, 237, 0.28);
-}
-
-.hero-btn.secondary,
-.btn.secondary {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #ffffff;
-  box-shadow: none;
-}
-
-.hero-btn:hover,
-.btn:hover,
-button:hover {
-  transform: translateY(-3px);
 }
 
 .hero-metrics {
@@ -381,7 +325,7 @@ button:hover {
   font-weight: 850;
 }
 
-/* Hero map */
+/* HARTA HOMEPAGE */
 .hero-map-wrap {
   position: relative;
   min-height: 560px;
@@ -527,10 +471,7 @@ button:hover {
   }
 }
 
-/* =========================
-   PAGE HERO - calculators/articles/about/contact
-   ========================= */
-
+/* HERO PAGINI */
 .page-hero,
 .calc-hero,
 .article-hero,
@@ -538,13 +479,37 @@ button:hover {
 .about-hero {
   position: relative;
   overflow: hidden;
-  padding: 120px 24px 82px;
-  background:
-    radial-gradient(circle at 70% 22%, rgba(124, 58, 237, 0.34), transparent 28%),
-    radial-gradient(circle at 20% 18%, rgba(37, 99, 235, 0.22), transparent 30%),
-    linear-gradient(135deg, #07111f, #0b1630 58%, #030712);
-  color: #ffffff;
+  max-width: 1180px;
+  margin: 34px auto 0;
+  padding: 82px 34px 70px;
+  border-radius: 0 0 42px 42px;
   text-align: center;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(56, 189, 248, 0.22), transparent 26%),
+    radial-gradient(circle at 82% 20%, rgba(124, 58, 237, 0.28), transparent 30%),
+    linear-gradient(135deg, #07111f 0%, #0b1630 55%, #030712 100%);
+  color: #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.page-hero::before,
+.calc-hero::before,
+.article-hero::before,
+.contact-hero::before,
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.68;
+  background-image:
+    radial-gradient(circle at 8% 18%, rgba(255,255,255,.72) 0 1px, transparent 2px),
+    radial-gradient(circle at 18% 78%, rgba(196,181,253,.62) 0 1px, transparent 2px),
+    radial-gradient(circle at 32% 28%, rgba(96,165,250,.58) 0 1px, transparent 2px),
+    radial-gradient(circle at 46% 64%, rgba(255,255,255,.50) 0 1px, transparent 2px),
+    radial-gradient(circle at 62% 18%, rgba(196,181,253,.62) 0 1px, transparent 2px),
+    radial-gradient(circle at 78% 74%, rgba(96,165,250,.58) 0 1px, transparent 2px),
+    radial-gradient(circle at 92% 32%, rgba(255,255,255,.60) 0 1px, transparent 2px);
 }
 
 .page-hero > *,
@@ -556,31 +521,18 @@ button:hover {
   z-index: 1;
 }
 
-.page-hero .eyebrow,
-.calc-hero .eyebrow,
-.article-hero .eyebrow {
-  display: inline-flex;
-  margin-bottom: 18px;
-  padding: 9px 15px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #c4b5fd;
-  font-size: 14px;
-  font-weight: 950;
-}
-
 .page-hero h1,
 .calc-hero h1,
 .article-hero h1,
 .contact-hero h1,
 .about-hero h1 {
-  max-width: 980px;
+  max-width: 960px;
   margin: 0 auto;
   color: #ffffff;
-  font-size: clamp(42px, 6vw, 78px);
-  line-height: 1;
-  letter-spacing: -3px;
+  font-size: clamp(42px, 5.2vw, 72px);
+  line-height: 1.03;
+  letter-spacing: -2.4px;
+  text-shadow: 0 16px 44px rgba(0, 0, 0, 0.28);
 }
 
 .page-hero p,
@@ -588,16 +540,14 @@ button:hover {
 .article-hero p,
 .contact-hero p,
 .about-hero p {
-  max-width: 780px;
+  max-width: 760px;
   margin: 22px auto 0;
   color: #cbd5e1;
-  font-size: 20px;
+  font-size: 19px;
+  line-height: 1.7;
 }
 
-/* =========================
-   LIST PAGES
-   ========================= */
-
+/* GRID LISTE */
 .page-shell {
   max-width: 1280px;
   margin: 0 auto;
@@ -654,18 +604,20 @@ button:hover {
 
 .tool-card span,
 .article-card span,
-.category-card span {
+.category-card span,
+.card-symbol {
   display: inline-grid;
   place-items: center;
-  width: 54px;
-  height: 54px;
+  width: 62px;
+  height: 62px;
   margin-bottom: 22px;
-  border-radius: 18px;
-  background: #07111f;
+  border-radius: 20px;
+  background: var(--dark);
   color: #ffffff;
   font-weight: 950;
   position: relative;
   z-index: 1;
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.20);
 }
 
 .tool-card h2,
@@ -693,90 +645,116 @@ button:hover {
   color: var(--muted);
 }
 
-/* =========================
-   CALCULATOR PAGES
-   ========================= */
-
+/* CALCULATOARE */
 .premium-calculator,
 .calculator-layout,
 .calc-layout {
   max-width: 1180px;
-  margin: 70px auto;
+  margin: 42px auto 0;
   padding: 0 24px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
-  align-items: start;
-}
-
-.calculator-card,
-.calc-box,
-.rezultat-box,
-.calculator-visual,
-.side-card,
-.content,
-.faq-item {
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid var(--line);
-  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
+  gap: 26px;
+  align-items: stretch;
 }
 
 .calculator-card,
 .calc-box {
+  width: 100%;
+  max-width: none;
+  margin: 0;
   padding: 34px;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent 36%),
+    #ffffff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 
-.calc-box h2,
-.calculator-card h2 {
-  margin-bottom: 14px;
-  font-size: 24px;
-  letter-spacing: -0.6px;
+.calculator-card .calc-box {
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
 }
 
+.calculator-card h2,
+.calc-box h2 {
+  margin: 18px 0 10px;
+  color: #111827;
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+}
+
+.calculator-card > h2:first-child,
+.calc-box > h2:first-child {
+  margin-top: 0;
+}
+
+.calculator-card input,
 .calc-box input,
-.calculator-card input {
+.calculator-card select,
+.calc-box select {
   margin-bottom: 16px;
 }
 
-.calc-box button,
-.calculator-card button {
+.calculator-card button,
+.calc-box button {
   width: 100%;
-  min-height: 58px;
-  margin: 10px 0 18px;
-  border: 0;
-  border-radius: 18px;
-  font-weight: 950;
+  margin-top: 10px;
 }
 
 .rezultat-box {
-  margin-top: 22px;
-  padding: 26px;
-  text-align: center;
+  margin-top: 24px;
+  padding: 28px;
+  border-radius: 28px;
   background:
-    radial-gradient(circle at top right, rgba(124, 58, 237, 0.12), transparent 42%),
-    #ffffff;
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.14), transparent 42%),
+    linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid var(--line);
+  text-align: center;
+  box-shadow: none;
 }
 
 .rezultat-box h2 {
+  margin: 0;
   color: #4c1d95;
-  font-size: 30px;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.15;
 }
 
-.calculator-visual,
-.side-card {
-  padding: 30px;
+.rezultat-box p {
+  margin-top: 10px;
+  color: var(--muted);
 }
 
 .calculator-visual {
-  min-height: 430px;
+  min-height: auto;
+  padding: 34px;
+  border-radius: 34px;
   background:
-    radial-gradient(circle at top right, rgba(124, 58, 237, 0.20), transparent 36%),
+    radial-gradient(circle at 75% 12%, rgba(124, 58, 237, 0.26), transparent 34%),
+    radial-gradient(circle at 20% 78%, rgba(56, 189, 248, 0.14), transparent 32%),
     linear-gradient(135deg, #07111f, #111827);
   color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: var(--shadow-strong);
+  overflow: hidden;
+}
+
+.calculator-visual h2,
+.calculator-visual h3 {
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
 }
 
 .calculator-visual p {
+  margin-top: 12px;
   color: #cbd5e1;
 }
 
@@ -788,8 +766,8 @@ button:hover {
   margin-top: 34px;
   padding: 22px;
   border-radius: 24px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .mini-bars i {
@@ -810,23 +788,35 @@ button:hover {
   justify-content: space-between;
   padding: 14px;
   border-radius: 16px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
 }
 
+/* CONTENT */
 .premium-content,
 .article-layout {
   max-width: 1180px;
-  margin: 70px auto;
+  margin: 58px auto 0;
   padding: 0 24px;
   display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 26px;
   align-items: start;
 }
 
-.content-main {
+.content-main,
+.side-stack {
   display: grid;
   gap: 22px;
+}
+
+.content,
+.side-card,
+.faq-item {
+  border-radius: 30px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
 }
 
 .content {
@@ -835,13 +825,15 @@ button:hover {
 
 .content h2 {
   margin-bottom: 14px;
+  color: #111827;
   font-size: 32px;
   letter-spacing: -1px;
 }
 
 .content h3 {
   margin: 24px 0 8px;
-  font-size: 24px;
+  color: #111827;
+  font-size: 23px;
 }
 
 .content p,
@@ -855,14 +847,9 @@ button:hover {
   margin: 14px 0;
 }
 
-.faq-item {
+.faq-item,
+.side-card {
   padding: 24px;
-  margin-top: 16px;
-}
-
-.side-stack {
-  display: grid;
-  gap: 18px;
 }
 
 .side-list {
@@ -893,17 +880,14 @@ button:hover {
   color: #cbd5e1;
 }
 
-/* =========================
-   ABOUT / CONTACT
-   ========================= */
-
+/* ABOUT CONTACT */
 .about-grid,
 .contact-grid {
   max-width: 1180px;
-  margin: 70px auto;
+  margin: 58px auto 0;
   padding: 0 24px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -935,14 +919,31 @@ button:hover {
   text-decoration: none;
 }
 
-/* =========================
-   MONEY PATH
-   ========================= */
-
-.money-path-section {
+/* SECTIUNI HOMEPAGE */
+.money-path-section,
+.home-section {
   max-width: 1280px;
   margin: 0 auto;
   padding: 90px 24px 0;
+}
+
+.section-heading {
+  max-width: 820px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin-bottom: 12px;
+  color: var(--text);
+  font-size: clamp(34px, 4.2vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -1.8px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 18px;
 }
 
 .money-path {
@@ -976,7 +977,7 @@ button:hover {
   height: 42px;
   margin-bottom: 20px;
   border-radius: 14px;
-  background: #07111f;
+  background: var(--dark);
   color: #ffffff;
   font-weight: 950;
 }
@@ -1001,44 +1002,23 @@ button:hover {
   box-shadow: 0 0 20px rgba(124, 58, 237, 0.28);
 }
 
-/* =========================
-   HOMEPAGE CARDS
-   ========================= */
-
-.home-section {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 90px 24px 0;
-}
-
-.section-heading {
-  max-width: 820px;
-  margin: 0 auto 30px;
-  text-align: center;
-}
-
-.section-heading h2 {
-  margin-bottom: 12px;
-  color: var(--text);
-  font-size: clamp(34px, 4.2vw, 56px);
-  line-height: 1.08;
-  letter-spacing: -1.8px;
-}
-
-.section-heading p {
-  color: var(--muted);
-  font-size: 18px;
-}
-
-.premium-grid {
+.premium-grid,
+.article-grid-premium {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
   gap: 22px;
 }
 
-.premium-card {
+.premium-grid {
+  grid-template-columns: 1.2fr 1fr 1fr;
+}
+
+.article-grid-premium {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.premium-card,
+.article-card-premium {
   position: relative;
-  min-height: 220px;
   padding: 30px;
   border-radius: 32px;
   background: #ffffff;
@@ -1049,7 +1029,16 @@ button:hover {
   transition: 0.24s;
 }
 
-.premium-card:hover {
+.premium-card {
+  min-height: 220px;
+}
+
+.article-card-premium {
+  padding: 18px;
+}
+
+.premium-card:hover,
+.article-card-premium:hover {
   transform: translateY(-7px);
   border-color: #c4b5fd;
 }
@@ -1059,20 +1048,7 @@ button:hover {
   min-height: 462px;
   background:
     radial-gradient(circle at top right, rgba(124, 58, 237, 0.18), transparent 42%),
-    linear-gradient(180deg, #ffffff, #f5f3ff);
-}
-
-.card-symbol {
-  width: 62px;
-  height: 62px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 22px;
-  border-radius: 20px;
-  background: var(--dark);
-  color: #ffffff;
-  font-weight: 950;
-  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.20);
+    linear-gradient(180deg, #ffffff, var(--purple-soft));
 }
 
 .premium-card.big .card-symbol {
@@ -1094,31 +1070,9 @@ button:hover {
   font-size: 42px;
 }
 
-.premium-card p {
+.premium-card p,
+.article-card-premium p {
   color: var(--muted);
-  font-size: 16px;
-}
-
-.article-grid-premium {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.article-card-premium {
-  padding: 18px;
-  border-radius: 32px;
-  background: #ffffff;
-  border: 1px solid var(--line);
-  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
-  color: var(--text);
-  text-decoration: none;
-  transition: 0.24s;
-}
-
-.article-card-premium:hover {
-  transform: translateY(-7px);
-  border-color: #c4b5fd;
 }
 
 .article-symbol {
@@ -1143,11 +1097,7 @@ button:hover {
   line-height: 1.2;
 }
 
-.article-card-premium p {
-  color: var(--muted);
-  font-size: 15.5px;
-}
-
+/* CTA FOOTER */
 .final-cta {
   max-width: 1280px;
   margin: 90px auto 20px;
@@ -1165,7 +1115,7 @@ button:hover {
     radial-gradient(circle at right, rgba(124, 58, 237, 0.18), transparent 36%),
     linear-gradient(135deg, #07111f, #111827);
   color: #ffffff;
-  box-shadow: 0 30px 90px rgba(15, 23, 42, 0.18);
+  box-shadow: var(--shadow-strong);
 }
 
 .final-cta-box h2 {
@@ -1179,10 +1129,6 @@ button:hover {
   color: #cbd5e1;
   font-size: 17px;
 }
-
-/* =========================
-   FOOTER
-   ========================= */
 
 .footer {
   margin-top: 90px;
@@ -1199,10 +1145,7 @@ button:hover {
   font-weight: 850;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
-
+/* RESPONSIVE */
 @media (max-width: 1100px) {
   .hero-grid,
   .final-cta-box,
@@ -1252,6 +1195,14 @@ button:hover {
     grid-row: auto;
     min-height: 280px;
   }
+
+  .calc-hero,
+  .page-hero,
+  .article-hero,
+  .about-hero,
+  .contact-hero {
+    margin: 24px 18px 0;
+  }
 }
 
 @media (max-width: 760px) {
@@ -1284,8 +1235,8 @@ button:hover {
   .article-hero h1,
   .contact-hero h1,
   .about-hero h1 {
-    font-size: 42px;
-    letter-spacing: -1.7px;
+    font-size: 38px;
+    letter-spacing: -1.4px;
   }
 
   .hero-copy p,
@@ -1294,7 +1245,7 @@ button:hover {
   .article-hero p,
   .contact-hero p,
   .about-hero p {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .hero-actions {
@@ -1337,463 +1288,20 @@ button:hover {
     padding: 26px;
   }
 
-  /* =========================================================
-   FIX FINAL - Calculatoare + Articole + Despre + Contact
-   Adaugă acest bloc LA FINALUL fișierului style.css
-   Nu șterge CSS-ul existent.
-   ========================================================= */
-
-/* Repară fundalul paginilor */
-body.calculator-page,
-body.article-page,
-body.constellation-page {
-  background:
-    radial-gradient(circle at 12% 8%, rgba(124, 58, 237, 0.08), transparent 28%),
-    radial-gradient(circle at 88% 18%, rgba(37, 99, 235, 0.08), transparent 30%),
-    linear-gradient(180deg, #ffffff 0%, #f8fafc 48%, #ffffff 100%) !important;
-}
-
-/* Header mai curat pe paginile de calculatoare/articole */
-body.calculator-page .navbar,
-body.article-page .navbar,
-body.constellation-page .navbar {
-  background: rgba(7, 17, 31, 0.96) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.18) !important;
-}
-
-body.calculator-page .brand span,
-body.article-page .brand span,
-body.constellation-page .brand span,
-body.calculator-page .navbar a,
-body.article-page .navbar a,
-body.constellation-page .navbar a {
-  color: #ffffff !important;
-}
-
-/* HERO CALCULATOARE - mai premium, nu mai taie titlul */
-body.calculator-page .calc-hero,
-body.calculator-page .page-hero,
-body.article-page .article-hero,
-body.article-page .page-hero {
-  max-width: 1180px !important;
-  margin: 34px auto 0 !important;
-  padding: 82px 34px 70px !important;
-  border-radius: 0 0 42px 42px !important;
-  text-align: center !important;
-  overflow: hidden !important;
-  position: relative !important;
-  background:
-    radial-gradient(circle at 18% 24%, rgba(56, 189, 248, 0.22), transparent 26%),
-    radial-gradient(circle at 82% 20%, rgba(124, 58, 237, 0.28), transparent 30%),
-    linear-gradient(135deg, #07111f 0%, #0b1630 55%, #030712 100%) !important;
-  box-shadow: 0 30px 90px rgba(15, 23, 42, 0.18) !important;
-}
-
-/* stele discrete în hero */
-body.calculator-page .calc-hero::before,
-body.calculator-page .page-hero::before,
-body.article-page .article-hero::before,
-body.article-page .page-hero::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  pointer-events: none !important;
-  opacity: 0.65 !important;
-  background-image:
-    radial-gradient(circle at 8% 18%, rgba(255,255,255,.72) 0 1px, transparent 2px),
-    radial-gradient(circle at 18% 78%, rgba(196,181,253,.62) 0 1px, transparent 2px),
-    radial-gradient(circle at 32% 28%, rgba(96,165,250,.58) 0 1px, transparent 2px),
-    radial-gradient(circle at 46% 64%, rgba(255,255,255,.50) 0 1px, transparent 2px),
-    radial-gradient(circle at 62% 18%, rgba(196,181,253,.62) 0 1px, transparent 2px),
-    radial-gradient(circle at 78% 74%, rgba(96,165,250,.58) 0 1px, transparent 2px),
-    radial-gradient(circle at 92% 32%, rgba(255,255,255,.60) 0 1px, transparent 2px) !important;
-}
-
-body.calculator-page .calc-hero > *,
-body.calculator-page .page-hero > *,
-body.article-page .article-hero > *,
-body.article-page .page-hero > * {
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-/* badge-ul mic de sus */
-body.calculator-page .calc-hero .eyebrow,
-body.calculator-page .page-hero .eyebrow,
-body.article-page .article-hero .eyebrow,
-body.article-page .page-hero .eyebrow {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto 22px !important;
-  padding: 10px 18px !important;
-  border-radius: 999px !important;
-  background: rgba(255, 255, 255, 0.10) !important;
-  border: 1px solid rgba(255, 255, 255, 0.16) !important;
-  color: #c4b5fd !important;
-  font-size: 14px !important;
-  font-weight: 950 !important;
-  box-shadow: none !important;
-}
-
-/* titlul nu mai este gigantic și nu se mai taie */
-body.calculator-page .calc-hero h1,
-body.calculator-page .page-hero h1,
-body.article-page .article-hero h1,
-body.article-page .page-hero h1 {
-  max-width: 960px !important;
-  margin: 0 auto !important;
-  color: #ffffff !important;
-  font-size: clamp(42px, 5.2vw, 72px) !important;
-  line-height: 1.03 !important;
-  letter-spacing: -2.4px !important;
-  background: none !important;
-  -webkit-text-fill-color: #ffffff !important;
-  text-shadow: 0 16px 44px rgba(0, 0, 0, 0.28) !important;
-  transform: none !important;
-  opacity: 1 !important;
-}
-
-/* descrierea */
-body.calculator-page .calc-hero p,
-body.calculator-page .page-hero p,
-body.article-page .article-hero p,
-body.article-page .page-hero p {
-  max-width: 760px !important;
-  margin: 22px auto 0 !important;
-  color: #cbd5e1 !important;
-  font-size: 19px !important;
-  line-height: 1.7 !important;
-}
-
-/* Layout formular + rezultat */
-body.calculator-page .premium-calculator,
-body.calculator-page .calculator-layout,
-body.calculator-page .calc-layout {
-  max-width: 1180px !important;
-  margin: 42px auto 0 !important;
-  padding: 0 24px !important;
-  display: grid !important;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr) !important;
-  gap: 26px !important;
-  align-items: stretch !important;
-}
-
-/* cardul formularului */
-body.calculator-page .calculator-card,
-body.calculator-page .calc-box {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 34px !important;
-  border-radius: 34px !important;
-  background:
-    radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent 36%),
-    #ffffff !important;
-  border: 1px solid #e5e7eb !important;
-  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.10) !important;
-}
-
-/* scoate dublurile vizuale dacă există calc-box în calculator-card */
-body.calculator-page .calculator-card .calc-box {
-  padding: 0 !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  background: transparent !important;
-  border-radius: 0 !important;
-}
-
-/* titluri din formular */
-body.calculator-page .calculator-card h2,
-body.calculator-page .calc-box h2 {
-  margin: 18px 0 10px !important;
-  color: #111827 !important;
-  font-size: 18px !important;
-  line-height: 1.25 !important;
-  letter-spacing: -0.3px !important;
-}
-
-body.calculator-page .calculator-card > h2:first-child,
-body.calculator-page .calc-box > h2:first-child {
-  margin-top: 0 !important;
-}
-
-/* inputuri */
-body.calculator-page input,
-body.calculator-page select {
-  width: 100% !important;
-  min-height: 58px !important;
-  padding: 14px 18px !important;
-  border-radius: 18px !important;
-  border: 1px solid #d8b4fe !important;
-  background: #ffffff !important;
-  color: #111827 !important;
-  font-size: 16px !important;
-  outline: none !important;
-}
-
-body.calculator-page input:focus,
-body.calculator-page select:focus {
-  border-color: #7c3aed !important;
-  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.14) !important;
-}
-
-/* buton */
-body.calculator-page button {
-  width: 100% !important;
-  min-height: 60px !important;
-  margin: 18px 0 0 !important;
-  border: 0 !important;
-  border-radius: 18px !important;
-  background: linear-gradient(135deg, #7c3aed, #2563eb) !important;
-  color: #ffffff !important;
-  font-size: 16px !important;
-  font-weight: 950 !important;
-  box-shadow: 0 22px 50px rgba(124, 58, 237, 0.26) !important;
-  cursor: pointer !important;
-}
-
-/* rezultat */
-body.calculator-page .rezultat-box {
-  margin-top: 24px !important;
-  padding: 28px !important;
-  border-radius: 28px !important;
-  background:
-    radial-gradient(circle at top right, rgba(124, 58, 237, 0.14), transparent 42%),
-    linear-gradient(180deg, #ffffff, #f8fafc) !important;
-  border: 1px solid #e5e7eb !important;
-  text-align: center !important;
-  box-shadow: none !important;
-}
-
-body.calculator-page .rezultat-box h2 {
-  margin: 0 !important;
-  color: #4c1d95 !important;
-  font-size: clamp(24px, 3vw, 36px) !important;
-  line-height: 1.15 !important;
-}
-
-body.calculator-page .rezultat-box p {
-  margin-top: 10px !important;
-  color: #64748b !important;
-}
-
-/* panelul din dreapta */
-body.calculator-page .calculator-visual {
-  min-height: auto !important;
-  padding: 34px !important;
-  border-radius: 34px !important;
-  background:
-    radial-gradient(circle at 75% 12%, rgba(124, 58, 237, 0.26), transparent 34%),
-    radial-gradient(circle at 20% 78%, rgba(56, 189, 248, 0.14), transparent 32%),
-    linear-gradient(135deg, #07111f, #111827) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.10) !important;
-  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.18) !important;
-  overflow: hidden !important;
-}
-
-body.calculator-page .calculator-visual h2,
-body.calculator-page .calculator-visual h3 {
-  color: #ffffff !important;
-  font-size: 28px !important;
-  line-height: 1.15 !important;
-  letter-spacing: -0.8px !important;
-}
-
-body.calculator-page .calculator-visual p {
-  margin-top: 12px !important;
-  color: #cbd5e1 !important;
-}
-
-/* graficul din dreapta */
-body.calculator-page .mini-bars {
-  height: 180px !important;
-  display: flex !important;
-  align-items: flex-end !important;
-  gap: 14px !important;
-  margin-top: 34px !important;
-  padding: 22px !important;
-  border-radius: 24px !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-}
-
-body.calculator-page .mini-bars i {
-  flex: 1 !important;
-  display: block !important;
-  border-radius: 14px 14px 6px 6px !important;
-  background: linear-gradient(180deg, #38bdf8, #7c3aed, #2563eb) !important;
-}
-
-/* pastile dreapta */
-body.calculator-page .visual-pills {
-  display: grid !important;
-  gap: 12px !important;
-  margin-top: 24px !important;
-}
-
-body.calculator-page .visual-pills div {
-  display: flex !important;
-  justify-content: space-between !important;
-  padding: 14px !important;
-  border-radius: 16px !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  color: #ffffff !important;
-}
-
-/* secțiuni text de sub calculator */
-body.calculator-page .premium-content,
-body.calculator-page .article-layout {
-  max-width: 1180px !important;
-  margin: 58px auto 0 !important;
-  padding: 0 24px !important;
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) 320px !important;
-  gap: 26px !important;
-  align-items: start !important;
-}
-
-body.calculator-page .content,
-body.calculator-page .side-card,
-body.calculator-page .faq-item {
-  border-radius: 30px !important;
-  background: #ffffff !important;
-  border: 1px solid #e5e7eb !important;
-  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07) !important;
-}
-
-body.calculator-page .content {
-  padding: 34px !important;
-}
-
-body.calculator-page .content h2 {
-  margin-bottom: 14px !important;
-  color: #111827 !important;
-  font-size: 32px !important;
-  letter-spacing: -1px !important;
-}
-
-body.calculator-page .content h3 {
-  margin: 24px 0 8px !important;
-  color: #111827 !important;
-  font-size: 23px !important;
-}
-
-body.calculator-page .content p,
-body.calculator-page .content li {
-  color: #475569 !important;
-  font-size: 17px !important;
-}
-
-/* Articole individuale */
-body.article-page .article-layout {
-  max-width: 1180px !important;
-  margin: 58px auto 0 !important;
-  padding: 0 24px !important;
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) 320px !important;
-  gap: 26px !important;
-}
-
-body.article-page .content {
-  padding: 38px !important;
-  border-radius: 34px !important;
-  background: #ffffff !important;
-  border: 1px solid #e5e7eb !important;
-  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07) !important;
-}
-
-body.article-page .content h2 {
-  font-size: 34px !important;
-  letter-spacing: -1px !important;
-}
-
-body.article-page .content p,
-body.article-page .content li {
-  color: #475569 !important;
-  font-size: 18px !important;
-}
-
-/* Despre + Contact */
-body.constellation-page .about-grid,
-body.constellation-page .contact-grid {
-  max-width: 1180px !important;
-  margin: 58px auto 0 !important;
-  padding: 0 24px !important;
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
-  gap: 24px !important;
-}
-
-body.constellation-page .about-panel,
-body.constellation-page .contact-panel {
-  padding: 36px !important;
-  border-radius: 32px !important;
-  background: #ffffff !important;
-  border: 1px solid #e5e7eb !important;
-  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07) !important;
-}
-
-/* responsive */
-@media (max-width: 1100px) {
-  body.calculator-page .premium-calculator,
-  body.calculator-page .calculator-layout,
-  body.calculator-page .calc-layout,
-  body.calculator-page .premium-content,
-  body.calculator-page .article-layout,
-  body.article-page .article-layout,
-  body.constellation-page .about-grid,
-  body.constellation-page .contact-grid {
-    grid-template-columns: 1fr !important;
+  .premium-calculator,
+  .calculator-layout,
+  .calc-layout,
+  .premium-content,
+  .article-layout {
+    padding: 0 18px;
   }
 
-  body.calculator-page .calc-hero,
-  body.calculator-page .page-hero,
-  body.article-page .article-hero,
-  body.article-page .page-hero {
-    margin: 24px 18px 0 !important;
+  .calc-hero,
+  .page-hero,
+  .article-hero,
+  .about-hero,
+  .contact-hero {
+    padding: 58px 20px 50px;
+    border-radius: 0 0 30px 30px;
   }
 }
-
-@media (max-width: 760px) {
-  body.calculator-page .calc-hero,
-  body.calculator-page .page-hero,
-  body.article-page .article-hero,
-  body.article-page .page-hero {
-    padding: 58px 20px 50px !important;
-    border-radius: 0 0 30px 30px !important;
-  }
-
-  body.calculator-page .calc-hero h1,
-  body.calculator-page .page-hero h1,
-  body.article-page .article-hero h1,
-  body.article-page .page-hero h1 {
-    font-size: 38px !important;
-    letter-spacing: -1.4px !important;
-  }
-
-  body.calculator-page .calc-hero p,
-  body.calculator-page .page-hero p,
-  body.article-page .article-hero p,
-  body.article-page .page-hero p {
-    font-size: 17px !important;
-  }
-
-  body.calculator-page .premium-calculator,
-  body.calculator-page .calculator-layout,
-  body.calculator-page .calc-layout,
-  body.calculator-page .premium-content,
-  body.calculator-page .article-layout,
-  body.article-page .article-layout {
-    padding: 0 18px !important;
-  }
-
-  body.calculator-page .calculator-card,
-  body.calculator-page .calc-box,
-  body.article-page .content {
-    padding: 26px !important;
-  }
-}
-
