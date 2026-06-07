@@ -1336,4 +1336,464 @@ button:hover {
   .contact-panel {
     padding: 26px;
   }
+
+  /* =========================================================
+   FIX FINAL - Calculatoare + Articole + Despre + Contact
+   Adaugă acest bloc LA FINALUL fișierului style.css
+   Nu șterge CSS-ul existent.
+   ========================================================= */
+
+/* Repară fundalul paginilor */
+body.calculator-page,
+body.article-page,
+body.constellation-page {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(124, 58, 237, 0.08), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(37, 99, 235, 0.08), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 48%, #ffffff 100%) !important;
 }
+
+/* Header mai curat pe paginile de calculatoare/articole */
+body.calculator-page .navbar,
+body.article-page .navbar,
+body.constellation-page .navbar {
+  background: rgba(7, 17, 31, 0.96) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.18) !important;
+}
+
+body.calculator-page .brand span,
+body.article-page .brand span,
+body.constellation-page .brand span,
+body.calculator-page .navbar a,
+body.article-page .navbar a,
+body.constellation-page .navbar a {
+  color: #ffffff !important;
+}
+
+/* HERO CALCULATOARE - mai premium, nu mai taie titlul */
+body.calculator-page .calc-hero,
+body.calculator-page .page-hero,
+body.article-page .article-hero,
+body.article-page .page-hero {
+  max-width: 1180px !important;
+  margin: 34px auto 0 !important;
+  padding: 82px 34px 70px !important;
+  border-radius: 0 0 42px 42px !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  position: relative !important;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(56, 189, 248, 0.22), transparent 26%),
+    radial-gradient(circle at 82% 20%, rgba(124, 58, 237, 0.28), transparent 30%),
+    linear-gradient(135deg, #07111f 0%, #0b1630 55%, #030712 100%) !important;
+  box-shadow: 0 30px 90px rgba(15, 23, 42, 0.18) !important;
+}
+
+/* stele discrete în hero */
+body.calculator-page .calc-hero::before,
+body.calculator-page .page-hero::before,
+body.article-page .article-hero::before,
+body.article-page .page-hero::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  opacity: 0.65 !important;
+  background-image:
+    radial-gradient(circle at 8% 18%, rgba(255,255,255,.72) 0 1px, transparent 2px),
+    radial-gradient(circle at 18% 78%, rgba(196,181,253,.62) 0 1px, transparent 2px),
+    radial-gradient(circle at 32% 28%, rgba(96,165,250,.58) 0 1px, transparent 2px),
+    radial-gradient(circle at 46% 64%, rgba(255,255,255,.50) 0 1px, transparent 2px),
+    radial-gradient(circle at 62% 18%, rgba(196,181,253,.62) 0 1px, transparent 2px),
+    radial-gradient(circle at 78% 74%, rgba(96,165,250,.58) 0 1px, transparent 2px),
+    radial-gradient(circle at 92% 32%, rgba(255,255,255,.60) 0 1px, transparent 2px) !important;
+}
+
+body.calculator-page .calc-hero > *,
+body.calculator-page .page-hero > *,
+body.article-page .article-hero > *,
+body.article-page .page-hero > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* badge-ul mic de sus */
+body.calculator-page .calc-hero .eyebrow,
+body.calculator-page .page-hero .eyebrow,
+body.article-page .article-hero .eyebrow,
+body.article-page .page-hero .eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 22px !important;
+  padding: 10px 18px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #c4b5fd !important;
+  font-size: 14px !important;
+  font-weight: 950 !important;
+  box-shadow: none !important;
+}
+
+/* titlul nu mai este gigantic și nu se mai taie */
+body.calculator-page .calc-hero h1,
+body.calculator-page .page-hero h1,
+body.article-page .article-hero h1,
+body.article-page .page-hero h1 {
+  max-width: 960px !important;
+  margin: 0 auto !important;
+  color: #ffffff !important;
+  font-size: clamp(42px, 5.2vw, 72px) !important;
+  line-height: 1.03 !important;
+  letter-spacing: -2.4px !important;
+  background: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 16px 44px rgba(0, 0, 0, 0.28) !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* descrierea */
+body.calculator-page .calc-hero p,
+body.calculator-page .page-hero p,
+body.article-page .article-hero p,
+body.article-page .page-hero p {
+  max-width: 760px !important;
+  margin: 22px auto 0 !important;
+  color: #cbd5e1 !important;
+  font-size: 19px !important;
+  line-height: 1.7 !important;
+}
+
+/* Layout formular + rezultat */
+body.calculator-page .premium-calculator,
+body.calculator-page .calculator-layout,
+body.calculator-page .calc-layout {
+  max-width: 1180px !important;
+  margin: 42px auto 0 !important;
+  padding: 0 24px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr) !important;
+  gap: 26px !important;
+  align-items: stretch !important;
+}
+
+/* cardul formularului */
+body.calculator-page .calculator-card,
+body.calculator-page .calc-box {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 34px !important;
+  border-radius: 34px !important;
+  background:
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent 36%),
+    #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.10) !important;
+}
+
+/* scoate dublurile vizuale dacă există calc-box în calculator-card */
+body.calculator-page .calculator-card .calc-box {
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+/* titluri din formular */
+body.calculator-page .calculator-card h2,
+body.calculator-page .calc-box h2 {
+  margin: 18px 0 10px !important;
+  color: #111827 !important;
+  font-size: 18px !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.3px !important;
+}
+
+body.calculator-page .calculator-card > h2:first-child,
+body.calculator-page .calc-box > h2:first-child {
+  margin-top: 0 !important;
+}
+
+/* inputuri */
+body.calculator-page input,
+body.calculator-page select {
+  width: 100% !important;
+  min-height: 58px !important;
+  padding: 14px 18px !important;
+  border-radius: 18px !important;
+  border: 1px solid #d8b4fe !important;
+  background: #ffffff !important;
+  color: #111827 !important;
+  font-size: 16px !important;
+  outline: none !important;
+}
+
+body.calculator-page input:focus,
+body.calculator-page select:focus {
+  border-color: #7c3aed !important;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.14) !important;
+}
+
+/* buton */
+body.calculator-page button {
+  width: 100% !important;
+  min-height: 60px !important;
+  margin: 18px 0 0 !important;
+  border: 0 !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, #7c3aed, #2563eb) !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-weight: 950 !important;
+  box-shadow: 0 22px 50px rgba(124, 58, 237, 0.26) !important;
+  cursor: pointer !important;
+}
+
+/* rezultat */
+body.calculator-page .rezultat-box {
+  margin-top: 24px !important;
+  padding: 28px !important;
+  border-radius: 28px !important;
+  background:
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.14), transparent 42%),
+    linear-gradient(180deg, #ffffff, #f8fafc) !important;
+  border: 1px solid #e5e7eb !important;
+  text-align: center !important;
+  box-shadow: none !important;
+}
+
+body.calculator-page .rezultat-box h2 {
+  margin: 0 !important;
+  color: #4c1d95 !important;
+  font-size: clamp(24px, 3vw, 36px) !important;
+  line-height: 1.15 !important;
+}
+
+body.calculator-page .rezultat-box p {
+  margin-top: 10px !important;
+  color: #64748b !important;
+}
+
+/* panelul din dreapta */
+body.calculator-page .calculator-visual {
+  min-height: auto !important;
+  padding: 34px !important;
+  border-radius: 34px !important;
+  background:
+    radial-gradient(circle at 75% 12%, rgba(124, 58, 237, 0.26), transparent 34%),
+    radial-gradient(circle at 20% 78%, rgba(56, 189, 248, 0.14), transparent 32%),
+    linear-gradient(135deg, #07111f, #111827) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.18) !important;
+  overflow: hidden !important;
+}
+
+body.calculator-page .calculator-visual h2,
+body.calculator-page .calculator-visual h3 {
+  color: #ffffff !important;
+  font-size: 28px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.8px !important;
+}
+
+body.calculator-page .calculator-visual p {
+  margin-top: 12px !important;
+  color: #cbd5e1 !important;
+}
+
+/* graficul din dreapta */
+body.calculator-page .mini-bars {
+  height: 180px !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  gap: 14px !important;
+  margin-top: 34px !important;
+  padding: 22px !important;
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+body.calculator-page .mini-bars i {
+  flex: 1 !important;
+  display: block !important;
+  border-radius: 14px 14px 6px 6px !important;
+  background: linear-gradient(180deg, #38bdf8, #7c3aed, #2563eb) !important;
+}
+
+/* pastile dreapta */
+body.calculator-page .visual-pills {
+  display: grid !important;
+  gap: 12px !important;
+  margin-top: 24px !important;
+}
+
+body.calculator-page .visual-pills div {
+  display: flex !important;
+  justify-content: space-between !important;
+  padding: 14px !important;
+  border-radius: 16px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+/* secțiuni text de sub calculator */
+body.calculator-page .premium-content,
+body.calculator-page .article-layout {
+  max-width: 1180px !important;
+  margin: 58px auto 0 !important;
+  padding: 0 24px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 320px !important;
+  gap: 26px !important;
+  align-items: start !important;
+}
+
+body.calculator-page .content,
+body.calculator-page .side-card,
+body.calculator-page .faq-item {
+  border-radius: 30px !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07) !important;
+}
+
+body.calculator-page .content {
+  padding: 34px !important;
+}
+
+body.calculator-page .content h2 {
+  margin-bottom: 14px !important;
+  color: #111827 !important;
+  font-size: 32px !important;
+  letter-spacing: -1px !important;
+}
+
+body.calculator-page .content h3 {
+  margin: 24px 0 8px !important;
+  color: #111827 !important;
+  font-size: 23px !important;
+}
+
+body.calculator-page .content p,
+body.calculator-page .content li {
+  color: #475569 !important;
+  font-size: 17px !important;
+}
+
+/* Articole individuale */
+body.article-page .article-layout {
+  max-width: 1180px !important;
+  margin: 58px auto 0 !important;
+  padding: 0 24px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 320px !important;
+  gap: 26px !important;
+}
+
+body.article-page .content {
+  padding: 38px !important;
+  border-radius: 34px !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07) !important;
+}
+
+body.article-page .content h2 {
+  font-size: 34px !important;
+  letter-spacing: -1px !important;
+}
+
+body.article-page .content p,
+body.article-page .content li {
+  color: #475569 !important;
+  font-size: 18px !important;
+}
+
+/* Despre + Contact */
+body.constellation-page .about-grid,
+body.constellation-page .contact-grid {
+  max-width: 1180px !important;
+  margin: 58px auto 0 !important;
+  padding: 0 24px !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 24px !important;
+}
+
+body.constellation-page .about-panel,
+body.constellation-page .contact-panel {
+  padding: 36px !important;
+  border-radius: 32px !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07) !important;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  body.calculator-page .premium-calculator,
+  body.calculator-page .calculator-layout,
+  body.calculator-page .calc-layout,
+  body.calculator-page .premium-content,
+  body.calculator-page .article-layout,
+  body.article-page .article-layout,
+  body.constellation-page .about-grid,
+  body.constellation-page .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.calculator-page .calc-hero,
+  body.calculator-page .page-hero,
+  body.article-page .article-hero,
+  body.article-page .page-hero {
+    margin: 24px 18px 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.calculator-page .calc-hero,
+  body.calculator-page .page-hero,
+  body.article-page .article-hero,
+  body.article-page .page-hero {
+    padding: 58px 20px 50px !important;
+    border-radius: 0 0 30px 30px !important;
+  }
+
+  body.calculator-page .calc-hero h1,
+  body.calculator-page .page-hero h1,
+  body.article-page .article-hero h1,
+  body.article-page .page-hero h1 {
+    font-size: 38px !important;
+    letter-spacing: -1.4px !important;
+  }
+
+  body.calculator-page .calc-hero p,
+  body.calculator-page .page-hero p,
+  body.article-page .article-hero p,
+  body.article-page .page-hero p {
+    font-size: 17px !important;
+  }
+
+  body.calculator-page .premium-calculator,
+  body.calculator-page .calculator-layout,
+  body.calculator-page .calc-layout,
+  body.calculator-page .premium-content,
+  body.calculator-page .article-layout,
+  body.article-page .article-layout {
+    padding: 0 18px !important;
+  }
+
+  body.calculator-page .calculator-card,
+  body.calculator-page .calc-box,
+  body.article-page .content {
+    padding: 26px !important;
+  }
+}
+
