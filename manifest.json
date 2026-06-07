@@ -1,1 +1,15 @@
-{"name":"Finance Tools RO","short_name":"FinanceTools","start_url":"/Financetools/","display":"standalone","background_color":"#07111f","theme_color":"#07111f","icons":[{"src":"icons/constellation-logo.svg","sizes":"512x512","type":"image/svg+xml"}]}
+{
+  "name": "Finance Tools RO",
+  "short_name": "FinanceTools",
+  "start_url": "/Financetools/",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "icons/constellation-logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

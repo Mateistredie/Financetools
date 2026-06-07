@@ -1,8 +1,13 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="512" height="512" rx="116" fill="#07111F"/>
-<path d="M140 310L226 188L316 252L386 118" stroke="url(#g)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="140" cy="310" r="24" fill="#fff"/><circle cx="226" cy="188" r="24" fill="#fff"/><circle cx="316" cy="252" r="24" fill="#fff"/><circle cx="386" cy="118" r="24" fill="#fff"/>
-<circle cx="112" cy="126" r="5" fill="#A78BFA"/><circle cx="388" cy="360" r="4" fill="#38BDF8"/><circle cx="248" cy="392" r="4" fill="#C4B5FD"/>
-<text x="118" y="418" fill="white" font-family="Arial, sans-serif" font-size="72" font-weight="900">FT</text>
+<path d="M132 316L220 186L318 252L388 118" stroke="url(#g)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="132" cy="316" r="23" fill="#FFFFFF"/>
+<circle cx="220" cy="186" r="23" fill="#FFFFFF"/>
+<circle cx="318" cy="252" r="23" fill="#FFFFFF"/>
+<circle cx="388" cy="118" r="23" fill="#FFFFFF"/>
+<circle cx="106" cy="126" r="5" fill="#A78BFA"/>
+<circle cx="400" cy="358" r="4" fill="#38BDF8"/>
+<circle cx="250" cy="392" r="4" fill="#C4B5FD"/>
+<text x="116" y="420" fill="white" font-family="Arial, sans-serif" font-size="74" font-weight="900">FT</text>
 <defs><linearGradient id="g" x1="120" y1="320" x2="390" y2="120"><stop stop-color="#38BDF8"/><stop offset=".5" stop-color="#7C3AED"/><stop offset="1" stop-color="#2563EB"/></linearGradient></defs>
 </svg>
