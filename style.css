@@ -1,6 +1,6 @@
 /* =========================================================
    Finance Tools RO - CSS complet formatat
-   Include homepage constelație + stiluri generale site
+   Homepage constelație, variantă curată
    ========================================================= */
 
 * {
@@ -19,7 +19,6 @@
   --blue: #2563eb;
   --cyan: #38bdf8;
   --dark: #07111f;
-  --shadow: 0 24px 70px rgba(15, 23, 42, 0.10);
 }
 
 html {
@@ -45,7 +44,7 @@ img {
 }
 
 /* =========================
-   NAVBAR GENERAL
+   NAVBAR
    ========================= */
 
 .navbar {
@@ -64,8 +63,7 @@ img {
   backdrop-filter: blur(22px);
 }
 
-.brand,
-.logo {
+.brand {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -112,19 +110,6 @@ img {
   background: #ffffff;
 }
 
-.brand-strip {
-  padding: 10px 16px;
-  text-align: center;
-  background: var(--dark);
-  color: #dbeafe;
-  font-size: 13px;
-  font-weight: 850;
-}
-
-.brand-strip span {
-  color: #c4b5fd;
-}
-
 .constellation-home .navbar {
   background: rgba(7, 17, 31, 0.94);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -156,10 +141,10 @@ img {
 .constellation-hero {
   position: relative;
   overflow: hidden;
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh - 82px);
   background:
-    radial-gradient(circle at 76% 20%, rgba(124, 58, 237, 0.32), transparent 24%),
-    radial-gradient(circle at 22% 22%, rgba(37, 99, 235, 0.20), transparent 28%),
+    radial-gradient(circle at 70% 22%, rgba(124, 58, 237, 0.34), transparent 27%),
+    radial-gradient(circle at 20% 18%, rgba(37, 99, 235, 0.22), transparent 28%),
     linear-gradient(135deg, #07111f, #0b1630 55%, #030712);
   color: #ffffff;
 }
@@ -168,37 +153,33 @@ img {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.75) 0 1px, transparent 2px),
-    radial-gradient(circle at 72% 28%, rgba(196, 181, 253, 0.70) 0 1px, transparent 2px),
-    radial-gradient(circle at 42% 72%, rgba(96, 165, 250, 0.65) 0 1px, transparent 2px),
-    radial-gradient(circle at 88% 68%, rgba(255, 255, 255, 0.60) 0 1px, transparent 2px),
-    radial-gradient(circle at 10% 82%, rgba(196, 181, 253, 0.55) 0 1px, transparent 2px);
-  opacity: 0.75;
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.72) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 28%, rgba(196, 181, 253, 0.68) 0 1px, transparent 2px),
+    radial-gradient(circle at 42% 72%, rgba(96, 165, 250, 0.62) 0 1px, transparent 2px),
+    radial-gradient(circle at 88% 68%, rgba(255, 255, 255, 0.55) 0 1px, transparent 2px),
+    radial-gradient(circle at 10% 82%, rgba(196, 181, 253, 0.50) 0 1px, transparent 2px);
+  opacity: 0.7;
 }
 
 .hero-grid {
   position: relative;
   max-width: 1280px;
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh - 82px);
   margin: 0 auto;
-  padding: 86px 24px 70px;
+  padding: 90px 24px 74px;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 58px;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
   align-items: center;
 }
 
-.hero-logo {
-  width: 118px;
-  height: 118px;
-  margin-bottom: 28px;
-  border-radius: 28px;
-  filter: drop-shadow(0 0 28px rgba(124, 58, 237, 0.52));
+.hero-copy.clean {
+  padding-left: 4px;
 }
 
-.hero-badge {
+.hero-small-label {
   display: inline-flex;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
   padding: 10px 16px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
@@ -210,17 +191,17 @@ img {
 }
 
 .hero-copy h1 {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0;
   color: #ffffff;
-  font-size: clamp(52px, 7vw, 96px);
-  line-height: 0.96;
+  font-size: clamp(54px, 7vw, 92px);
+  line-height: 0.95;
   letter-spacing: -4px;
 }
 
 .hero-copy p {
-  max-width: 680px;
-  margin-top: 26px;
+  max-width: 640px;
+  margin-top: 28px;
   color: #cbd5e1;
   font-size: 21px;
   line-height: 1.75;
@@ -259,6 +240,23 @@ img {
 
 .hero-btn:hover {
   transform: translateY(-3px);
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero-trust span {
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  color: #dbeafe;
+  font-size: 13px;
+  font-weight: 850;
 }
 
 /* Map */
@@ -591,10 +589,7 @@ img {
   font-size: 17px;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
-
+/* Footer */
 .footer {
   margin-top: 90px;
   padding: 46px 24px;
@@ -610,10 +605,7 @@ img {
   font-weight: 850;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
-
+/* Responsive */
 @media (max-width: 1100px) {
   .hero-grid,
   .final-cta-box {
@@ -621,9 +613,9 @@ img {
     text-align: center;
   }
 
-  .hero-logo,
   .hero-copy p,
-  .hero-actions {
+  .hero-actions,
+  .hero-trust {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
