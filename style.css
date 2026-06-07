@@ -1,6 +1,7 @@
 /* =========================================================
-   Finance Tools RO - CSS complet formatat
-   Homepage constelație, variantă curată
+   Finance Tools RO - Homepage 9.8 constelație
+   Include navbar transparent, noduri animate, metrici,
+   ecosistem financiar și carduri premium.
    ========================================================= */
 
 * {
@@ -111,7 +112,9 @@ img {
 }
 
 .constellation-home .navbar {
-  background: rgba(7, 17, 31, 0.94);
+  position: fixed;
+  width: 100%;
+  background: rgba(7, 17, 31, 0.42);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: none;
 }
@@ -141,7 +144,8 @@ img {
 .constellation-hero {
   position: relative;
   overflow: hidden;
-  min-height: calc(100vh - 82px);
+  min-height: 100vh;
+  padding-top: 82px;
   background:
     radial-gradient(circle at 70% 22%, rgba(124, 58, 237, 0.34), transparent 27%),
     radial-gradient(circle at 20% 18%, rgba(37, 99, 235, 0.22), transparent 28%),
@@ -161,6 +165,30 @@ img {
   opacity: 0.7;
 }
 
+.aurora {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(70px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.aurora-one {
+  width: 360px;
+  height: 360px;
+  right: 10%;
+  top: 16%;
+  background: rgba(124, 58, 237, 0.45);
+}
+
+.aurora-two {
+  width: 300px;
+  height: 300px;
+  left: 13%;
+  bottom: 8%;
+  background: rgba(56, 189, 248, 0.22);
+}
+
 .hero-grid {
   position: relative;
   max-width: 1280px;
@@ -171,10 +199,6 @@ img {
   grid-template-columns: 0.85fr 1.15fr;
   gap: 70px;
   align-items: center;
-}
-
-.hero-copy.clean {
-  padding-left: 4px;
 }
 
 .hero-small-label {
@@ -242,20 +266,34 @@ img {
   transform: translateY(-3px);
 }
 
-.hero-trust {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 32px;
+  max-width: 620px;
 }
 
-.hero-trust span {
-  padding: 9px 13px;
-  border-radius: 999px;
+.hero-metrics div {
+  padding: 16px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.13);
-  color: #dbeafe;
-  font-size: 13px;
+  backdrop-filter: blur(18px);
+}
+
+.hero-metrics strong {
+  display: block;
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.hero-metrics span {
+  display: block;
+  margin-top: 6px;
+  color: #cbd5e1;
+  font-size: 12px;
   font-weight: 850;
 }
 
@@ -285,6 +323,41 @@ img {
   stroke-linecap: round;
   opacity: 0.95;
   filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.6));
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: drawLine 3.2s ease forwards, glowLine 4s ease-in-out infinite;
+}
+
+.map-lines line:nth-child(2) {
+  animation-delay: 0.25s, 0s;
+}
+
+.map-lines line:nth-child(3) {
+  animation-delay: 0.45s, 0s;
+}
+
+.map-lines line:nth-child(4) {
+  animation-delay: 0.65s, 0s;
+}
+
+.map-lines line:nth-child(5) {
+  animation-delay: 0.85s, 0s;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes glowLine {
+  0%, 100% {
+    opacity: 0.72;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 .finance-node {
@@ -370,6 +443,69 @@ img {
   }
 }
 
+/* Money Path */
+.money-path-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 90px 24px 0;
+}
+
+.money-path {
+  display: grid;
+  grid-template-columns: 1fr 42px 1fr 42px 1fr 42px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.money-path a {
+  min-height: 190px;
+  padding: 28px;
+  border-radius: 30px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
+  transition: 0.24s;
+}
+
+.money-path a:hover {
+  transform: translateY(-7px);
+  border-color: #c4b5fd;
+}
+
+.money-path span {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: #07111f;
+  color: #ffffff;
+  font-weight: 950;
+}
+
+.money-path strong {
+  display: block;
+  font-size: 28px;
+  letter-spacing: -1px;
+}
+
+.money-path small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.money-path i {
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cyan), var(--violet), var(--blue));
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.28);
+}
+
 /* Sections */
 .home-section {
   max-width: 1280px;
@@ -394,49 +530,6 @@ img {
 .section-heading p {
   color: var(--muted);
   font-size: 18px;
-}
-
-.ecosystem-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 14px;
-}
-
-.ecosystem-card {
-  min-height: 128px;
-  padding: 20px;
-  border-radius: 26px;
-  background: #ffffff;
-  border: 1px solid var(--line);
-  color: var(--text);
-  text-decoration: none;
-  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
-  transition: 0.24s;
-}
-
-.ecosystem-card:hover {
-  transform: translateY(-6px);
-  border-color: #c4b5fd;
-}
-
-.ecosystem-dot {
-  width: 32px;
-  height: 32px;
-  margin-bottom: 18px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--cyan), var(--violet), var(--blue));
-  box-shadow: 0 0 24px rgba(124, 58, 237, 0.35);
-}
-
-.ecosystem-card h3 {
-  margin-bottom: 6px;
-  font-size: 20px;
-}
-
-.ecosystem-card p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.55;
 }
 
 .premium-grid {
@@ -615,7 +708,7 @@ img {
 
   .hero-copy p,
   .hero-actions,
-  .hero-trust {
+  .hero-metrics {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
@@ -625,10 +718,16 @@ img {
     min-height: 480px;
   }
 
-  .ecosystem-grid,
   .premium-grid,
-  .article-grid-premium {
-    grid-template-columns: repeat(2, 1fr);
+  .article-grid-premium,
+  .money-path {
+    grid-template-columns: 1fr;
+  }
+
+  .money-path i {
+    width: 4px;
+    height: 36px;
+    margin: 0 auto;
   }
 
   .premium-card.big {
@@ -646,6 +745,11 @@ img {
   .navbar nav {
     justify-content: center;
     gap: 12px;
+  }
+
+  .constellation-home .navbar {
+    position: sticky;
+    background: rgba(7, 17, 31, 0.94);
   }
 
   .hero-grid {
@@ -669,6 +773,10 @@ img {
     width: 100%;
   }
 
+  .hero-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .hero-map-wrap {
     min-height: 410px;
   }
@@ -678,13 +786,8 @@ img {
     transform-origin: top center;
   }
 
-  .ecosystem-grid,
-  .premium-grid,
-  .article-grid-premium {
-    grid-template-columns: 1fr;
-  }
-
-  .home-section {
+  .home-section,
+  .money-path-section {
     padding-top: 70px;
   }
 
