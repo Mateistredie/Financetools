@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Calculator Pensie 2026 | Finance Tools RO</title>
+  <meta name="description" content="Calculator Pensie 2026 pentru România. Calculează rapid economiile necesare pentru pensie, cu explicații, exemple, formule, FAQ și rezultate direct în browser.">
+  <link rel="canonical" href="https://mateistredie.github.io/Financetools/calculatoare/calculator-pensie.html">
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" type="image/svg+xml" href="../icons/constellation-logo.svg">
+  <meta name="theme-color" content="#07111f">
+
+  <meta property="og:site_name" content="Finance Tools RO">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculator Pensie 2026">
+  <meta property="og:description" content="Calculator Pensie 2026 pentru România. Calculează rapid economiile necesare pentru pensie, cu explicații, exemple, formule, FAQ și rezultate direct în browser.">
+</head>
+
+<body class="calculator-page">
+
+<header class="navbar">
+  <a class="brand" href="../index.html">
+    <img src="../icons/constellation-logo.svg" alt="Finance Tools RO logo">
+    <span>Finance Tools RO</span>
+  </a>
+  <nav>
+    <a href="../index.html">Acasă</a>
+    <a href="../calculatoare.html">Calculatoare</a>
+    <a href="../articole.html">Articole</a>
+    <a href="../categorii.html">Categorii</a>
+    <a href="../despre.html">Despre</a>
+    <a href="../contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="eyebrow">Calculator financiar avansat</div>
+    <h1>Calculator Pensie</h1>
+    <p>Calculator Pensie pentru România. Introdu valorile tale și obții o estimare rapidă, clară și privată, fără cont și fără date trimise către server.</p>
+  </section>
+
+  <section class="calculator-layout">
+    <div class="calc-card">
+      <h2>Introdu datele pentru calcul</h2>
+
+      <h2>Suma inițială (RON)</h2>
+      <input id="input1" type="number" placeholder="Ex: 7000" inputmode="decimal">
+
+      <h2>Randament / dobândă anuală estimată (%)</h2>
+      <input id="input2" type="number" placeholder="Ex: 7" inputmode="decimal">
+
+      <h2>Perioada (ani)</h2>
+      <input id="input3" type="number" placeholder="Ex: 10" inputmode="decimal">
+
+      <h2>Contribuție lunară (RON, opțional)</h2>
+      <input id="input4" type="number" placeholder="Ex: 300" inputmode="decimal">
+
+      <button onclick="calculateTool('investitii')">Calculează</button>
+
+      <div class="result">
+        <h2 id="resultTitle">Rezultat</h2>
+        <p id="rezultat">Completează valorile pentru a vedea estimarea.</p>
+      </div>
+    </div>
+
+    <aside class="visual">
+      <h2>Rezultat rapid și clar</h2>
+      <p>Completează valorile și vezi imediat estimarea. Calculele sunt făcute direct în browser.</p>
+
+      <div class="mini-bars">
+        <i style="height:45%"></i>
+        <i style="height:68%"></i>
+        <i style="height:55%"></i>
+        <i style="height:82%"></i>
+        <i style="height:95%"></i>
+      </div>
+
+      <div class="pills">
+        <div><strong>Rapid</strong><span>instant</span></div>
+        <div><strong>Privat</strong><span>fără cont</span></div>
+        <div><strong>Util</strong><span>decizii clare</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="content-layout">
+    <div class="content-main">
+
+      <section class="content">
+        <h2>Ce calculează acest instrument?</h2>
+        <p>
+          Calculator Pensie te ajută să estimezi economiile necesare pentru pensie. Scopul este să ai o imagine rapidă înainte
+          să iei o decizie financiară, să compari mai multe variante și să înțelegi cum se schimbă
+          rezultatul atunci când modifici suma, procentul sau perioada.
+        </p>
+        <p>
+          Calculatorul este construit pentru utilizatorii din România și este potrivit pentru
+          planificare personală, comparații rapide, simulări înainte de o achiziție sau pentru
+          înțelegerea mai clară a unor concepte financiare. Rezultatul nu este o recomandare
+          financiară, ci o estimare practică.
+        </p>
+      </section>
+
+      <section class="content">
+        <h2>Cum se folosește calculatorul?</h2>
+        <p>
+          Completează suma principală, procentul relevant, perioada și, dacă este cazul, o valoare
+          suplimentară. Apoi apasă pe butonul de calcul. Rezultatul îți arată valoarea finală estimată, câștigul acumulat și influența contribuțiilor lunare.
+        </p>
+        <p>
+          Poți testa mai multe scenarii: o variantă conservatoare, una medie și una optimistă.
+          Această metodă este utilă deoarece deciziile financiare bune nu se iau pe un singur număr,
+          ci pe comparații între mai multe posibilități.
+        </p>
+      </section>
+
+      <section class="content">
+        <h2>Exemplu practic</h2>
+        <p>
+          Dacă introduci o valoare de 7.000 RON, un procent de 7% și o perioadă de 10 ani,
+          calculatorul va genera o estimare care îți arată cum poate evolua suma în timp.
+          Pentru unele calcule, câmpul suplimentar poate reprezenta o contribuție lunară,
+          o rambursare anticipată, o cheltuială fixă sau o ajustare.
+        </p>
+        <p>
+          Important este să folosești valori realiste. Procentele prea optimiste pot crea o imagine
+          falsă, iar ignorarea costurilor secundare poate schimba semnificativ rezultatul final.
+        </p>
+      </section>
+
+      <section class="content">
+        <h2>Ce trebuie să verifici înainte de o decizie?</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Element</th>
+              <th>De ce contează</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Suma introdusă</td>
+              <td>Influențează direct rezultatul final și comparația între scenarii.</td>
+            </tr>
+            <tr>
+              <td>Procentul</td>
+              <td>Poate reprezenta dobândă, randament, taxă, comision sau pondere.</td>
+            </tr>
+            <tr>
+              <td>Perioada</td>
+              <td>Cu cât perioada este mai mare, cu atât diferențele pot deveni mai importante.</td>
+            </tr>
+            <tr>
+              <td>Costuri ascunse</td>
+              <td>Taxele, comisioanele, inflația sau condițiile contractuale pot modifica rezultatul real.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="content">
+        <h2>Greșeli frecvente</h2>
+        <ul>
+          <li>să folosești un procent nerealist;</li>
+          <li>să compari variante fără aceeași perioadă de timp;</li>
+          <li>să ignori taxele, comisioanele sau inflația;</li>
+          <li>să tratezi estimarea ca rezultat garantat;</li>
+          <li>să nu verifici condițiile reale înainte de o decizie importantă;</li>
+          <li>să nu testezi mai multe scenarii.</li>
+        </ul>
+      </section>
+
+      <section class="content">
+        <h2>Întrebări frecvente</h2>
+        <div class="faq-item">
+          <h3>Este calculul exact?</h3>
+          <p>Rezultatul este o estimare orientativă. În realitate pot apărea taxe, comisioane, variații de dobândă, inflație sau reguli diferite în funcție de situația personală.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Pot folosi calculatorul pe telefon?</h3>
+          <p>Da. Pagina este gândită să funcționeze pe mobil, tabletă și desktop, iar calculul se face direct în browser.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Datele mele sunt salvate?</h3>
+          <p>Nu. Valorile introduse sunt folosite local în browser pentru calcul și nu sunt trimise către Finance Tools RO.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Cum folosesc rezultatul?</h3>
+          <p>Folosește rezultatul ca punct de plecare pentru comparații, scenarii și planificare. Pentru decizii importante, verifică și condițiile exacte ale băncii, brokerului sau instituției relevante.</p>
+        </div>
+      </section>
+
+      <section class="content">
+        <h2>Calculatoare și articole utile</h2>
+        <p>Poți continua analiza cu aceste instrumente și ghiduri:</p>
+        <ul>
+          <li><a href="../calculatoare.html">Toate calculatoarele</a></li>
+          <li><a href="../articole.html">Articole financiare</a></li>
+          <li><a href="calculator-dobanda-compusa.html">Dobândă compusă</a></li>
+          <li><a href="calculator-investitii.html">Investiții</a></li>
+          <li><a href="../blog/investitii-pentru-incepatori.html">Investiții pentru începători</a></li>
+        </ul>
+      </section>
+
+    </div>
+
+    <aside class="side-stack">
+      <div class="side-card gradient">
+        <h3>Finance Tools RO</h3>
+        <p>Instrumente simple pentru decizii financiare mai clare.</p>
+      </div>
+
+      <div class="side-card">
+        <h3>Recomandate</h3>
+        <div class="side-list">
+          <a href="../calculatoare.html">Toate calculatoarele</a>
+          <a href="../articole.html">Articole financiare</a>
+          <a href="calculator-dobanda-compusa.html">Dobândă compusă</a>
+          <a href="calculator-investitii.html">Investiții</a>
+        </div>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>
+    © 2026 Finance Tools RO |
+    <a href="../privacy-policy.html">Confidențialitate</a> |
+    <a href="../terms.html">Termeni</a> |
+    <a href="../disclaimer.html">Disclaimer</a> |
+    <a href="../contact.html">Contact</a>
+  </p>
+</footer>
+
+<script>
+function val(id) {
+  return parseFloat(document.getElementById(id)?.value) || 0;
+}
+
+function ron(n) {
+  return Number(n || 0).toLocaleString("ro-RO", { maximumFractionDigits: 0 }) + " RON";
+}
+
+function writeResult(title, details) {
+  document.getElementById("resultTitle").innerText = title;
+  document.getElementById("rezultat").innerHTML = details || "";
+}
+
+function calculateTool(type) {
+  const a = val("input1");
+  const b = val("input2");
+  const c = val("input3");
+  const d = val("input4");
+
+  if (a <= 0) {
+    writeResult("Introdu o valoare validă", "Completează prima valoare cu o sumă mai mare decât zero.");
+    return;
+  }
+
+  const procent = b || 7;
+  const perioada = c || 10;
+
+  if (type === "credit") {
+    const luni = Math.max(1, perioada * 12);
+    const r = procent / 100 / 12;
+    const rata = r === 0 ? a / luni : a * (r * Math.pow(1 + r, luni)) / (Math.pow(1 + r, luni) - 1);
+    const rataNoua = Math.max(0, rata - d);
+    const total = rata * luni;
+    writeResult(
+      "Rată lunară estimată: " + ron(rataNoua),
+      "Total estimat de plată: " + ron(total) +
+      "<br>Cost estimat al dobânzii: " + ron(total - a) +
+      "<br>Perioadă analizată: " + luni + " luni"
+    );
+    return;
+  }
+
+  if (type === "investitii") {
+    const ani = Math.max(1, perioada);
+    const r = procent / 100;
+    let final = a * Math.pow(1 + r, ani);
+    if (d > 0) {
+      for (let i = 0; i < ani * 12; i++) {
+        final = (final + d) * Math.pow(1 + r, 1 / 12);
+      }
+    }
+    const contrib = d * ani * 12;
+    writeResult(
+      "Valoare finală estimată: " + ron(final),
+      "Câștig estimat: " + ron(final - a - contrib) +
+      "<br>Contribuții totale: " + ron(contrib) +
+      "<br>Perioadă analizată: " + ani + " ani"
+    );
+    return;
+  }
+
+  if (type === "taxe") {
+    const taxa = a * procent / 100;
+    const net = Math.max(0, a - taxa - d);
+    writeResult(
+      "Valoare netă estimată: " + ron(net),
+      "Taxă / contribuție estimată: " + ron(taxa) +
+      "<br>Ajustări introduse: " + ron(d) +
+      "<br>Procent folosit: " + procent + "%"
+    );
+    return;
+  }
+
+  if (type === "buget") {
+    const economii = a * procent / 100;
+    const disponibil = Math.max(0, a - economii - d);
+    writeResult(
+      "Economii estimate: " + ron(economii),
+      "Disponibil după economii și cheltuieli fixe: " + ron(disponibil) +
+      "<br>Cheltuieli fixe introduse: " + ron(d) +
+      "<br>Perioadă analizată: " + perioada
+    );
+    return;
+  }
+
+  if (type === "procent") {
+    const rezultat = a * procent / 100;
+    const total = a + rezultat + d;
+    writeResult(
+      "Valoare procentuală: " + ron(rezultat),
+      "Total estimat: " + ron(total) +
+      "<br>Procent folosit: " + procent + "%" +
+      "<br>Cost suplimentar: " + ron(d)
+    );
+    return;
+  }
+
+  const rezultat = a * procent / 100;
+  writeResult(
+    "Rezultat estimat: " + ron(rezultat),
+    "Valoare principală: " + ron(a) + "<br>Procent folosit: " + procent + "%"
+  );
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculator Pensie",
+  "url": "https://mateistredie.github.io/Financetools/calculatoare/calculator-pensie.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "RON"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Finance Tools RO"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Este calculul exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rezultatul este o estimare orientativă. În realitate pot apărea taxe, comisioane, variații de dobândă, inflație sau reguli diferite în funcție de situația personală."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot folosi calculatorul pe telefon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Pagina este gândită să funcționeze pe mobil, tabletă și desktop, iar calculul se face direct în browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Datele mele sunt salvate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nu. Valorile introduse sunt folosite local în browser pentru calcul și nu sunt trimise către Finance Tools RO."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cum folosesc rezultatul?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Folosește rezultatul ca punct de plecare pentru comparații, scenarii și planificare. Pentru decizii importante, verifică și condițiile exacte ale băncii, brokerului sau instituției relevante."
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
