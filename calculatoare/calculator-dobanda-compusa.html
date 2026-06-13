@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator Dobanda Compusa 2026 | Finance Tools RO</title>
-  <meta name="description" content="Calculator Dobanda Compusa pentru România. Calculează rapid o estimare financiară direct în browser.">
+
+  <title>Calculator Dobândă Compusă 2026 | Finance Tools RO</title>
+  <meta name="description" content="Calculator dobândă compusă pentru România. Estimează valoarea finală a unei sume în funcție de dobânda anuală și perioada aleasă. Gratuit, rapid și fără cont.">
+
   <link rel="stylesheet" href="../style.css">
   <link rel="manifest" href="../manifest.json">
   <link rel="icon" type="image/svg+xml" href="../icons/constellation-logo.svg">
@@ -18,6 +20,7 @@
     <img src="../icons/constellation-logo.svg" alt="Finance Tools RO logo">
     <span>Finance Tools RO</span>
   </a>
+
   <nav>
     <a href="../index.html">Acasă</a>
     <a href="../calculatoare.html">Calculatoare</a>
@@ -29,26 +32,25 @@
 </header>
 
 <main>
+
   <section class="page-hero">
     <div class="eyebrow">Calculator financiar</div>
-    <h1>Calculator Dobanda Compusa</h1>
-    <p>Calculator Dobanda Compusa pentru România. Calculează rapid o estimare financiară direct în browser. Gratuit, rapid și fără cont.</p>
+    <h1>Calculator Dobândă Compusă</h1>
+    <p>Calculează rapid cât poate valora o sumă de bani după mai mulți ani, folosind efectul dobânzii compuse.</p>
   </section>
 
   <section class="calculator-layout">
     <div class="calc-card">
       <h2>Introdu datele pentru calcul</h2>
 
-      <h2>Valoare principală (RON)</h2>
+      <h2>Valoare inițială (RON)</h2>
       <input id="input1" type="number" placeholder="Ex: 7000">
 
-      
-        <h2>Procent / dobândă anuală (%)</h2>
-        <input id="input2" type="number" placeholder="Ex: 7">
+      <h2>Dobândă anuală estimată (%)</h2>
+      <input id="input2" type="number" placeholder="Ex: 7">
 
-        <h2>Perioada (ani) / valoare suplimentară</h2>
-        <input id="input3" type="number" placeholder="Ex: 10">
-        
+      <h2>Perioada (ani)</h2>
+      <input id="input3" type="number" placeholder="Ex: 10">
 
       <button onclick="calculateTool('compus')">Calculează</button>
 
@@ -80,18 +82,139 @@
 
   <section class="content-layout">
     <div class="content-main">
+
       <section class="content">
-        <h2>Detalii calcul</h2>
-        <p>Acest calculator oferă o estimare rapidă pentru decizii financiare mai clare. Valorile pot varia în funcție de situația personală și de regulile aplicabile.</p>
+        <h2>Ce este dobânda compusă?</h2>
+        <p>
+          Dobânda compusă este procesul prin care câștigul obținut dintr-o investiție
+          este reinvestit, iar în timp începe să producă la rândul lui câștig.
+          Practic, nu câștigi doar din suma inițială, ci și din profitul acumulat anterior.
+        </p>
+
+        <p>
+          Acest calculator de dobândă compusă te ajută să estimezi cât ar putea valora
+          o sumă de bani după mai mulți ani, în funcție de randamentul anual introdus.
+          Este util pentru economii, investiții, ETF-uri, depozite sau planificare financiară.
+        </p>
+      </section>
+
+      <section class="content">
+        <h2>Cum funcționează calculatorul?</h2>
+        <p>
+          Introdu suma inițială, dobânda anuală estimată și perioada în ani.
+          Calculatorul aplică dobânda compusă și îți arată valoarea finală estimată,
+          împreună cu câștigul total.
+        </p>
+
+        <p>
+          Exemplu: dacă investești 7.000 lei timp de 10 ani cu un randament mediu anual
+          de 7%, valoarea finală poate fi semnificativ mai mare decât suma inițială,
+          deoarece randamentul se acumulează de la an la an.
+        </p>
+      </section>
+
+      <section class="content">
+        <h2>Formula dobânzii compuse</h2>
+        <p>
+          Formula simplificată este:
+        </p>
+
+        <p>
+          <strong>Valoare finală = suma inițială × (1 + dobânda anuală) ^ numărul de ani</strong>
+        </p>
+
+        <p>
+          Calculatorul face automat acest calcul în browser, fără cont, fără salvarea datelor
+          și fără să trimită informațiile tale către un server.
+        </p>
+      </section>
+
+      <section class="content">
+        <h2>Când este util acest calculator?</h2>
+        <ul>
+          <li>când vrei să estimezi creșterea unei investiții;</li>
+          <li>când compari randamente diferite;</li>
+          <li>când vrei să vezi efectul timpului asupra banilor;</li>
+          <li>când planifici economii pe termen lung;</li>
+          <li>când vrei să înțelegi mai bine investițiile în ETF-uri sau fonduri.</li>
+        </ul>
+      </section>
+
+      <section class="content">
+        <h2>De ce contează timpul?</h2>
+        <p>
+          Dobânda compusă devine mai puternică pe perioade lungi. Diferența dintre 5 ani,
+          10 ani și 20 de ani poate fi foarte mare, chiar dacă suma inițială și randamentul
+          rămân aceleași.
+        </p>
+
+        <p>
+          De aceea, în investiții, timpul este unul dintre cei mai importanți factori.
+          Cu cât începi mai devreme, cu atât efectul compunerii poate deveni mai puternic.
+        </p>
+      </section>
+
+      <section class="content">
+        <h2>Greșeli frecvente</h2>
+        <ul>
+          <li>să presupui că randamentul este garantat;</li>
+          <li>să ignori inflația;</li>
+          <li>să folosești procente prea optimiste;</li>
+          <li>să nu iei în calcul taxele sau comisioanele;</li>
+          <li>să confunzi dobânda simplă cu dobânda compusă.</li>
+        </ul>
       </section>
 
       <section class="content">
         <h2>Întrebări frecvente</h2>
+
         <div class="faq-item">
           <h3>Este calculul exact?</h3>
-          <p>Este o estimare orientativă, utilă pentru comparații rapide și planificare.</p>
+          <p>
+            Nu. Rezultatul este o estimare orientativă. Randamentele reale pot varia în funcție
+            de piață, inflație, taxe, comisioane și perioada aleasă.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Pot folosi calculatorul pentru ETF-uri?</h3>
+          <p>
+            Da. Calculatorul poate fi folosit pentru simulări simple de investiții în ETF-uri,
+            fonduri mutuale sau alte instrumente cu randament anual estimat.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Ce randament anual ar trebui să introduc?</h3>
+          <p>
+            Poți testa mai multe scenarii: conservator, mediu și optimist. Nu folosi un singur
+            randament ca certitudine, deoarece investițiile pot varia de la an la an.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Este calculatorul gratuit?</h3>
+          <p>
+            Da. Calculatorul este gratuit, nu necesită cont și funcționează direct în browser.
+          </p>
         </div>
       </section>
+
+      <section class="content">
+        <h2>Calculatoare și articole utile</h2>
+        <p>
+          Pentru o imagine mai completă, poți folosi și:
+        </p>
+
+        <ul>
+          <li><a href="calculator-investitii.html">Calculator investiții</a></li>
+          <li><a href="calculator-etf.html">Calculator ETF</a></li>
+          <li><a href="calculator-economii-lunare.html">Calculator economii lunare</a></li>
+          <li><a href="../blog/dobanda-compusa-explicata.html">Dobânda compusă explicată</a></li>
+          <li><a href="../blog/investitii-pentru-incepatori.html">Investiții pentru începători</a></li>
+        </ul>
+      </section>
+
     </div>
 
     <aside class="side-stack">
@@ -103,21 +226,28 @@
       <div class="side-card">
         <h3>Recomandate</h3>
         <div class="side-list">
-          <a href="calculator-salariu-net-romania.html">Salariu net</a>
-          <a href="calculator-credit-romania.html">Credit</a>
+          <a href="calculator-investitii.html">Investiții</a>
           <a href="calculator-etf.html">ETF</a>
+          <a href="calculator-pensie.html">Pensie</a>
+          <a href="../blog/dobanda-compusa-explicata.html">Ghid dobândă compusă</a>
         </div>
       </div>
     </aside>
   </section>
+
 </main>
 
 <footer class="footer">
-  <p>© 2026 Finance Tools RO | <a href="../privacy-policy.html">Confidențialitate</a> | <a href="../terms.html">Termeni</a> | <a href="../contact.html">Contact</a></p>
+  <p>
+    © 2026 Finance Tools RO |
+    <a href="../privacy-policy.html">Confidențialitate</a> |
+    <a href="../terms.html">Termeni</a> |
+    <a href="../disclaimer.html">Disclaimer</a> |
+    <a href="../contact.html">Contact</a>
+  </p>
 </footer>
 
 <script>
-
 function val(id) {
   return parseFloat(document.getElementById(id)?.value) || 0;
 }
@@ -137,43 +267,18 @@ function calculateTool(type) {
     return;
   }
 
-  if (type === "salariu") {
-    const cas = a * 0.25;
-    const cass = a * 0.10;
-    const impozit = (a - cas - cass) * 0.10;
-    const net = a - cas - cass - impozit;
-    writeResult("Rezultat: " + net.toFixed(0) + " RON", "CAS: " + cas.toFixed(0) + " RON<br>CASS: " + cass.toFixed(0) + " RON<br>Impozit: " + impozit.toFixed(0) + " RON");
-    return;
-  }
-
-  if (type === "credit") {
-    const dob = b || 7;
-    const ani = c || 20;
-    const luni = ani * 12;
-    const r = dob / 100 / 12;
-    const rata = a * (r * Math.pow(1 + r, luni)) / (Math.pow(1 + r, luni) - 1);
-    writeResult("Rată lunară: " + rata.toFixed(0) + " RON", "Total plătit: " + (rata * luni).toFixed(0) + " RON<br>Dobândă totală: " + (rata * luni - a).toFixed(0) + " RON");
-    return;
-  }
-
-  if (type === "buget") {
-    writeResult("Nevoi: " + (a * 0.5).toFixed(0) + " RON", "Dorințe: " + (a * 0.3).toFixed(0) + " RON<br>Economii: " + (a * 0.2).toFixed(0) + " RON");
-    return;
-  }
-
   if (type === "compus") {
     const dob = b || 7;
     const ani = c || 10;
     const final = a * Math.pow(1 + dob / 100, ani);
-    writeResult("Valoare finală: " + final.toFixed(0) + " RON", "Câștig estimat: " + (final - a).toFixed(0) + " RON");
+
+    writeResult(
+      "Valoare finală: " + final.toFixed(0) + " RON",
+      "Câștig estimat: " + (final - a).toFixed(0) + " RON"
+    );
     return;
   }
-
-  const procent = b || 19;
-  const rezultat = a * procent / 100;
-  writeResult("Rezultat: " + rezultat.toFixed(2), "Valoare: " + a.toFixed(2) + "<br>Procent: " + procent + "%");
 }
-
 </script>
 
 </body>
